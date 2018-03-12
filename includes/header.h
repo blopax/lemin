@@ -6,7 +6,7 @@
 /*   By: nvergnac <nvergnac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/12 15:21:27 by nvergnac          #+#    #+#             */
-/*   Updated: 2018/03/12 16:30:11 by nvergnac         ###   ########.fr       */
+/*   Updated: 2018/03/12 16:32:22 by nvergnac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,5 @@ typedef	struct		s_info
 	t_room			*end;
 }					t_info;
 
+t_info				*ft_info_init(void);
 #endif

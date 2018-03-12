@@ -6,11 +6,12 @@
 /*   By: nvergnac <nvergnac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/05 14:18:04 by nvergnac          #+#    #+#             */
-/*   Updated: 2018/03/12 16:27:37 by nvergnac         ###   ########.fr       */
+/*   Updated: 2018/03/12 16:31:25 by nvergnac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
+
 t_room	*ft_room_init(void)
 {
 	t_room *room;
