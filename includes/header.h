@@ -8,6 +8,9 @@
 # define MAX_PATH info->max_path
 # define START info->start
 # define END info->end
+# define X_ROOM info->x_room
+# define Y_ROOM info->y_room
+# define SIZE info->size
 # include <stdlib.h>
 # include <unistd.h>
 # include <fcntl.h>
@@ -36,10 +39,14 @@ typedef	struct		s_info
 	int				ant_nb;
 	int				room_nb;
 	int				max_path;
+	int				x_room;
+	int				y_room;
+	int				size;
 	t_room			*start;
 	t_room			*end;
 	int				treat_over;
 }					t_info;
 
 t_info				*ft_info_init(void);
+int					ft_sharp_treatment(char *line, t_info *info);
 #endif

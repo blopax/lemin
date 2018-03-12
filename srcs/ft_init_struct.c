@@ -6,7 +6,7 @@
 /*   By: nvergnac <nvergnac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/05 14:18:04 by nvergnac          #+#    #+#             */
-/*   Updated: 2018/03/12 18:12:47 by nvergnac         ###   ########.fr       */
+/*   Updated: 2018/03/12 20:24:11 by nvergnac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,8 @@ t_info	*ft_info_init(void)
 	ROOM_NB = 0;
 	PHASE = 1;
 	MAX_PATH = 0;
+	X_ROOM = -1;
+	Y_ROOM = -1;
+	SIZE = 0;
 	return (info);
 }

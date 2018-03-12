@@ -6,19 +6,54 @@
 /*   By: pclement <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/12 15:53:35 by pclement          #+#    #+#             */
-/*   Updated: 2018/03/12 18:12:41 by nvergnac         ###   ########.fr       */
+/*   Updated: 2018/03/12 20:23:35 by nvergnac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-void	ft_check_command(char *line, t_info *info)
+int		ft_check_input(char *line, t_info *info)
 {
-	if (ft_strncmp("##", line, 2) == 0)
+	int blank;
+
+	blank = 0;
+	SIZE = ft_strlen(line) - 1;
+	if (ft_isdigit(line[SIZE]) == 0 || SIZE < 5)
+		return (1);
+	while (blank < 2 && line[SIZE])
+	{
+		if (line[SIZE] != ' ' && ft_isdigit(line[SIZE]) == 0)
+			return (1);
+		if (line[SIZE] == ' ')
+			{
+				blank++;
+				if (blank == 1)
+					Y_ROOM = ft_atoi(line + SIZE);
+				if (blank == 2)
+					X_ROOM = ft_atoi(line + SIZE);
+			}
+		if (blank < 2)
+			SIZE--;
+	}
+	if (X_ROOM == -1 || Y_ROOM == -1)
+		return (1);
+	return (0);
 }
+
 
 int		ft_fill_info_p2(char *line, t_info *info)
 {
+	if (line[0] == '#')
+		return (ft_sharp_treatment(line, info));
+	if (ft_check_input(line, info) == 1)
+		return (1);
+	if (ft_strcmp(CMD, "start") == 0)
+	{
+	}
+	else if (ft_strcmp(CMD, "end") == 0)
+	{
+	}
+
 }
 
 int		ft_fill_info(char *line, t_info *info)

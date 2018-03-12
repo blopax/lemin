@@ -6,7 +6,7 @@
 /*   By: pclement <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/12 16:27:44 by pclement          #+#    #+#             */
-/*   Updated: 2018/03/12 18:04:01 by pclement         ###   ########.fr       */
+/*   Updated: 2018/03/12 18:24:52 by nvergnac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,11 @@ int		ft_sharp_treatment(char *line, t_info *info)
 {
 	if (line[1] != '#')
 		return (0);
-	else 
-		ft_command_treatment(line, info);
+	else
+	{
+		CMD = ft_safe_free(CMD);
+		CMD = ft_strdup(line + 3);
+	}
 	return (0);
 
 }
@@ -44,7 +47,6 @@ int		ft_fill_info_p3(char *line, t_info *info)
 	char*	room1;
 	char*	room2;
 	int		i;
-
 
 	if (line[0] == '#')
 		return (ft_sharp_treatment(line, info));
