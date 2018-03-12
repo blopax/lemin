@@ -6,7 +6,7 @@
 /*   By: pclement <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/12 15:53:35 by pclement          #+#    #+#             */
-/*   Updated: 2018/03/12 20:23:35 by nvergnac         ###   ########.fr       */
+/*   Updated: 2018/03/12 21:15:32 by nvergnac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,12 +48,12 @@ int		ft_fill_info_p2(char *line, t_info *info)
 	if (ft_check_input(line, info) == 1)
 		return (1);
 	if (ft_strcmp(CMD, "start") == 0)
-	{
-	}
+		ft_add_room(line, info, 1);
 	else if (ft_strcmp(CMD, "end") == 0)
-	{
-	}
-
+		ft_add_room(line, info, 2);
+	else
+		ft_add_room(line, info, 0);
+	return (0);
 }
 
 int		ft_fill_info(char *line, t_info *info)

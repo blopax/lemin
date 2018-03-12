@@ -6,7 +6,7 @@
 /*   By: nvergnac <nvergnac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/05 14:18:04 by nvergnac          #+#    #+#             */
-/*   Updated: 2018/03/12 20:24:11 by nvergnac         ###   ########.fr       */
+/*   Updated: 2018/03/12 21:15:34 by nvergnac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ t_room	*ft_room_init(void)
 	room->linked_room = link;
 	room->next = NULL;
 	room->name = 0;
-	room->x = 0;
-	room->y = 0;
+	room->x = -1;
+	room->y = -1;
 	return (room);
 }
 
@@ -37,10 +37,7 @@ t_info	*ft_info_init(void)
 
 	if (!(info = (t_info*)malloc(sizeof(t_info))))
 		exit(0);
-	if (!(END = (t_room*)malloc(sizeof(t_room))))
-		exit(0);
-	START = ft_room_init();
-	END = ft_room_init();
+	FIRST = ft_room_init();
 	CMD = 0;
 	TREAT_OVER = 0;
 	ANT_NB = 0;

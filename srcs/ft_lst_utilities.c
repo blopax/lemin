@@ -6,7 +6,7 @@
 /*   By: pclement <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/12 18:42:39 by pclement          #+#    #+#             */
-/*   Updated: 2018/03/12 18:48:00 by pclement         ###   ########.fr       */
+/*   Updated: 2018/03/12 21:15:29 by nvergnac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,3 +53,34 @@ void	ft_add_linked_room(t_link *linked_room, char *room_name)
 	}
 }
 
+void	ft_add_room(char *line, t_info *info, int type)
+{
+	t_room	*new;
+	int		flag;
+	char	*tmp;
+	t_room	*room_tmp;
+
+	flag = 0;
+	new = 0;
+	if (!(tmp=(char*)malloc(sizeof(char) * (SIZE + 1))))
+		exit(0);
+	room_tmp = FIRST;
+	if (FIRST->x == -1)
+	{
+		room_tmp->x = X_ROOM;
+		room_tmp->y = Y_ROOM;
+		room_tmp->type = type;
+		room_tmp->name = ft_strdup(ft_strncat(tmp, line, SIZE));
+	}
+	else
+	{
+		new = ft_room_init();
+		new->x = X_ROOM;
+		new->y = Y_ROOM;
+		new->type = type;
+		new->name = ft_strdup(ft_strncat(tmp, line, SIZE));
+		while (room_tmp->next)
+			room_tmp = room_tmp->next;
+		room_tmp->next = new;
+	}
+}
