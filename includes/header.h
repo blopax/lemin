@@ -49,4 +49,6 @@ typedef	struct		s_info
 
 t_info				*ft_info_init(void);
 int					ft_sharp_treatment(char *line, t_info *info);
+void				ft_add_linked_room(t_link *linked_room, char *room_name);
+
 #endif

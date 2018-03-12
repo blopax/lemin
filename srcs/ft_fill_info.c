@@ -6,7 +6,7 @@
 /*   By: pclement <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/12 16:27:44 by pclement          #+#    #+#             */
-/*   Updated: 2018/03/12 18:24:52 by nvergnac         ###   ########.fr       */
+/*   Updated: 2018/03/12 20:24:57 by nvergnac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ int		ft_sharp_treatment(char *line, t_info *info)
 		CMD = ft_strdup(line + 3);
 	}
 	return (0);
-
 }
 
 void		ft_link_rooms(t_info *info, char *room1, char *room2)
@@ -33,9 +32,9 @@ void		ft_link_rooms(t_info *info, char *room1, char *room2)
 	while (room_tmp)
 	{
 		if (ft_strcmp(room_tmp->name, room1) == 0)
-			ft_lst_linked_add(room_tmp->linked_room, room1);
+			ft_add_linked_room(room_tmp->linked_room, room1);
 		if (ft_strcmp(room_tmp->name, room2) == 0)
-			ft_lst_linked_add(room_tmp->linked_room, room2);
+			ft_add_linked_room(room_tmp->linked_room, room2);
 		room_tmp = room_tmp->next;
 	}
 
