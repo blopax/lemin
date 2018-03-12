@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   header.h                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: nvergnac <nvergnac@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/12 15:21:27 by nvergnac          #+#    #+#             */
-/*   Updated: 2018/03/12 18:12:44 by nvergnac         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #ifndef HEADER_H
 # define HEADER_H
 # define CMD info->command
@@ -50,6 +38,7 @@ typedef	struct		s_info
 	int				max_path;
 	t_room			*start;
 	t_room			*end;
+	int				treat_over;
 }					t_info;
 
 t_info				*ft_info_init(void);
