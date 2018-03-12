@@ -6,7 +6,7 @@
 /*   By: nvergnac <nvergnac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/05 14:18:04 by nvergnac          #+#    #+#             */
-/*   Updated: 2018/03/12 16:31:25 by nvergnac         ###   ########.fr       */
+/*   Updated: 2018/03/12 18:12:47 by nvergnac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ t_info	*ft_info_init(void)
 		exit(0);
 	START = ft_room_init();
 	END = ft_room_init();
+	CMD = 0;
+	TREAT_OVER = 0;
 	ANT_NB = 0;
 	ROOM_NB = 0;
 	PHASE = 1;
