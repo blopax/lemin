@@ -6,12 +6,18 @@
 /*   By: nvergnac <nvergnac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/12 15:21:27 by nvergnac          #+#    #+#             */
-/*   Updated: 2018/03/12 16:21:15 by pclement         ###   ########.fr       */
+/*   Updated: 2018/03/12 16:32:22 by nvergnac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef HEADER_H
 # define HEADER_H
+# define PHASE info->phase
+# define ANT_NB info->ant_nb
+# define ROOM_NB info->room_nb
+# define MAX_PATH info->max_path
+# define START info->start
+# define END info->end
 # include <stdlib.h>
 # include <unistd.h>
 # include <fcntl.h>
@@ -34,6 +40,7 @@ typedef struct		s_room
 
 typedef	struct		s_info
 {
+	int				phase;
 	int				ant_nb;
 	int				room_nb;
 	int				max_path;
@@ -41,4 +48,5 @@ typedef	struct		s_info
 	t_room			*end;
 }					t_info;
 
+t_info				*ft_info_init(void);
 #endif
