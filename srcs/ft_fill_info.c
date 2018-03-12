@@ -1,38 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lem-in.c                                           :+:      :+:    :+:   */
+/*   ft_info_fill.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pclement <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/12 15:53:35 by pclement          #+#    #+#             */
-/*   Updated: 2018/03/12 16:29:19 by pclement         ###   ########.fr       */
+/*   Created: 2018/03/12 16:27:44 by pclement          #+#    #+#             */
+/*   Updated: 2018/03/12 16:41:36 by pclement         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/header.h"
 
-int		main(int argc, char** argv)
+void	treat 
+
+void	ft_fill_info(char *line, t_info info)
 {
-	char	*line;
-	int		fd;
-	int		ret;
-	t_info	info;
-
-	if (argc != 2)
-		return (ft_error());
-	if ((fd = open(argv[1], O_RDONLY)) <= 0)
-		return (ft_error());
-	info = ft_info_init();
-	while ((ret = get_next_line(fd, &line)) > 0)
-	{
-		ft_info_fill(line, info);
-		free(line);
-	}
-	if (ft_check_info(info) != 0)
-		return (ft_error());
-	ft_solve(info);
-	ft_free_all(info);
-	return (0);
+	if (info.phase == 0)
+		ft_info_fill_ants_nb(line, info);
+	else if (info.phase == 1)
+		ft_info_fill_room(line, info);
+	else
+		ft_fill_tubes(line, info);
 }
-
