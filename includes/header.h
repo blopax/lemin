@@ -6,7 +6,7 @@
 /*   By: nvergnac <nvergnac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/12 15:21:27 by nvergnac          #+#    #+#             */
-/*   Updated: 2018/03/12 16:32:22 by nvergnac         ###   ########.fr       */
+/*   Updated: 2018/03/12 18:04:12 by pclement         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ typedef	struct		s_info
 	int				max_path;
 	t_room			*start;
 	t_room			*end;
+	int				treat_over;
 }					t_info;
 
 t_info				*ft_info_init(void);
