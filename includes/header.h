@@ -6,7 +6,7 @@
 /*   By: nvergnac <nvergnac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/12 15:21:27 by nvergnac          #+#    #+#             */
-/*   Updated: 2018/03/12 16:18:51 by nvergnac         ###   ########.fr       */
+/*   Updated: 2018/03/12 16:30:11 by nvergnac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # define END info->end
 # include <stdlib.h>
 # include <unistd.h>
+# include <fcntl.h>
 # include "../libft/libft.h"
 
 typedef struct		s_link
