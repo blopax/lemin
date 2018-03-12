@@ -6,11 +6,21 @@
 /*   By: pclement <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/12 15:53:35 by pclement          #+#    #+#             */
-/*   Updated: 2018/03/12 16:42:59 by nvergnac         ###   ########.fr       */
+/*   Updated: 2018/03/12 16:52:38 by nvergnac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
+
+void	ft_fill_info(char *line, t_info *info)
+{
+	if (PHASE == 1)
+		ft_fill_info_p1(info);
+	else if (PHASE == 2)
+		ft_fill_info_p2(info);
+	else if (PHASE == 3)
+		ft_fill_info_p3(info);
+}
 
 int		main(int argc, char** argv)
 {
