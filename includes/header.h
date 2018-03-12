@@ -6,12 +6,14 @@
 /*   By: nvergnac <nvergnac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/12 15:21:27 by nvergnac          #+#    #+#             */
-/*   Updated: 2018/03/12 16:32:22 by nvergnac         ###   ########.fr       */
+/*   Updated: 2018/03/12 18:12:44 by nvergnac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef HEADER_H
 # define HEADER_H
+# define CMD info->command
+# define TREAT_OVER info->treatment_over
 # define PHASE info->phase
 # define ANT_NB info->ant_nb
 # define ROOM_NB info->room_nb
@@ -40,6 +42,8 @@ typedef struct		s_room
 
 typedef	struct		s_info
 {
+	char			*command;
+	int				treatment_over;
 	int				phase;
 	int				ant_nb;
 	int				room_nb;
