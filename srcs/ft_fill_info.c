@@ -6,7 +6,7 @@
 /*   By: pclement <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/12 16:27:44 by pclement          #+#    #+#             */
-/*   Updated: 2018/03/12 20:24:57 by nvergnac         ###   ########.fr       */
+/*   Updated: 2018/03/13 18:20:29 by nvergnac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void		ft_link_rooms(t_info *info, char *room1, char *room2)
 {
 	t_room		*room_tmp;
 
-	room_tmp = START;
+	room_tmp = FIRST;
 	while (room_tmp)
 	{
 		if (ft_strcmp(room_tmp->name, room1) == 0)

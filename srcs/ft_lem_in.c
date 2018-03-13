@@ -6,7 +6,7 @@
 /*   By: pclement <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/12 15:53:35 by pclement          #+#    #+#             */
-/*   Updated: 2018/03/12 21:15:32 by nvergnac         ###   ########.fr       */
+/*   Updated: 2018/03/13 18:20:22 by nvergnac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ int		ft_fill_info_p2(char *line, t_info *info)
 		ft_add_room(line, info, 2);
 	else
 		ft_add_room(line, info, 0);
+	CMD = ft_safe_free(CMD);
 	return (0);
 }
 

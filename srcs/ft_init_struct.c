@@ -6,7 +6,7 @@
 /*   By: nvergnac <nvergnac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/05 14:18:04 by nvergnac          #+#    #+#             */
-/*   Updated: 2018/03/12 21:15:34 by nvergnac         ###   ########.fr       */
+/*   Updated: 2018/03/13 18:20:27 by nvergnac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ t_info	*ft_info_init(void)
 	if (!(info = (t_info*)malloc(sizeof(t_info))))
 		exit(0);
 	FIRST = ft_room_init();
+	START = 0;
 	CMD = 0;
 	TREAT_OVER = 0;
 	ANT_NB = 0;

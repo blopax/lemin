@@ -7,6 +7,7 @@
 # define ROOM_NB info->room_nb
 # define MAX_PATH info->max_path
 # define FIRST info->first
+# define START info->first
 # define X_ROOM info->x_room
 # define Y_ROOM info->y_room
 # define SIZE info->size
@@ -43,10 +44,12 @@ typedef	struct		s_info
 	int				y_room;
 	int				size;
 	t_room			*first;
+	t_room			*start;
 	int				treat_over;
 }					t_info;
 
 t_info				*ft_info_init(void);
+int					ft_fill_info_p3(char *line, t_info *info);
 int					ft_sharp_treatment(char *line, t_info *info);
 void				ft_add_linked_room(t_link *linked_room, char *room_name);
 t_room				*ft_room_init(void);
