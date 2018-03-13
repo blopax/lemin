@@ -6,7 +6,7 @@
 /*   By: pclement <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/12 15:53:35 by pclement          #+#    #+#             */
-/*   Updated: 2018/03/13 18:20:22 by nvergnac         ###   ########.fr       */
+/*   Updated: 2018/03/13 18:49:44 by pclement         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int		ft_check_input(char *line, t_info *info)
 
 	blank = 0;
 	SIZE = ft_strlen(line) - 1;
-	if (ft_isdigit(line[SIZE]) == 0 || SIZE < 5)
+	if (!line || ft_isdigit(line[SIZE]) == 0 || SIZE < 5)
 		return (1);
 	while (blank < 2 && line[SIZE])
 	{
