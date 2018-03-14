@@ -19,8 +19,9 @@ LIB = $(addprefix $(LIB_PATH), $(LIB_NAME))
 
 #srcs
 SRC_PATH =srcs/
-SRC_NAME = \
-OBJ = $(addprefix $(SRC_PATH), $(SRC_NAME))
+SRC_NAME = ft_fill_info.c ft_fill_info_utls.c ft_init_struct.c ft_lem_in.c\
+			ft_lst_utilities.c
+SRC = $(addprefix $(SRC_PATH), $(SRC_NAME))
 
 #obj
 OBJ_PATH = obj/

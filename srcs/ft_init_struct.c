@@ -19,11 +19,9 @@ t_room	*ft_room_init(void)
 
 	if (!(room = (t_room*)malloc(sizeof(t_room))))
 		exit(0);
-	if (!(link = (t_link*)malloc(sizeof(t_link))))
-		exit(0);
 	link->name = 0;
 	link->next = NULL;
-	room->linked_room = link;
+	room->linked_room = 0;
 	room->next = NULL;
 	room->name = 0;
 	room->x = -1;
@@ -39,6 +37,8 @@ t_info	*ft_info_init(void)
 		exit(0);
 	FIRST = ft_room_init();
 	START = 0;
+	START_COUNT = 0;
+	END_COUNT = 0;
 	CMD = 0;
 	TREAT_OVER = 0;
 	ANT_NB = 0;

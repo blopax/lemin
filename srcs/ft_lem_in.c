@@ -12,67 +12,15 @@
 
 #include "header.h"
 
-int		ft_check_input(char *line, t_info *info)
+int		ft_check_info(t_info *info)
 {
-	int blank;
-
-	blank = 0;
-	SIZE = ft_strlen(line) - 1;
-	if (!line || ft_isdigit(line[SIZE]) == 0 || SIZE < 5)
+	if (PHASE < 3)
 		return (1);
-	while (blank < 2 && line[SIZE])
-	{
-		if (line[SIZE] != ' ' && ft_isdigit(line[SIZE]) == 0)
-			return (1);
-		if (line[SIZE] == ' ')
-			{
-				blank++;
-				if (blank == 1)
-					Y_ROOM = ft_atoi(line + SIZE);
-				if (blank == 2)
-					X_ROOM = ft_atoi(line + SIZE);
-			}
-		if (blank < 2)
-			SIZE--;
-	}
-	if (X_ROOM == -1 || Y_ROOM == -1)
+	if (START->linked_room == 0)
 		return (1);
 	return (0);
 }
-
-
-int		ft_fill_info_p2(char *line, t_info *info)
-{
-	if (line[0] == '#')
-		return (ft_sharp_treatment(line, info));
-	if (ft_check_input(line, info) == 1)
-		return (1);
-	if (ft_strcmp(CMD, "start") == 0)
-		ft_add_room(line, info, 1);
-	else if (ft_strcmp(CMD, "end") == 0)
-		ft_add_room(line, info, 2);
-	else
-		ft_add_room(line, info, 0);
-	CMD = ft_safe_free(CMD);
-	return (0);
-}
-
-int		ft_fill_info(char *line, t_info *info)
-{
-	if (PHASE == 1)
-		ft_fill_info_p1(line, info);
-	else if (PHASE == 2)
-	{
-		if (ft_fill_info_p2(line, info) == 1)
-			return (1);
-	}
-	else if (PHASE == 3)
-	{
-		if (ft_fill_info_p3(line, info) == 1)
-			return (1);
-	}
-	return (0);
-}
+// si on met end ds sinfo on peut aussi checker si end n a pas de linked rooms
 
 int		main(int argc, char** argv)
 {

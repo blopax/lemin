@@ -14,35 +14,61 @@
 
 int		ft_sharp_treatment(char *line, t_info *info)
 {
-	if (line[1] != '#')
-		return (0);
-	else
+	if (line[1] == '#')
 	{
 		CMD = ft_safe_free(CMD);
-		CMD = ft_strdup(line + 3);
+		CMD = ft_strdup(line + 2);
 	}
+	if (ft_strcmp(CMD, "start") == 0)
+		START_COUNT++;
+	if (ft_strcmp(CMD, "end") == 0)
+		END_COUNT++;
+	if (START_COUNT > 1 || END_COUNT > 1 || (PHASE == 1 && (START_COUNT > 0 || END_COUNT > 0)))
+		return(1);
 	return (0);
 }
 
-void		ft_link_rooms(t_info *info, char *room1, char *room2)
+int		ft_fill_info_p1(char *line, t_info *info)
 {
-	t_room		*room_tmp;
+	int		i;
 
-	room_tmp = FIRST;
-	while (room_tmp)
+	if (line[0] == '#')
+		return (ft_sharp_treatment(line, info));
+	while (line[i] != 0)
 	{
-		if (ft_strcmp(room_tmp->name, room1) == 0)
-			ft_add_linked_room(room_tmp->linked_room, room1);
-		if (ft_strcmp(room_tmp->name, room2) == 0)
-			ft_add_linked_room(room_tmp->linked_room, room2);
-		room_tmp = room_tmp->next;
+		if (ft_isdigit(line[i] == 0))
+			return (1);
 	}
+	ANT_NB = ft_atoi(line);
+	if (ANT_NB < 1)
+		return (1);
+	PHASE = 2;
+	return (0);
+}
 
+int		ft_fill_info_p2(char *line, t_info *info)
+{
+	if (line[0] == '#')
+		return (ft_sharp_treatment(line, info));
+	if (ft_strchr(line, '-') != 0)
+	{
+		PHASE = 3;
+		return (ft_fill_info(line, info));
+	}
+	if (ft_check_p2(line, info) == 1)
+		return (1);
+	if (ft_strcmp(CMD, "start") == 0)
+		ft_add_room(line, info, 1);
+	else if (ft_strcmp(CMD, "end") == 0)
+		ft_add_room(line, info, 2);
+	else
+		ft_add_room(line, info, 0);
+	CMD = ft_safe_free(CMD);
+	return (0);
 }
 
 int		ft_fill_info_p3(char *line, t_info *info)
 {
-	int		hyphen_count;
 	char*	room1;
 	char*	room2;
 	int		i;
@@ -50,10 +76,7 @@ int		ft_fill_info_p3(char *line, t_info *info)
 	if (line[0] == '#')
 		return (ft_sharp_treatment(line, info));
 	if (ft_strchr(line, '-') == 0 || ft_strchr(line, '-') != ft_strrchr(line, '-'))
-	{
-		info->treat_over = 1;
-		return (0);
-	}
+		return (1);
 	room2 = ft_strchr(line,'-') + 1;
 	i = 0;
 	while (line[i] != '-')
@@ -61,8 +84,18 @@ int		ft_fill_info_p3(char *line, t_info *info)
 	line[i] = 0;
 	room1 = line;
 	if (room1[0] == 0 || room2[0] == 0)
-		info->treat_over = 1;
+		return (1);
 	else
-		ft_link_rooms(info, room1, room2);
+		return (ft_link_rooms(info, room1, room2));
+}
+
+int		ft_fill_info(char *line, t_info *info)
+{
+	if (PHASE == 1)
+		return (ft_fill_info_p1(line, info));
+	if (PHASE == 2)
+		return (ft_fill_info_p2(line, info));
+	if (PHASE == 3)
+		return (ft_fill_info_p3(line, info));
 	return (0);
 }
