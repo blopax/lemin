@@ -6,7 +6,7 @@
 /*   By: pclement <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/12 18:42:39 by pclement          #+#    #+#             */
-/*   Updated: 2018/03/13 18:20:25 by nvergnac         ###   ########.fr       */
+/*   Updated: 2018/03/15 15:52:19 by pclement         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int		ft_check_room_name(char *line, t_info *info)
 	room_tmp = FIRST;
 	while (room_tmp)
 	{
-		if (ft_strcmp(room_tmp->name, ft_strncat(tmp, line, SIZE)) == 0)
+		if (ft_strcmp(room_tmp->name, ft_strncpy(tmp, line, SIZE)) == 0)
 		{
 			ft_safe_free(tmp);
 			return (1);
