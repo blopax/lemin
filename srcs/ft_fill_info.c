@@ -6,7 +6,7 @@
 /*   By: nvergnac <nvergnac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/12 16:27:44 by pclement          #+#    #+#             */
-/*   Updated: 2018/03/15 17:24:50 by nvergnac         ###   ########.fr       */
+/*   Updated: 2018/03/15 17:34:08 by nvergnac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int		ft_fill_info_p2(char *line, t_info *info)
 		PHASE = 3;
 		return (ft_fill_info(line, info));
 	}
-	if (ft_check_p2(line, info) == 1)
+	if (ft_check_p2(line, info) == 1 || line[0] == 'L')
 		return (1);
 	if (ft_strcmp(CMD, "start") == 0)
 		ft_add_room(line, info, 1);
