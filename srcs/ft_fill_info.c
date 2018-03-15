@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_info_fill.c                                     :+:      :+:    :+:   */
+/*   ft_fill_info.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pclement <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: nvergnac <nvergnac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/12 16:27:44 by pclement          #+#    #+#             */
-/*   Updated: 2018/03/15 14:56:05 by pclement         ###   ########.fr       */
+/*   Created: 2018/03/15 15:15:20 by nvergnac          #+#    #+#             */
+/*   Updated: 2018/03/15 16:01:21 by nvergnac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/header.h"
+#include "header.h"
 
 int		ft_sharp_treatment(char *line, t_info *info)
 {
@@ -74,7 +74,8 @@ int		ft_fill_info_p3(char *line, t_info *info)
 	char*	room1;
 	char*	room2;
 	int		i;
-
+	
+	ft_show_lst_room(FIRST);
 	if (line[0] == '#')
 		return (ft_sharp_treatment(line, info));
 	if (ft_strchr(line, '-') == 0 || ft_strchr(line, '-') != ft_strrchr(line, '-'))
@@ -94,13 +95,19 @@ int		ft_fill_info_p3(char *line, t_info *info)
 int		ft_fill_info(char *line, t_info *info)
 {
 	if (PHASE == 1)
+	{
+		ft_putstr("PHASE1\n");
 		return (ft_fill_info_p1(line, info));
-	ft_putstr("PHASE1\n");
+	}
 	if (PHASE == 2)
+	{
+		ft_putstr("PHASE2\n");
 		return (ft_fill_info_p2(line, info));
-	ft_putstr("PHASE2\n");
+	}
 	if (PHASE == 3)
+	{
+		ft_putstr("PHASE3\n");
 		return (ft_fill_info_p3(line, info));
-	ft_putstr("PHASE3\n");
+	}
 	return (0);
 }
