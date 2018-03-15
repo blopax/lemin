@@ -61,4 +61,5 @@ void				ft_add_room(char *line, t_info *info, int type);
 int					ft_check_p2(char *line, t_info *info);
 int					ft_link_rooms(t_info *info, char *room1, char *room2);
 void				ft_show_lst_room(t_room *lst);
+void				ft_free_all(t_info *info);
 #endif

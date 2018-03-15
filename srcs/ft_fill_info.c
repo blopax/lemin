@@ -6,7 +6,7 @@
 /*   By: nvergnac <nvergnac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/12 16:27:44 by pclement          #+#    #+#             */
-/*   Updated: 2018/03/15 16:03:11 by nvergnac         ###   ########.fr       */
+/*   Updated: 2018/03/15 17:24:50 by nvergnac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int		ft_fill_info_p1(char *line, t_info *info)
 		return (ft_sharp_treatment(line, info));
 	while (line[i] != 0)
 	{
-		if (ft_isdigit(line[i] == 0))
+		if (ft_isdigit(line[i]) == 0)
 			return (1);
 		i++;
 	}
