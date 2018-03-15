@@ -6,7 +6,7 @@
 /*   By: pclement <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/12 18:42:39 by pclement          #+#    #+#             */
-/*   Updated: 2018/03/15 16:03:43 by nvergnac         ###   ########.fr       */
+/*   Updated: 2018/03/15 16:57:37 by pclement         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,6 +120,22 @@ void	ft_add_room(char *line, t_info *info, int type)
 	ft_safe_free(tmp);
 }
 
+void	ft_show_linked_rooms(t_room *lst)
+{
+	t_link	*linked_room;
+
+	linked_room = lst->linked_room;
+	if (!linked_room)
+		ft_putstr("No linked room");
+	while (linked_room)
+	{
+		ft_putstr("\t");
+		ft_putstr(linked_room->name);
+		ft_putstr("\n");
+		linked_room = linked_room->next;
+	}
+}
+
 void	ft_show_lst_room(t_room *lst)
 {
 	while (lst)
@@ -136,6 +152,45 @@ void	ft_show_lst_room(t_room *lst)
 		ft_putstr("TYPE : ");
 		ft_putnbr(lst->type);
 		ft_putstr("\n");
+		ft_show_linked_rooms(lst);
+		ft_putstr("\n");
 		lst = lst->next;
 	}
+}
+
+void	ft_show_info(t_info *info)
+{
+	ft_putstr("Command : ");
+	ft_putstr(info->command);
+	ft_putstr("\n");
+	ft_putstr("TREAT_OVER : ");
+	ft_putnbr(info->treatment_over);
+	ft_putstr("\n");
+	ft_putstr("PHASE ");
+	ft_putnbr(info->phase);
+	ft_putstr("\n");
+	ft_putstr("ANT_NB : ");
+	ft_putnbr(info->ant_nb);
+	ft_putstr("\n");
+	ft_putstr("room_nb");
+	ft_putnbr(info->room_nb);
+	ft_putstr("\n");
+	ft_putstr("MAX_PATH");
+	ft_putnbr(info->max_path);
+	ft_putstr("\n");
+	ft_putstr("first ptr : ");
+	ft_putnbr((int)info->first);
+	ft_putstr("\n");
+	ft_putstr("start ptr: ");
+	ft_putnbr((int)info->start);
+	ft_putstr("\n");
+	ft_putstr("START_COUNT : ");
+	ft_putnbr(info->start_count);
+	ft_putstr("\n");
+	ft_putstr("end_count : ");
+	ft_putnbr(info->end_count);
+	ft_putstr("\n");
+	ft_putstr("TREAT_OVER : ");
+	ft_putnbr(info->treat_over);
+	ft_putstr("\n");
 }
