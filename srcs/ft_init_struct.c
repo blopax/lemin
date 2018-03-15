@@ -6,25 +6,36 @@
 /*   By: nvergnac <nvergnac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/05 14:18:04 by nvergnac          #+#    #+#             */
-/*   Updated: 2018/03/15 14:31:00 by pclement         ###   ########.fr       */
+/*   Updated: 2018/03/15 19:43:57 by nvergnac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-t_room	*ft_room_init(void)
+t_room	*ft_room_init(int x, int y, int type)
 {
 	t_room *room;
 
 	if (!(room = (t_room*)malloc(sizeof(t_room))))
 		exit(0);
-	room->x = -1;
-	room->y = -1;
-	room->type = 0;
+	room->x = x;
+	room->y = y;
+	room->type = type;
 	room->name = 0;
 	room->linked_room = 0;
 	room->next = NULL;
 	return (room);
+}
+
+t_link	*ft_linked_room_init(char *room_name)
+{
+	t_link	*new_linked_room;
+
+	if (!(new_linked_room = (t_link*)malloc(sizeof(t_link))))
+		exit(0);
+	new_linked_room->name = ft_strdup(room_name);
+	new_linked_room->next = NULL;
+	return (new_linked_room);
 }
 
 t_info	*ft_info_init(void)
@@ -33,7 +44,7 @@ t_info	*ft_info_init(void)
 
 	if (!(info = (t_info*)malloc(sizeof(t_info))))
 		exit(0);
-	FIRST = ft_room_init();
+	FIRST = ft_room_init(-1, -1, 0);
 	START = 0;
 	START_COUNT = 0;
 	END_COUNT = 0;

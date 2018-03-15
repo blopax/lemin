@@ -6,7 +6,7 @@
 /*   By: nvergnac <nvergnac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/12 18:42:39 by pclement          #+#    #+#             */
-/*   Updated: 2018/03/15 17:27:29 by nvergnac         ###   ########.fr       */
+/*   Updated: 2018/03/15 19:44:13 by nvergnac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,9 +63,9 @@ int		ft_check_p2(char *line, t_info *info)
 		{
 			blank++;
 			if (blank == 1)
-				Y_ROOM = ft_atoi(line + SIZE);
+				Y_ROOM = ft_atoi_lem(line + SIZE);
 			if (blank == 2)
-				X_ROOM = ft_atoi(line + SIZE);
+				X_ROOM = ft_atoi_lem(line + SIZE);
 		}
 		if (blank < 2)
 			SIZE--;
@@ -74,5 +74,3 @@ int		ft_check_p2(char *line, t_info *info)
 		return (1);
 	return (ft_check_room_name(line, info));
 }
-
-

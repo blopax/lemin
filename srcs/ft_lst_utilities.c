@@ -6,62 +6,75 @@
 /*   By: pclement <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/12 18:42:39 by pclement          #+#    #+#             */
-/*   Updated: 2018/03/15 16:57:37 by pclement         ###   ########.fr       */
+/*   Updated: 2018/03/15 19:47:53 by nvergnac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/header.h"
 
-t_link	*ft_init_linked_room(char *room_name)
+void	ft_add_room(char *line, t_info *info, int type)
 {
-	t_link	*new_linked_room;
+	t_room	*new;
+	char	*tmp;
+	t_room	*room_tmp;
 
-	if (!(new_linked_room = (t_link*)malloc(sizeof(t_link))))
+	new = 0;
+	if (!(tmp = ft_strnew(SIZE)))
 		exit(0);
-	new_linked_room->name = ft_strdup(room_name);
-	new_linked_room->next = NULL;
-	return (new_linked_room);
+	room_tmp = FIRST;
+	if (FIRST->x == -1)
+	{
+		room_tmp->x = X_ROOM;
+		room_tmp->y = Y_ROOM;
+		room_tmp->type = type;
+		room_tmp->name = ft_strdup(ft_strncpy(tmp, line, SIZE));
+	}
+	else
+	{
+		new = ft_room_init(X_ROOM, Y_ROOM, type);
+		new->name = ft_strdup(ft_strncpy(tmp, line, SIZE));
+		while (room_tmp->next)
+			room_tmp = room_tmp->next;
+		room_tmp->next = new;
+	}
+	ft_safe_free(tmp);
 }
 
-void	ft_add_linked_room(t_link *linked_room, char *room_name)
+int		ft_add_linked_room(t_room *room, char *room_name)
 {
 	t_link	*new;
 	t_link	*linked_room_tmp;
 
-	if (!(new = (t_link*)malloc(sizeof(t_link))))
-		exit (0);
-	linked_room_tmp = linked_room;
-	while (linked_room_tmp)
+	new = ft_linked_room_init(room_name);
+	linked_room_tmp = room->linked_room;
+	if (!room->linked_room)
+		room->linked_room = new;
+	else
 	{
-		if (ft_strcmp(linked_room_tmp->name, room_name) == 0)
-			break ;
-		linked_room = linked_room_tmp->next;
-	}
-	if (!linked_room_tmp)
-	{
-		linked_room_tmp = linked_room;
-		new = ft_init_linked_room(room_name);
-		if (linked_room == 0)
-			linked_room = new;
-		else
+		while (linked_room_tmp->next)
 		{
-			while (linked_room->next != 0)
-				linked_room = linked_room->next;
-			linked_room->next = new;
+			if (ft_strcmp(linked_room_tmp->name, room_name) == 0)
+				return (1);
+			linked_room_tmp = linked_room_tmp->next;
 		}
+		if (ft_strcmp(linked_room_tmp->name, room_name) == 0)
+			return (1);
+		linked_room_tmp->next = new;
 	}
+	return (0);
 }
 
 void	ft_browse_rooms(t_info *info, char *room1, char *room2)
 {
 	t_room		*room_tmp;
+
 	room_tmp = FIRST;
 	while (room_tmp)
 	{
 		if (ft_strcmp(room_tmp->name, room1) == 0)
-			ft_add_linked_room(room_tmp->linked_room, room2);
+			ft_add_linked_room(room_tmp, room2);
 		if (ft_strcmp(room_tmp->name, room2) == 0)
-			ft_add_linked_room(room_tmp->linked_room, room1);
+			ft_add_linked_room(room_tmp, room1);
 		room_tmp = room_tmp->next;
 	}
 }
@@ -87,37 +100,6 @@ int		ft_link_rooms(t_info *info, char *room1, char *room2)
 		return (1);
 	ft_browse_rooms(info, room1, room2);
 	return (0);
-	}
-
-void	ft_add_room(char *line, t_info *info, int type)
-{
-	t_room	*new;
-	char	*tmp;
-	t_room	*room_tmp;
-
-	new = 0;
-	if (!(tmp = ft_strnew(SIZE)))
-		exit(0);
-	room_tmp = FIRST;
-	if (FIRST->x == -1)
-	{
-		room_tmp->x = X_ROOM;
-		room_tmp->y = Y_ROOM;
-		room_tmp->type = type;
-		room_tmp->name = ft_strdup(ft_strncpy(tmp, line, SIZE));
-	}
-	else
-	{
-		new = ft_room_init();
-		new->x = X_ROOM;
-		new->y = Y_ROOM;
-		new->type = type;
-		new->name = ft_strdup(ft_strncpy(tmp, line, SIZE));
-		while (room_tmp->next)
-			room_tmp = room_tmp->next;
-		room_tmp->next = new;
-	}
-	ft_safe_free(tmp);
 }
 
 void	ft_show_linked_rooms(t_room *lst)
@@ -154,6 +136,8 @@ void	ft_show_lst_room(t_room *lst)
 		ft_putstr("\n");
 		ft_show_linked_rooms(lst);
 		ft_putstr("\n");
+		ft_putstr("\n");
+		ft_putstr("\n");
 		lst = lst->next;
 	}
 }
@@ -166,22 +150,22 @@ void	ft_show_info(t_info *info)
 	ft_putstr("TREAT_OVER : ");
 	ft_putnbr(info->treatment_over);
 	ft_putstr("\n");
-	ft_putstr("PHASE ");
+	ft_putstr("PHASE : ");
 	ft_putnbr(info->phase);
 	ft_putstr("\n");
 	ft_putstr("ANT_NB : ");
 	ft_putnbr(info->ant_nb);
 	ft_putstr("\n");
-	ft_putstr("room_nb");
+	ft_putstr("room_nb : ");
 	ft_putnbr(info->room_nb);
 	ft_putstr("\n");
-	ft_putstr("MAX_PATH");
+	ft_putstr("MAX_PATH : ");
 	ft_putnbr(info->max_path);
 	ft_putstr("\n");
 	ft_putstr("first ptr : ");
 	ft_putnbr((int)info->first);
 	ft_putstr("\n");
-	ft_putstr("start ptr: ");
+	ft_putstr("start ptr : ");
 	ft_putnbr((int)info->start);
 	ft_putstr("\n");
 	ft_putstr("START_COUNT : ");
@@ -190,7 +174,5 @@ void	ft_show_info(t_info *info)
 	ft_putstr("end_count : ");
 	ft_putnbr(info->end_count);
 	ft_putstr("\n");
-	ft_putstr("TREAT_OVER : ");
-	ft_putnbr(info->treat_over);
 	ft_putstr("\n");
 }

@@ -6,7 +6,7 @@
 /*   By: nvergnac <nvergnac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/12 16:27:44 by pclement          #+#    #+#             */
-/*   Updated: 2018/03/15 17:43:04 by pclement         ###   ########.fr       */
+/*   Updated: 2018/03/15 19:45:43 by nvergnac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,9 @@ int		ft_sharp_treatment(char *line, t_info *info)
 		START_COUNT++;
 	if (ft_strcmp(CMD, "end") == 0)
 		END_COUNT++;
-	if (START_COUNT > 1 || END_COUNT > 1 || (PHASE == 1 && (START_COUNT > 0 || END_COUNT > 0)))
-		return(1);
+	if (START_COUNT > 1 || END_COUNT > 1 || (PHASE == 1 && (START_COUNT > 0 ||
+					END_COUNT > 0)))
+		return (1);
 	return (0);
 }
 
@@ -41,7 +42,7 @@ int		ft_fill_info_p1(char *line, t_info *info)
 			return (1);
 		i++;
 	}
-	ANT_NB = ft_atoi(line);
+	ANT_NB = ft_atoi_lem(line);
 	if (ANT_NB < 1)
 		return (1);
 	PHASE = 2;
@@ -71,16 +72,16 @@ int		ft_fill_info_p2(char *line, t_info *info)
 
 int		ft_fill_info_p3(char *line, t_info *info)
 {
-	char*	room1;
-	char*	room2;
+	char	*room1;
+	char	*room2;
 	int		i;
-	
-//	ft_show_lst_room(FIRST);
+
 	if (line[0] == '#')
 		return (ft_sharp_treatment(line, info));
-	if (ft_strchr(line, '-') == 0 || ft_strchr(line, '-') != ft_strrchr(line, '-'))
+	if (ft_strchr(line, '-') == 0 ||
+			ft_strchr(line, '-') != ft_strrchr(line, '-'))
 		return (1);
-	room2 = ft_strchr(line,'-') + 1;
+	room2 = ft_strchr(line, '-') + 1;
 	i = 0;
 	while (line[i] != '-')
 		i++;
@@ -96,17 +97,17 @@ int		ft_fill_info(char *line, t_info *info)
 {
 	if (PHASE == 1)
 	{
-//		ft_putstr("PHASE1\n");
+		//ft_putstr("PHASE1\n");
 		return (ft_fill_info_p1(line, info));
 	}
 	if (PHASE == 2)
 	{
-//		ft_putstr("PHASE2\n");
+		//ft_putstr("PHASE2\n");
 		return (ft_fill_info_p2(line, info));
 	}
 	if (PHASE == 3)
 	{
-//		ft_putstr("PHASE3\n");
+		//ft_putstr("PHASE3\n");
 		return (ft_fill_info_p3(line, info));
 	}
 	return (0);

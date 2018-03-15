@@ -53,13 +53,17 @@ typedef	struct		s_info
 }					t_info;
 
 t_info				*ft_info_init(void);
+int					ft_atoi_lem(const char *str);
 int					ft_fill_info(char *line, t_info *info);
 int					ft_sharp_treatment(char *line, t_info *info);
-void				ft_add_linked_room(t_link *linked_room, char *room_name);
-t_room				*ft_room_init(void);
+int					ft_add_linked_room(t_room *room, char *room_name);
+t_room				*ft_room_init(int x, int y, int type);
+t_link				*ft_linked_room_init(char *room_name);
 void				ft_add_room(char *line, t_info *info, int type);
 int					ft_check_p2(char *line, t_info *info);
 int					ft_link_rooms(t_info *info, char *room1, char *room2);
 void				ft_show_lst_room(t_room *lst);
+void				ft_show_info(t_info *info);
 void				ft_free_all(t_info *info);
+int					ft_error(void);
 #endif

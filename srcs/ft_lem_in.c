@@ -6,7 +6,7 @@
 /*   By: pclement <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/12 15:53:35 by pclement          #+#    #+#             */
-/*   Updated: 2018/03/15 17:42:51 by pclement         ###   ########.fr       */
+/*   Updated: 2018/03/15 19:43:14 by nvergnac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		ft_error(void)
 {
-	write(1, "ERROR\n", 6);
+	write(2, "ERROR\n", 6);
 	return (1);
 }
 
@@ -22,7 +22,7 @@ int		ft_check_info(t_info *info)
 {
 	if (PHASE < 3)
 		return (1);
-	if (START->linked_room == 0)
+	if (START && START->linked_room == 0)
 		return (1);
 	return (0);
 }
@@ -42,11 +42,12 @@ int		main(int argc, char **argv)
 			TREAT_OVER = 1;
 		line = ft_safe_free(line);
 	}
-	if (ft_check_info(info) != 0)
+	ft_show_lst_room(FIRST);
+	ft_show_info(info);
+	if (ft_check_info(info) != 0 || START_COUNT != 1 || END_COUNT != 1)
 		return (ft_error());
 //	ft_solve(info);
 	ft_putstr("FREE\n");
 	ft_free_all(info);
 	return (0);
 }
-
