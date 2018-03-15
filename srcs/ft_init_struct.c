@@ -6,7 +6,7 @@
 /*   By: nvergnac <nvergnac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/05 14:18:04 by nvergnac          #+#    #+#             */
-/*   Updated: 2018/03/13 18:20:27 by nvergnac         ###   ########.fr       */
+/*   Updated: 2018/03/15 14:31:00 by pclement         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,15 @@
 t_room	*ft_room_init(void)
 {
 	t_room *room;
-	t_link *link;
 
 	if (!(room = (t_room*)malloc(sizeof(t_room))))
 		exit(0);
-	link->name = 0;
-	link->next = NULL;
-	room->linked_room = 0;
-	room->next = NULL;
-	room->name = 0;
 	room->x = -1;
 	room->y = -1;
+	room->type = 0;
+	room->name = 0;
+	room->linked_room = 0;
+	room->next = NULL;
 	return (room);
 }
 

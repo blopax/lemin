@@ -6,7 +6,7 @@
 /*   By: pclement <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/12 16:27:44 by pclement          #+#    #+#             */
-/*   Updated: 2018/03/13 18:20:29 by nvergnac         ###   ########.fr       */
+/*   Updated: 2018/03/15 14:56:05 by pclement         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,14 @@ int		ft_fill_info_p1(char *line, t_info *info)
 {
 	int		i;
 
+	i = 0;
 	if (line[0] == '#')
 		return (ft_sharp_treatment(line, info));
 	while (line[i] != 0)
 	{
 		if (ft_isdigit(line[i] == 0))
 			return (1);
+		i++;
 	}
 	ANT_NB = ft_atoi(line);
 	if (ANT_NB < 1)
@@ -93,9 +95,12 @@ int		ft_fill_info(char *line, t_info *info)
 {
 	if (PHASE == 1)
 		return (ft_fill_info_p1(line, info));
+	ft_putstr("PHASE1\n");
 	if (PHASE == 2)
 		return (ft_fill_info_p2(line, info));
+	ft_putstr("PHASE2\n");
 	if (PHASE == 3)
 		return (ft_fill_info_p3(line, info));
+	ft_putstr("PHASE3\n");
 	return (0);
 }

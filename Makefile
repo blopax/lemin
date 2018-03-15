@@ -6,8 +6,8 @@ CFLAGS = -Werror -Wall -Wextra
 
 #flags for preprocessor
 CPPFLAGS = -Iincludes/ -Ilibft/
-LFLAGS = -Llibft -lft -Lminilibx_macos -lmlx -framework OpenGL -framework AppKit
-LFLAGS_DEBUG = -Llibft -lft-debug -Lminilibx_macos -lmlx -framework OpenGL -framework AppKit
+LFLAGS = -Llibft -lft
+LFLAGS_DEBUG = -Llibft -lft-debug
 
 #deps
 DEPENDENCIES = includes/header.h Makefile

@@ -6,11 +6,17 @@
 /*   By: pclement <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/12 15:53:35 by pclement          #+#    #+#             */
-/*   Updated: 2018/03/13 18:49:44 by pclement         ###   ########.fr       */
+/*   Updated: 2018/03/15 14:53:08 by pclement         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
+
+int		ft_error(void)
+{
+	write(1, "ERROR\n", 6);
+	return (1);
+}
 
 int		ft_check_info(t_info *info)
 {
@@ -22,11 +28,13 @@ int		ft_check_info(t_info *info)
 }
 // si on met end ds sinfo on peut aussi checker si end n a pas de linked rooms
 
-int		main(int argc, char** argv)
+int		main(int argc, char **argv)
 {
 	char	*line;
 	t_info	*info;
 
+	argc = 0;
+	(void)argv;
 	info = ft_info_init();
 	while (get_next_line(0, &line) > 0 && TREAT_OVER == 0)
 	{
@@ -36,8 +44,8 @@ int		main(int argc, char** argv)
 	}
 	if (ft_check_info(info) != 0)
 		return (ft_error());
-	ft_solve(info);
-	ft_free_all(info);
+//	ft_solve(info);
+//	ft_free_all(info);
 	return (0);
 }
 
