@@ -28,6 +28,10 @@ void	ft_add_room(char *line, t_info *info, int type)
 		room_tmp->y = Y_ROOM;
 		room_tmp->type = type;
 		room_tmp->name = ft_strdup(ft_strncpy(tmp, line, SIZE));
+		if (type == 1)
+			START = FIRST;
+		else if (type == 2)
+			END = FIRST;
 	}
 	else
 	{
@@ -36,7 +40,12 @@ void	ft_add_room(char *line, t_info *info, int type)
 		while (room_tmp->next)
 			room_tmp = room_tmp->next;
 		room_tmp->next = new;
+		if (type == 1)
+			START = room_tmp->next;
+		else if (type == 2)
+			END = room_tmp->next;
 	}
+	ROOM_NB++;
 	ft_safe_free(tmp);
 }
 
@@ -61,6 +70,7 @@ int		ft_add_linked_room(t_room *room, char *room_name)
 			return (1);
 		linked_room_tmp->next = new;
 	}
+	room->link_room_count++;
 	return (0);
 }
 
@@ -134,6 +144,9 @@ void	ft_show_lst_room(t_room *lst)
 		ft_putstr("TYPE : ");
 		ft_putnbr(lst->type);
 		ft_putstr("\n");
+		ft_putstr("NB of linked rooms: ");
+		ft_putnbr(lst->link_room_count);
+		ft_putstr("\n");
 		ft_show_linked_rooms(lst);
 		ft_putstr("\n");
 		ft_putstr("\n");
@@ -167,6 +180,9 @@ void	ft_show_info(t_info *info)
 	ft_putstr("\n");
 	ft_putstr("start ptr : ");
 	ft_putnbr((int)info->start);
+	ft_putstr("\n");
+	ft_putstr("end ptr : ");
+	ft_putnbr((int)info->end);
 	ft_putstr("\n");
 	ft_putstr("START_COUNT : ");
 	ft_putnbr(info->start_count);

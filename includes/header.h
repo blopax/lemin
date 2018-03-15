@@ -8,6 +8,7 @@
 # define MAX_PATH info->max_path
 # define FIRST info->first
 # define START info->start
+# define END info->end
 # define START_COUNT info->start_count
 # define END_COUNT info->end_count
 # define X_ROOM info->x_room
@@ -31,6 +32,7 @@ typedef struct		s_room
 	int				type;
 	char			*name;
 	t_link			*linked_room;
+	int				link_room_count;
 	struct s_room	*next;
 }					t_room;
 
@@ -47,6 +49,7 @@ typedef	struct		s_info
 	int				size;
 	t_room			*first;
 	t_room			*start;
+	t_room			*end;
 	int				start_count;
 	int				end_count;
 	int				treat_over;

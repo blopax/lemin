@@ -87,7 +87,7 @@ int		ft_fill_info_p3(char *line, t_info *info)
 		i++;
 	line[i] = 0;
 	room1 = line;
-	if (room1[0] == 0 || room2[0] == 0)
+	if (room1[0] == 0 || room2[0] == 0 || ft_strcmp(room1, room2) == 0)
 		return (1);
 	else
 		return (ft_link_rooms(info, room1, room2));

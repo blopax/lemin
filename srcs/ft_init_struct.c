@@ -22,6 +22,7 @@ t_room	*ft_room_init(int x, int y, int type)
 	room->y = y;
 	room->type = type;
 	room->name = 0;
+	room->link_room_count = 0;
 	room->linked_room = 0;
 	room->next = NULL;
 	return (room);
@@ -46,6 +47,7 @@ t_info	*ft_info_init(void)
 		exit(0);
 	FIRST = ft_room_init(-1, -1, 0);
 	START = 0;
+	END = 0;
 	START_COUNT = 0;
 	END_COUNT = 0;
 	CMD = 0;

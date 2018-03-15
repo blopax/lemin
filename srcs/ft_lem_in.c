@@ -22,7 +22,9 @@ int		ft_check_info(t_info *info)
 {
 	if (PHASE < 3)
 		return (1);
-	if (START && START->linked_room == 0)
+	if (!START || !END)
+		return (1);
+	if ((START && START->linked_room == 0) || (END && END->linked_room == 0))
 		return (1);
 	return (0);
 }
@@ -47,7 +49,7 @@ int		main(int argc, char **argv)
 	if (ft_check_info(info) != 0 || START_COUNT != 1 || END_COUNT != 1)
 		return (ft_error());
 //	ft_solve(info);
-	ft_putstr("FREE\n");
+	ft_putstr("_______________FREE\n");
 	ft_free_all(info);
 	return (0);
 }
