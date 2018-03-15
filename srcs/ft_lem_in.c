@@ -6,7 +6,7 @@
 /*   By: pclement <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/12 15:53:35 by pclement          #+#    #+#             */
-/*   Updated: 2018/03/15 17:26:11 by pclement         ###   ########.fr       */
+/*   Updated: 2018/03/15 17:42:51 by pclement         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int		ft_check_info(t_info *info)
 {
 	if (PHASE < 3)
 		return (1);
-	if (START && START->linked_room == 0)
+	if (START->linked_room == 0)
 		return (1);
 	return (0);
 }
@@ -45,7 +45,8 @@ int		main(int argc, char **argv)
 	if (ft_check_info(info) != 0)
 		return (ft_error());
 //	ft_solve(info);
-//	ft_free_all(info);
+	ft_putstr("FREE\n");
+	ft_free_all(info);
 	return (0);
 }
 
