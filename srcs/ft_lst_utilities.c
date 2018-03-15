@@ -6,7 +6,7 @@
 /*   By: pclement <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/12 18:42:39 by pclement          #+#    #+#             */
-/*   Updated: 2018/03/15 15:49:17 by pclement         ###   ########.fr       */
+/*   Updated: 2018/03/15 16:03:43 by nvergnac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ void	ft_add_room(char *line, t_info *info, int type)
 	t_room	*room_tmp;
 
 	new = 0;
-	if (!(tmp=(char*)malloc(sizeof(char) * (SIZE + 1))))
+	if (!(tmp = ft_strnew(SIZE)))
 		exit(0);
 	room_tmp = FIRST;
 	if (FIRST->x == -1)
@@ -104,7 +104,7 @@ void	ft_add_room(char *line, t_info *info, int type)
 		room_tmp->x = X_ROOM;
 		room_tmp->y = Y_ROOM;
 		room_tmp->type = type;
-		room_tmp->name = ft_strdup(ft_strncat(tmp, line, SIZE));
+		room_tmp->name = ft_strdup(ft_strncpy(tmp, line, SIZE));
 	}
 	else
 	{
@@ -112,10 +112,30 @@ void	ft_add_room(char *line, t_info *info, int type)
 		new->x = X_ROOM;
 		new->y = Y_ROOM;
 		new->type = type;
-		new->name = ft_strdup(ft_strncat(tmp, line, SIZE));
+		new->name = ft_strdup(ft_strncpy(tmp, line, SIZE));
 		while (room_tmp->next)
 			room_tmp = room_tmp->next;
 		room_tmp->next = new;
 	}
 	ft_safe_free(tmp);
+}
+
+void	ft_show_lst_room(t_room *lst)
+{
+	while (lst)
+	{
+		ft_putstr("NAME : ");
+		ft_putstr(lst->name);
+		ft_putstr("\n");
+		ft_putstr("X : ");
+		ft_putnbr(lst->x);
+		ft_putstr("\n");
+		ft_putstr("Y : ");
+		ft_putnbr(lst->y);
+		ft_putstr("\n");
+		ft_putstr("TYPE : ");
+		ft_putnbr(lst->type);
+		ft_putstr("\n");
+		lst = lst->next;
+	}
 }

@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lst_utilities.c                                 :+:      :+:    :+:   */
+/*   ft_fill_info_utls.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pclement <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: nvergnac <nvergnac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/12 18:42:39 by pclement          #+#    #+#             */
-/*   Updated: 2018/03/15 15:52:19 by pclement         ###   ########.fr       */
+/*   Updated: 2018/03/15 16:06:20 by pclement         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/header.h"
+#include "header.h"
 
 int		ft_check_room_name(char *line, t_info *info)
 {
 	char	*tmp;
 	t_room	*room_tmp;
 
-	if (!(tmp=(char*)malloc(sizeof(char) * (SIZE + 1))))
+	if (!(tmp = ft_strnew(SIZE)))
 		exit(0);
 	room_tmp = FIRST;
 	while (room_tmp)
