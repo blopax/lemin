@@ -6,7 +6,7 @@
 /*   By: pclement <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/12 18:42:39 by pclement          #+#    #+#             */
-/*   Updated: 2018/03/15 16:01:19 by nvergnac         ###   ########.fr       */
+/*   Updated: 2018/03/15 16:03:43 by nvergnac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ int		ft_link_rooms(t_info *info, char *room1, char *room2)
 		return (1);
 	ft_browse_rooms(info, room1, room2);
 	return (0);
-}
+	}
 
 void	ft_add_room(char *line, t_info *info, int type)
 {

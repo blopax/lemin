@@ -6,7 +6,7 @@
 /*   By: pclement <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/12 15:53:35 by pclement          #+#    #+#             */
-/*   Updated: 2018/03/15 16:01:22 by nvergnac         ###   ########.fr       */
+/*   Updated: 2018/03/15 16:04:02 by nvergnac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int		ft_check_info(t_info *info)
 {
 	if (PHASE < 3)
 		return (1);
-	if (START->linked_room == 0)
+	if (START && START->linked_room == 0)
 		return (1);
 	return (0);
 }
