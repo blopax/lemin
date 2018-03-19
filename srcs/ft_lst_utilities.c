@@ -6,7 +6,7 @@
 /*   By: pclement <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/12 18:42:39 by pclement          #+#    #+#             */
-/*   Updated: 2018/03/15 19:47:53 by nvergnac         ###   ########.fr       */
+/*   Updated: 2018/03/19 23:26:25 by nvergnac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ void	ft_add_room(char *line, t_info *info, int type)
 	char	*tmp;
 	t_room	*room_tmp;
 
+	INDEX++;
 	new = 0;
 	if (!(tmp = ft_strnew(SIZE)))
 		exit(0);
@@ -27,6 +28,7 @@ void	ft_add_room(char *line, t_info *info, int type)
 		room_tmp->x = X_ROOM;
 		room_tmp->y = Y_ROOM;
 		room_tmp->type = type;
+		room_tmp->index = type;
 		room_tmp->name = ft_strdup(ft_strncpy(tmp, line, SIZE));
 		if (type == 1)
 			START = FIRST;
@@ -35,7 +37,7 @@ void	ft_add_room(char *line, t_info *info, int type)
 	}
 	else
 	{
-		new = ft_room_init(X_ROOM, Y_ROOM, type);
+		new = ft_room_init(X_ROOM, Y_ROOM, type, INDEX);
 		new->name = ft_strdup(ft_strncpy(tmp, line, SIZE));
 		while (room_tmp->next)
 			room_tmp = room_tmp->next;
@@ -143,6 +145,9 @@ void	ft_show_lst_room(t_room *lst)
 		ft_putstr("\n");
 		ft_putstr("TYPE : ");
 		ft_putnbr(lst->type);
+		ft_putstr("\n");
+		ft_putstr("INDEX : ");
+		ft_putnbr(lst->index);
 		ft_putstr("\n");
 		ft_putstr("NB of linked rooms: ");
 		ft_putnbr(lst->link_room_count);

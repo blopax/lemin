@@ -6,13 +6,24 @@
 /*   By: nvergnac <nvergnac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/05 14:18:04 by nvergnac          #+#    #+#             */
-/*   Updated: 2018/03/15 19:43:57 by nvergnac         ###   ########.fr       */
+/*   Updated: 2018/03/19 23:23:17 by nvergnac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-t_room	*ft_room_init(int x, int y, int type)
+/*t_path	*ft_path_init(t_sol sol_lst)
+{
+	t_room *path;
+
+	if (!(path = (t_path*)malloc(sizeof(t_path))))
+		exit(0);
+	path->path_room = sol_lst;
+	path->next = NULL;
+	return (path);
+}
+*/
+t_room	*ft_room_init(int x, int y, int type, int index)
 {
 	t_room *room;
 
@@ -20,6 +31,7 @@ t_room	*ft_room_init(int x, int y, int type)
 		exit(0);
 	room->x = x;
 	room->y = y;
+	room->index = index;
 	room->type = type;
 	room->name = 0;
 	room->link_room_count = 0;
@@ -45,7 +57,7 @@ t_info	*ft_info_init(void)
 
 	if (!(info = (t_info*)malloc(sizeof(t_info))))
 		exit(0);
-	FIRST = ft_room_init(-1, -1, 0);
+	FIRST = ft_room_init(-1, -1, 0, 0);
 	START = 0;
 	END = 0;
 	START_COUNT = 0;
@@ -58,6 +70,7 @@ t_info	*ft_info_init(void)
 	MAX_PATH = 0;
 	X_ROOM = -1;
 	Y_ROOM = -1;
+	INDEX = 0;
 	SIZE = 0;
 	return (info);
 }

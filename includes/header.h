@@ -13,11 +13,25 @@
 # define END_COUNT info->end_count
 # define X_ROOM info->x_room
 # define Y_ROOM info->y_room
+# define INDEX info->index_room
 # define SIZE info->size
 # include <stdlib.h>
 # include <unistd.h>
 # include <fcntl.h>
 # include "../libft/libft.h"
+
+typedef struct		s_path
+{
+	char			*name;
+	struct s_sol	*next;
+}					t_path;
+
+typedef struct		s_sol
+{
+	t_path			*path;
+	int				*black_room;
+	struct s_sol	*next;
+}					t_sol;
 
 typedef struct		s_link
 {
@@ -29,6 +43,7 @@ typedef struct		s_room
 {
 	int				x;
 	int				y;
+	int				index;
 	int				type;
 	char			*name;
 	t_link			*linked_room;
@@ -44,12 +59,14 @@ typedef	struct		s_info
 	int				ant_nb;
 	int				room_nb;
 	int				max_path;
+	int				index_room;
 	int				x_room;
 	int				y_room;
 	int				size;
 	t_room			*first;
 	t_room			*start;
 	t_room			*end;
+	t_sol			*sol;
 	int				start_count;
 	int				end_count;
 	int				treat_over;
@@ -60,7 +77,7 @@ int					ft_atoi_lem(const char *str);
 int					ft_fill_info(char *line, t_info *info);
 int					ft_sharp_treatment(char *line, t_info *info);
 int					ft_add_linked_room(t_room *room, char *room_name);
-t_room				*ft_room_init(int x, int y, int type);
+t_room				*ft_room_init(int x, int y, int type, int index);
 t_link				*ft_linked_room_init(char *room_name);
 void				ft_add_room(char *line, t_info *info, int type);
 int					ft_check_p2(char *line, t_info *info);
