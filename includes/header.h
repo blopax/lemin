@@ -7,6 +7,7 @@
 # define ROOM_NB info->room_nb
 # define MAX_PATH info->max_path
 # define FIRST info->first
+# define PATH info->path
 # define START info->start
 # define END info->end
 # define START_COUNT info->start_count
@@ -22,16 +23,10 @@
 
 typedef struct		s_path
 {
-	char			*name;
-	struct s_sol	*next;
+	int				*path_index;
+	int				flag;
+	struct s_path	*next;
 }					t_path;
-
-typedef struct		s_sol
-{
-	t_path			*path;
-	int				*black_room;
-	struct s_sol	*next;
-}					t_sol;
 
 typedef struct		s_link
 {
@@ -66,13 +61,15 @@ typedef	struct		s_info
 	t_room			*first;
 	t_room			*start;
 	t_room			*end;
-	t_sol			*sol;
+	t_path			*path;
 	int				start_count;
 	int				end_count;
 	int				treat_over;
 }					t_info;
 
+void				ft_solve(t_info *info);
 t_info				*ft_info_init(void);
+t_path				*ft_path_init(t_info *info, t_path *path_lst, int new_index);
 int					ft_atoi_lem(const char *str);
 int					ft_fill_info(char *line, t_info *info);
 int					ft_sharp_treatment(char *line, t_info *info);

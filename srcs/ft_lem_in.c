@@ -6,12 +6,38 @@
 /*   By: pclement <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/12 15:53:35 by pclement          #+#    #+#             */
-/*   Updated: 2018/03/15 19:43:14 by nvergnac         ###   ########.fr       */
+/*   Updated: 2018/03/20 20:55:34 by nvergnac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
+/*
+int		ft_count_lst(t_room *room, int flag)
+{
+	int		i;
+	t_room	*tmp_room;
+	t_link	*tmp_link;
+
+	i = 0;
+	tmp_room = room;
+	if (flag == 1)
+	{
+		while (tmp_room)
+		{
+			tmp_room->link_room_count = ft_count_lst(tmp_room, 2);
+			tmp_room = tmp_room->next;
+			i++;
+		}
+	}
+	else if (flag == 2)
+	{
+		while (room->linked_room)
+			i++;
+	}
+	return (i);
+}
+*/
 int		ft_error(void)
 {
 	write(2, "ERROR\n", 6);

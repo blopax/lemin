@@ -6,23 +6,50 @@
 /*   By: nvergnac <nvergnac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/05 14:18:04 by nvergnac          #+#    #+#             */
-/*   Updated: 2018/03/19 23:23:17 by nvergnac         ###   ########.fr       */
+/*   Updated: 2018/03/20 20:46:29 by nvergnac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-/*t_path	*ft_path_init(t_sol sol_lst)
+int		*ft_intdup(int *path_tab, int room_nb, int new_index)
 {
-	t_room *path;
+	int	*tab;
+	int i;
+
+	i = 0;
+	if (!(tab = (int*)malloc(sizeof(int) * room_nb)))
+		exit(0);
+	ft_bzero(tab, room_nb * sizeof(int));
+	if (path_tab)
+	{
+		while (i < room_nb && path_tab[i] != 0)
+		{
+			tab[i] = path_tab[i];
+			i++;
+		}
+		tab[i] = new_index;
+	}
+	else
+		tab[0] = new_index;
+	return (tab);
+}
+
+t_path	*ft_path_init(t_info *info, t_path *path_lst, int new_index)
+{
+	t_path *path;
 
 	if (!(path = (t_path*)malloc(sizeof(t_path))))
 		exit(0);
-	path->path_room = sol_lst;
-	path->next = NULL;
+	if (path_lst)
+		path->path_index = ft_intdup(path_lst->path_index, ROOM_NB, new_index);
+	else
+		path->path_index = ft_intdup(0, ROOM_NB, new_index);
+	path->flag = 0;
+	path->next = 0;
 	return (path);
 }
-*/
+
 t_room	*ft_room_init(int x, int y, int type, int index)
 {
 	t_room *room;
