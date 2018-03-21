@@ -6,7 +6,7 @@
 /*   By: pclement <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/12 18:42:39 by pclement          #+#    #+#             */
-/*   Updated: 2018/03/20 20:46:33 by nvergnac         ###   ########.fr       */
+/*   Updated: 2018/03/21 19:18:13 by pclement         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,33 +130,36 @@ void	ft_show_linked_rooms(t_room *lst)
 	}
 }
 
-void	ft_show_lst_room(t_room *lst)
+void	ft_show_lst_room(t_room *room_lst)
 {
-	while (lst)
+	t_room *tmp;
+
+	tmp = room_lst;
+	while (tmp)
 	{
 		ft_putstr("NAME : ");
-		ft_putstr(lst->name);
+		ft_putstr(tmp->name);
 		ft_putstr("\n");
 		ft_putstr("X : ");
-		ft_putnbr(lst->x);
+		ft_putnbr(tmp->x);
 		ft_putstr("\n");
 		ft_putstr("Y : ");
-		ft_putnbr(lst->y);
+		ft_putnbr(tmp->y);
 		ft_putstr("\n");
 		ft_putstr("TYPE : ");
-		ft_putnbr(lst->type);
+		ft_putnbr(tmp->type);
 		ft_putstr("\n");
 		ft_putstr("INDEX : ");
-		ft_putnbr(lst->index);
+		ft_putnbr(tmp->index);
 		ft_putstr("\n");
 		ft_putstr("NB of linked rooms: ");
-		ft_putnbr(lst->link_room_count);
+		ft_putnbr(tmp->link_room_count);
 		ft_putstr("\n");
-		ft_show_linked_rooms(lst);
+		ft_show_linked_rooms(tmp);
 		ft_putstr("\n");
 		ft_putstr("\n");
 		ft_putstr("\n");
-		lst = lst->next;
+		tmp = tmp->next;
 	}
 }
 
@@ -196,4 +199,26 @@ void	ft_show_info(t_info *info)
 	ft_putnbr(info->end_count);
 	ft_putstr("\n");
 	ft_putstr("\n");
+}
+
+void	ft_show_path(t_info *info, t_path *lst)
+{
+	int i;
+	t_path *path;
+
+	path = lst;
+	while (path)
+	{
+		i = 0;
+		while (i < ROOM_NB && path->path_index[i] != 0)
+		{
+			ft_putnbr((int)path->path_index[i]);
+			ft_putstr(" | ");
+			i++;
+		}
+		ft_putstr("\n");
+		ft_putnbr((int)path->flag);
+		ft_putstr("\n\n");
+		path = path->next;
+	}
 }

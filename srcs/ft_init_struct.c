@@ -6,7 +6,7 @@
 /*   By: nvergnac <nvergnac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/05 14:18:04 by nvergnac          #+#    #+#             */
-/*   Updated: 2018/03/20 20:46:29 by nvergnac         ###   ########.fr       */
+/*   Updated: 2018/03/21 16:38:06 by pclement         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,7 @@ t_info	*ft_info_init(void)
 	FIRST = ft_room_init(-1, -1, 0, 0);
 	START = 0;
 	END = 0;
+	PATH = 0;
 	START_COUNT = 0;
 	END_COUNT = 0;
 	CMD = 0;

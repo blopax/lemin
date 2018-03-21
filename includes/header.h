@@ -12,6 +12,7 @@
 # define END info->end
 # define START_COUNT info->start_count
 # define END_COUNT info->end_count
+# define INDEX_END info->index_end
 # define X_ROOM info->x_room
 # define Y_ROOM info->y_room
 # define INDEX info->index_room
@@ -55,6 +56,7 @@ typedef	struct		s_info
 	int				room_nb;
 	int				max_path;
 	int				index_room;
+	int				index_end;
 	int				x_room;
 	int				y_room;
 	int				size;
@@ -81,6 +83,7 @@ int					ft_check_p2(char *line, t_info *info);
 int					ft_link_rooms(t_info *info, char *room1, char *room2);
 void				ft_show_lst_room(t_room *lst);
 void				ft_show_info(t_info *info);
+void				ft_show_path(t_info *info, t_path *path);
 void				ft_free_all(t_info *info);
 int					ft_error(void);
 #endif

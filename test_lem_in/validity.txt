@@ -1,0 +1,40 @@
+Problem in map ./valid_map//valid_map00
+
+Problem in map ./valid_map//valid_map01
+
+Problem in map ./valid_map//valid_map02
+
+Problem in map ./valid_map//valid_map03
+
+Problem in map ./valid_map//valid_map04
+
+Problem in map ./valid_map//valid_map05
+
+Problem in map ./valid_map//valid_map06
+
+Problem in map ./valid_map//valid_map07
+
+Problem in map ./valid_map//valid_map08
+
+Problem in map ./valid_map//valid_map09
+
+Problem in map ./valid_map//valid_map10
+
+Problem in map ./valid_map//valid_map11
+
+Problem in map ./valid_map//valid_map12
+
+Problem in map ./valid_map//valid_map13
+
+Problem in map ./valid_map//valid_map14
+
+Problem in map ./valid_map//valid_map15
+
+Problem in map ./valid_map//valid_map_dead_way00
+
+Problem in map ./valid_map//valid_map_long_way00
+
+Problem in map ./valid_map//valid_map_long_way01
+
+Problem in map ./valid_map//validOrNot_Do_not_worry00
+
