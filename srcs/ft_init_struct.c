@@ -6,7 +6,7 @@
 /*   By: nvergnac <nvergnac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/05 14:18:04 by nvergnac          #+#    #+#             */
-/*   Updated: 2018/03/21 16:38:06 by pclement         ###   ########.fr       */
+/*   Updated: 2018/03/22 19:38:33 by nvergnac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,5 +100,7 @@ t_info	*ft_info_init(void)
 	Y_ROOM = -1;
 	INDEX = 0;
 	SIZE = 0;
+	RECURSIVE = 0;
+	EX_SOL = 0;
 	return (info);
 }

@@ -17,6 +17,8 @@
 # define Y_ROOM info->y_room
 # define INDEX info->index_room
 # define SIZE info->size
+# define RECURSIVE info->recursive
+# define EX_SOL info->exclusive_sol
 # include <stdlib.h>
 # include <unistd.h>
 # include <fcntl.h>
@@ -67,9 +69,11 @@ typedef	struct		s_info
 	int				start_count;
 	int				end_count;
 	int				treat_over;
+	int				recursive;
+	int				exclusive_sol;
 }					t_info;
 
-void				ft_solve(t_info *info);
+int					ft_solve(t_info *info, int flag);
 t_info				*ft_info_init(void);
 t_path				*ft_path_init(t_info *info, t_path *path_lst, int new_index);
 int					ft_atoi_lem(const char *str);
