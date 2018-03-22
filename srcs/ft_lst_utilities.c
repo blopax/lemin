@@ -6,7 +6,7 @@
 /*   By: pclement <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/12 18:42:39 by pclement          #+#    #+#             */
-/*   Updated: 2018/03/21 19:18:13 by pclement         ###   ########.fr       */
+/*   Updated: 2018/03/22 17:38:30 by nvergnac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	ft_add_room(char *line, t_info *info, int type)
 		room_tmp->x = X_ROOM;
 		room_tmp->y = Y_ROOM;
 		room_tmp->type = type;
-		room_tmp->index = type;
+		room_tmp->index = INDEX;
 		room_tmp->name = ft_strdup(ft_strncpy(tmp, line, SIZE));
 		if (type == 1)
 			START = FIRST;

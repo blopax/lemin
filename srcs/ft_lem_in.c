@@ -6,7 +6,7 @@
 /*   By: pclement <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/12 15:53:35 by pclement          #+#    #+#             */
-/*   Updated: 2018/03/21 20:56:14 by pclement         ###   ########.fr       */
+/*   Updated: 2018/03/22 17:47:24 by nvergnac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,11 +70,11 @@ int		main(int argc, char **argv)
 			TREAT_OVER = 1;
 		line = ft_safe_free(line);
 	}
-	INDEX_END = END->index;
 	ft_show_lst_room(FIRST);
 	ft_show_info(info);
 	if (ft_check_info(info) != 0 || START_COUNT != 1 || END_COUNT != 1)
 		return (ft_error());
+	INDEX_END = END->index;
 	ft_solve(info);
 	ft_show_path(info, PATH);
 	ft_putstr("_______________FREE\n");
