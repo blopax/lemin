@@ -22,6 +22,13 @@
 # include <fcntl.h>
 # include "../libft/libft.h"
 
+typedef struct		s_sol
+{
+	s_path			*path_first;
+	int				flag;
+	struct s_path	*next;
+}					t_sol;
+
 typedef struct		s_path
 {
 	int				*path_index;

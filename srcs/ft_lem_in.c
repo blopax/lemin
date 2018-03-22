@@ -6,7 +6,7 @@
 /*   By: pclement <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/12 15:53:35 by pclement          #+#    #+#             */
-/*   Updated: 2018/03/22 17:47:24 by nvergnac         ###   ########.fr       */
+/*   Updated: 2018/03/22 18:38:56 by pclement         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,19 @@ int		ft_count_lst(t_room *room, int flag)
 	return (i);
 }
 */
+
+int		ft_max_path(t_info *info)
+{
+	if (!(info && START && END))
+		return (0);
+	if (ANT_NB <= START->link_room_count && ANT_NB <= END->link_room_count)
+		return (ANT_NB);
+	if (START->link_room_count <= END->link_room_count)
+		return (START->link_room_count);
+	else
+		return (END->link_room_count);
+}
+
 int		ft_error(void)
 {
 	write(2, "ERROR\n", 6);
@@ -70,9 +83,10 @@ int		main(int argc, char **argv)
 			TREAT_OVER = 1;
 		line = ft_safe_free(line);
 	}
+	MAX_PATH = ft_max_path(info);
 	ft_show_lst_room(FIRST);
 	ft_show_info(info);
-	if (ft_check_info(info) != 0 || START_COUNT != 1 || END_COUNT != 1)
+	if (ft_check_info(info) != 0 || START_COUNT != 1 || END_COUNT != 1 || MAX_PATH == 0)
 		return (ft_error());
 	INDEX_END = END->index;
 	ft_solve(info);
