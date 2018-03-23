@@ -24,17 +24,11 @@
 # include <fcntl.h>
 # include "../libft/libft.h"
 
-typedef struct		s_sol
-{
-	s_path			*path_first;
-	int				flag;
-	struct s_path	*next;
-}					t_sol;
-
 typedef struct		s_path
 {
 	int				*path_index;
 	int				flag;
+	int				path_len;
 	struct s_path	*next;
 }					t_path;
 
@@ -55,6 +49,22 @@ typedef struct		s_room
 	int				link_room_count;
 	struct s_room	*next;
 }					t_room;
+
+typedef struct		s_sol
+{
+	t_path			*first_path;
+	t_path			*last_path;
+	int				path_nb;
+	int				cycles;
+	struct s_sol	*next;
+}					t_sol;
+
+typedef struct		s_cycles_info
+{
+	int				*len_tab;
+	int				len_tab_min;
+	int				len_tab_max;
+}					t_cycles_info;
 
 typedef	struct		s_info
 {
@@ -78,6 +88,8 @@ typedef	struct		s_info
 	int				treat_over;
 	int				recursive;
 	int				exclusive_sol;
+	t_sol			*sol_first;
+	t_sol			*best_sol;
 }					t_info;
 
 int					ft_solve(t_info *info, int flag);
