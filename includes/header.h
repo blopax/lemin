@@ -29,6 +29,7 @@ typedef struct		s_path
 {
 	int				*path_index;
 	int				flag;
+	int				path_len;
 	struct s_path	*next;
 }					t_path;
 
@@ -49,6 +50,22 @@ typedef struct		s_room
 	int				link_room_count;
 	struct s_room	*next;
 }					t_room;
+
+typedef struct		s_sol
+{
+	t_path			*first_path;
+	t_path			*last_path;
+	int				path_nb;
+	int				cycles;
+	struct s_sol	*next;
+}					t_sol;
+
+typedef struct		s_cycles_info
+{
+	int				*len_tab;
+	int				len_tab_min;
+	int				len_tab_max;
+}					t_cycles_info;
 
 typedef	struct		s_info
 {
@@ -73,6 +90,8 @@ typedef	struct		s_info
 	int				recursive;
 	int				exclusive_sol;
 	int				flag_path;
+	t_sol			*sol_first;
+	t_sol			*best_sol;
 }					t_info;
 
 int					ft_solve(t_info *info);
@@ -92,4 +111,5 @@ void				ft_show_info(t_info *info);
 void				ft_show_path(t_info *info, t_path *path);
 void				ft_free_all(t_info *info);
 int					ft_error(void);
+int					ft_cycles(t_info *info, t_sol *sol);
 #endif
