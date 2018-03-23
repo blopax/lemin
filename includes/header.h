@@ -109,4 +109,5 @@ void				ft_show_info(t_info *info);
 void				ft_show_path(t_info *info, t_path *path);
 void				ft_free_all(t_info *info);
 int					ft_error(void);
+int					ft_cycles(t_info *info, t_sol *sol);
 #endif
