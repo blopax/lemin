@@ -6,7 +6,7 @@
 /*   By: nvergnac <nvergnac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/05 14:18:04 by nvergnac          #+#    #+#             */
-/*   Updated: 2018/03/22 20:45:48 by nvergnac         ###   ########.fr       */
+/*   Updated: 2018/03/23 18:21:46 by nvergnac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ t_path	*ft_path_init(t_info *info, t_path *path_lst, int new_index)
 		path->path_index = ft_intdup(path_lst->path_index, ROOM_NB, new_index);
 	else
 		path->path_index = ft_intdup(0, ROOM_NB, new_index);
-	path->flag = 0;
+	path->flag = FLAG;
 	path->next = 0;
 	return (path);
 }
@@ -102,5 +102,6 @@ t_info	*ft_info_init(void)
 	SIZE = 0;
 	RECURSIVE = 0;
 	EX_SOL = 0;
+	FLAG = 1;
 	return (info);
 }

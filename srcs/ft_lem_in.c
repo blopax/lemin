@@ -6,7 +6,7 @@
 /*   By: pclement <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/12 15:53:35 by pclement          #+#    #+#             */
-/*   Updated: 2018/03/22 20:46:08 by nvergnac         ###   ########.fr       */
+/*   Updated: 2018/03/23 18:29:07 by nvergnac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ int		main(int argc, char **argv)
 	if (ft_check_info(info) != 0 || START_COUNT != 1 || END_COUNT != 1 || MAX_PATH == 0)
 		return (ft_error());
 	INDEX_END = END->index;
-	ft_solve(info, 0);
+	ft_solve(info);
 	ft_show_path(info, PATH);
 	ft_putstr("_______________FREE\n");
 	ft_free_all(info);

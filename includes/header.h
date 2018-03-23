@@ -19,17 +19,11 @@
 # define SIZE info->size
 # define RECURSIVE info->recursive
 # define EX_SOL info->exclusive_sol
+# define FLAG info->flag_path
 # include <stdlib.h>
 # include <unistd.h>
 # include <fcntl.h>
 # include "../libft/libft.h"
-
-typedef struct		s_sol
-{
-	s_path			*path_first;
-	int				flag;
-	struct s_path	*next;
-}					t_sol;
 
 typedef struct		s_path
 {
@@ -78,9 +72,10 @@ typedef	struct		s_info
 	int				treat_over;
 	int				recursive;
 	int				exclusive_sol;
+	int				flag_path;
 }					t_info;
 
-int					ft_solve(t_info *info, int flag);
+int					ft_solve(t_info *info);
 t_info				*ft_info_init(void);
 t_path				*ft_path_init(t_info *info, t_path *path_lst, int new_index);
 int					ft_atoi_lem(const char *str);

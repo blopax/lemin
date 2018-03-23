@@ -6,7 +6,7 @@
 /*   By: pclement <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/12 18:42:39 by pclement          #+#    #+#             */
-/*   Updated: 2018/03/22 17:38:30 by nvergnac         ###   ########.fr       */
+/*   Updated: 2018/03/23 18:39:24 by nvergnac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -165,9 +165,6 @@ void	ft_show_lst_room(t_room *room_lst)
 
 void	ft_show_info(t_info *info)
 {
-	ft_putstr("Command : ");
-	ft_putstr(info->command);
-	ft_putstr("\n");
 	ft_putstr("TREAT_OVER : ");
 	ft_putnbr(info->treatment_over);
 	ft_putstr("\n");
@@ -207,18 +204,22 @@ void	ft_show_path(t_info *info, t_path *lst)
 	t_path *path;
 
 	path = lst;
+	ft_putstr("---------------------SOLUTIONS--------------------\n");
 	while (path)
 	{
-		i = 0;
-		while (i < ROOM_NB && path->path_index[i] != 0)
+		if (path->flag == 0)
 		{
-			ft_putnbr((int)path->path_index[i]);
-			ft_putstr(" | ");
-			i++;
+			i = 0;
+			while (i < ROOM_NB && path->path_index[i] != 0)
+			{
+				ft_putnbr((int)path->path_index[i]);
+				ft_putstr(" | ");
+				i++;
+			}
+			ft_putstr("\n");
+			ft_putnbr((int)path->flag);
+			ft_putstr("\n\n");
 		}
-		ft_putstr("\n");
-		ft_putnbr((int)path->flag);
-		ft_putstr("\n\n");
 		path = path->next;
 	}
 }
