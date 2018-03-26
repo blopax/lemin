@@ -6,7 +6,7 @@
 /*   By: nvergnac <nvergnac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/20 20:54:33 by nvergnac          #+#    #+#             */
-/*   Updated: 2018/03/23 18:41:56 by nvergnac         ###   ########.fr       */
+/*   Updated: 2018/03/26 20:10:41 by nvergnac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -137,19 +137,31 @@ int		ft_solve(t_info *info)
 			ft_putstr("\n");
 		}
 	}
-	//	ft_count_ex_sol(info);
+	ft_putstr("PATH ptr : ");
+	ft_putnbr((int)PATH);
+	ft_putstr("\n\n");
+	ft_putstr("SEGAULT 1\n\n");
+	ft_sol_list(info);
+	ft_putstr("SEGAULT ???????????\n\n");
+	ft_count_exclusive_path(info->sol_first, info);
 	RECURSIVE++;
 	FLAG++;
 	ft_putstr("RECURSIVE : ");
 	ft_putnbr(RECURSIVE);
-	ft_putstr("\n");
+	ft_putstr("\n\n");
 //	ft_putstr("ROOM_LIST : ");
 //	ft_putstr("\n");
 //	ft_show_lst_room(FIRST);
 	ft_putstr("PATH_LIST : \n");
 	ft_show_path(info, PATH);
 	ft_clean_room_type(info);
-	if (RECURSIVE < 3) //&& MAX_PATH > EX_SOL)
+	if (RECURSIVE < 1 || MAX_PATH > EX_SOL)
 		ft_solve(info);
+	ft_putstr("PATH ptr : ");
+	ft_putnbr((int)PATH);
+	ft_putstr("\n");
+	ft_putstr("BEST_SOL ptr : ");
+	ft_putnbr((int)info->best_sol);
+	ft_show_best_sol(info);
 	return (0);
 }

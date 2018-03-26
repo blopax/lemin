@@ -6,7 +6,7 @@
 /*   By: pclement <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/12 18:42:39 by pclement          #+#    #+#             */
-/*   Updated: 2018/03/23 19:20:34 by nvergnac         ###   ########.fr       */
+/*   Updated: 2018/03/26 19:52:22 by nvergnac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -177,6 +177,9 @@ void	ft_show_info(t_info *info)
 	ft_putstr("room_nb : ");
 	ft_putnbr(info->room_nb);
 	ft_putstr("\n");
+	ft_putstr("INDEX END : ");
+	ft_putnbr(INDEX_END);
+	ft_putstr("\n");
 	ft_putstr("MAX_PATH : ");
 	ft_putnbr(info->max_path);
 	ft_putstr("\n");
@@ -207,7 +210,7 @@ void	ft_show_path(t_info *info, t_path *lst)
 	ft_putstr("---------------------SOLUTIONS--------------------\n");
 	while (path)
 	{
-		if (path->flag == 0)
+		if (path->flag == -1)
 		{
 			i = 0;
 			while (i < ROOM_NB && path->path_index[i] != 0)
@@ -222,4 +225,26 @@ void	ft_show_path(t_info *info, t_path *lst)
 		}
 		path = path->next;
 	}
+}
+
+void	ft_show_best_sol(t_info *info)
+{
+	t_path *best_sol;
+	int i;
+
+	ft_putstr("TEST \n");
+	best_sol = info->best_sol->first_path;
+	ft_putstr("---------------------BEST SOLUTION--------------------\n");
+	while (best_sol)
+	{
+		i = 0;
+		while (i < ROOM_NB && best_sol->path_index[i] != 0)
+		{
+			ft_putnbr((int)best_sol->path_index[i]);
+			ft_putstr(" | ");
+			i++;
+		}
+		ft_putstr("\n\n");
+	}
+	best_sol = best_sol->next;
 }

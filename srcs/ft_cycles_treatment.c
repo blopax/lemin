@@ -1,6 +1,6 @@
 #include "../includes/header.h"
 
-t_cycles_info	*ft_cycles_init(t_info *info, t_sol *sol)
+t_cycles_info	*ft_cycles_init (t_sol *sol)
 {
 	t_cycles_info	*cycles_info;
 	t_path			*tmp_path;
@@ -35,7 +35,7 @@ int			ft_cycles(t_info *info, t_sol *sol)
 	int		arrived_ants;
 	int		cycles;
 
-	cycles_info = ft_cycles_init(info, sol);
+	cycles_info = ft_cycles_init(sol);
 	cycles = cycles_info->len_tab_min;
 	arrived_ants = 0;
 	while (arrived_ants < ANT_NB && cycles < cycles_info->len_tab_max)

@@ -21,7 +21,7 @@ LIB = $(addprefix $(LIB_PATH), $(LIB_NAME))
 SRC_PATH =srcs/
 SRC_NAME = ft_fill_info.c ft_fill_info_utls.c ft_init_struct.c ft_lem_in.c\
 		   ft_lst_utilities.c ft_safe_free_lst.c ft_atoi_lem_in.c\
-		   ft_solve.c
+		   ft_solve.c ft_path_combi.c ft_cycles_treatment.c
 SRC = $(addprefix $(SRC_PATH), $(SRC_NAME))
 
 #obj
