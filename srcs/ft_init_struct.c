@@ -6,7 +6,7 @@
 /*   By: nvergnac <nvergnac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/05 14:18:04 by nvergnac          #+#    #+#             */
-/*   Updated: 2018/03/23 18:21:46 by nvergnac         ###   ########.fr       */
+/*   Updated: 2018/03/27 19:47:30 by nvergnac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,13 +38,18 @@ int		*ft_intdup(int *path_tab, int room_nb, int new_index)
 t_path	*ft_path_init(t_info *info, t_path *path_lst, int new_index)
 {
 	t_path *path;
+	int		path_len;
 
+	path_len = 0;
 	if (!(path = (t_path*)malloc(sizeof(t_path))))
 		exit(0);
 	if (path_lst)
 		path->path_index = ft_intdup(path_lst->path_index, ROOM_NB, new_index);
 	else
 		path->path_index = ft_intdup(0, ROOM_NB, new_index);
+	while (path->path_index[path_len] != 0)
+		path_len++;
+	path->path_len = path_len;
 	path->flag = FLAG;
 	path->next = 0;
 	return (path);
@@ -84,24 +89,27 @@ t_info	*ft_info_init(void)
 
 	if (!(info = (t_info*)malloc(sizeof(t_info))))
 		exit(0);
+	CMD = 0;
+	TREAT_OVER = 0;
+	PHASE = 1;
+	ANT_NB = 0;
+	ROOM_NB = 0;
+	MAX_PATH = 0;
+	INDEX = 0;
+	INDEX_END = 0;
+	X_ROOM = -1;
+	Y_ROOM = -1;
+	SIZE = 0;
 	FIRST = ft_room_init(-1, -1, 0, 0);
 	START = 0;
 	END = 0;
 	PATH = 0;
 	START_COUNT = 0;
 	END_COUNT = 0;
-	CMD = 0;
-	TREAT_OVER = 0;
-	ANT_NB = 0;
-	ROOM_NB = 0;
-	PHASE = 1;
-	MAX_PATH = 0;
-	X_ROOM = -1;
-	Y_ROOM = -1;
-	INDEX = 0;
-	SIZE = 0;
 	RECURSIVE = 0;
 	EX_SOL = 0;
 	FLAG = 1;
+	info->sol_first = 0;
+	info->best_sol = 0;
 	return (info);
 }

@@ -6,7 +6,7 @@
 /*   By: pclement <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/12 18:42:39 by pclement          #+#    #+#             */
-/*   Updated: 2018/03/26 19:52:22 by nvergnac         ###   ########.fr       */
+/*   Updated: 2018/03/27 19:46:03 by nvergnac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -221,6 +221,8 @@ void	ft_show_path(t_info *info, t_path *lst)
 			}
 			ft_putstr("\n");
 			ft_putnbr((int)path->flag);
+			ft_putstr("\n");
+			ft_putnbr((int)path->path_len);
 			ft_putstr("\n\n");
 		}
 		path = path->next;
@@ -245,6 +247,9 @@ void	ft_show_best_sol(t_info *info)
 			i++;
 		}
 		ft_putstr("\n\n");
+		ft_putstr("PATH_LEN :\t");
+		ft_putnbr((int)best_sol->path_len);
+		ft_putstr("\n\n");
+		best_sol = best_sol->next;
 	}
-	best_sol = best_sol->next;
 }

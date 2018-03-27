@@ -86,7 +86,6 @@ typedef	struct		s_info
 	t_path			*path;
 	int				start_count;
 	int				end_count;
-	int				treat_over;
 	int				recursive;
 	int				exclusive_sol;
 	int				flag_path;
@@ -109,6 +108,7 @@ int					ft_link_rooms(t_info *info, char *room1, char *room2);
 void				ft_show_lst_room(t_room *lst);
 void				ft_show_info(t_info *info);
 void				ft_show_path(t_info *info, t_path *path);
+void				ft_show_sol(t_info *info, t_sol *sol);
 void				ft_show_best_sol(t_info *info);
 void				ft_free_all(t_info *info);
 int					ft_error(void);

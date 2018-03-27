@@ -1,34 +1,10 @@
 #include "../includes/header.h"
 
-
-t_sol		*ft_init_sol(t_path *path)
-{
-	t_sol	*sol;
-
-	if (!(sol = (t_sol*)malloc(sizeof(t_sol))))
-		exit (0);
-	sol->first_path = path;
-	sol->last_path = path;
-	sol->path_nb = 1;
-	sol->cycles = 0;
-	return (sol);
-}
-
-t_sol	*ft_last_sol(t_sol *sol)
-{
-	t_sol	*sol_tmp;
-
-	sol_tmp = sol;
-	while (sol_tmp->next)
-		sol_tmp = sol_tmp->next;
-	return (sol_tmp);
-}
-
 t_path		*ft_path_duplicate(t_path *path)
 {
 	t_path	*new_path;
 
-	if (!(new_path = ft_memalloc(sizeof(t_path))))
+	if (!(new_path = (t_path *)malloc(sizeof(t_path))))
 		exit (0);
 	new_path->path_index = path->path_index;
 	new_path->flag = path->flag;
@@ -37,32 +13,69 @@ t_path		*ft_path_duplicate(t_path *path)
 	return (new_path);
 }
 
+t_sol		*ft_init_sol(t_path *path)
+{
+	t_sol	*sol;
+
+	if (!(sol = (t_sol*)malloc(sizeof(t_sol))))
+		exit (0);
+	sol->first_path = ft_path_duplicate(path);
+	sol->last_path = sol->first_path;
+	sol->path_nb = 1;
+	sol->cycles = 0;
+	sol->next = 0;
+	return (sol);
+}
+
+t_sol	*ft_last_sol(t_sol *sol)
+{
+	t_sol	*sol_tmp;
+
+	sol_tmp = sol;
+	ft_putstr("LAST 1\n\n");
+	while (sol_tmp->next)
+	{
+		ft_putstr("LAST 2\n\n");
+		//		ft_putnbr((int)sol_tmp);
+		//		ft_putstr("\n\n");
+		sol_tmp = sol_tmp->next;
+		//		sleep(1);
+	}
+	ft_putstr("LAST 3\n\n");
+	return (sol_tmp);
+}
+
 t_sol		*ft_sol_duplicate(t_info *info, t_sol *sol, t_path *path)
 {
 	t_sol	*new_sol;
 	t_path	*src_path_tmp;
 	t_path	*dest_path_tmp;
 
-	if (!(new_sol = ft_memalloc(sizeof(t_sol))))
+	if (!(new_sol = (t_sol*)malloc(sizeof(t_sol))))
 		exit (0);
 
+	ft_putstr("DUPLI 1\n\n");
 	src_path_tmp = sol->first_path;
 	new_sol->first_path = ft_path_duplicate(src_path_tmp);
 	dest_path_tmp = new_sol->first_path;
 	src_path_tmp = src_path_tmp->next;
 
+	ft_putstr("DUPLI 2\n\n");
 	while (src_path_tmp)
 	{
 		dest_path_tmp->next = ft_path_duplicate(src_path_tmp);
 		dest_path_tmp = dest_path_tmp->next;
 		src_path_tmp = src_path_tmp->next;
 	}
+	ft_putstr("DUPLI 3\n\n");
 	dest_path_tmp->next = ft_path_duplicate(path);
 	new_sol->last_path = dest_path_tmp->next;
 	new_sol->path_nb = sol->path_nb++;
 	new_sol->cycles = ft_cycles(info, sol);
+	new_sol->last_path->next = 0;
 	new_sol->next = 0;
-	return (sol);
+	ft_putstr("DUPLI 4\n\n");
+	return (new_sol);
 }
 
 /*int		ft_sol_add(t_info *info, t_sol *sol)
@@ -107,8 +120,9 @@ void	ft_count_exclusive_path(t_sol *sol, t_info *info)
 			EX_SOL = count;
 		if (EX_SOL == MAX_PATH)
 		{
-			ft_putstr("BEST_SOL IS SET \n ");
+			ft_putstr("BEST_SOL IS SET\n\n");
 			info->best_sol = sol_tmp;
+			ft_putstr("------COUNT_EXCLUSIVE_PATH-------\n\n");
 			break ;
 		}
 		sol_tmp = sol_tmp->next;
@@ -153,52 +167,47 @@ void	ft_sol_combine_to_existing(t_info *info, t_path *path)
 	sol_tmp = info->sol_first;
 	while (sol_tmp)
 	{
-		ft_putstr("SEGAULT 4\n\n");
+		ft_putstr("COMBINE 1\n\n");
 		if (ft_check_exclusive_path(sol_tmp, path, info) == 0)
 		{
-			ft_putstr("SEGAULT 5\n\n");
+			ft_putstr("COMBINE 2\n\n");
+			//			ft_putnbr((int)info->sol_first);
+			//			ft_putstr("\n\n");
+			//			ft_putnbr((int)ft_last_sol(info->sol_first));
+			//			ft_putstr("\n\n");
 			ft_last_sol(info->sol_first)->next = ft_sol_duplicate(info, sol_tmp, path);
+			ft_putstr("COMBINE 2 BIS\n\n");
+			//			ft_putnbr((int)info->sol_first);
+			//			ft_putstr("\n\n");
+			//			ft_putnbr((int)ft_last_sol(info->sol_first));
+			//			ft_putstr("\n\n");
 		}
-		ft_putstr("SEGAULT 6\n\n");
+		ft_putstr("COMBINE 3\n\n");
 		if (sol_tmp == last_preexisting_sol)
+		{
+			ft_putstr("BREAK COMBINE 3\n\n");
 			break ;
+		}
+		ft_putstr("COMBINE 4\n\n");
 		sol_tmp = sol_tmp->next;
 	}
+	ft_putstr("COMBINE 5\n\n");
 	ft_last_sol(sol_tmp)->next = ft_init_sol(path);
 }
 
-void	ft_sol_list(t_info *info)
+void	ft_show_sol(t_info *info, t_sol *sol)
 {
-	t_path	*path_tmp;
-	t_path	*sol_path_tmp;
-	t_sol	*sol_tmp;
-//	t_sol	*sol_last;
+	t_sol *sol_tmp;
+	t_path *sol_path_tmp;
 	int i;
 
-	path_tmp = PATH;
-	while (path_tmp)
-	{
-		if (path_tmp->flag == 0)
-		{
-			if (!info->sol_first)
-			{
-				ft_putstr("SEGAULT 2\n\n");
-				info->sol_first = ft_init_sol(path_tmp);
-			}
-			else
-			{
-				ft_putstr("SEGAULT 3\n\n");
-				ft_sol_combine_to_existing(info, path_tmp);
-			}
-			path_tmp->flag = -1;
-		}
-		path_tmp = path_tmp->next;
-	}
-	sol_tmp = info->sol_first;
+	i = 0;
+	sol_tmp = sol;
 	ft_putstr("---------------LISTE SOL-------------\n\n");
-	while (sol_tmp)
-	{
+//	while (sol_tmp)
+//	{
 		sol_path_tmp = sol_tmp->first_path;
+		ft_putstr("////////////////////////\n");
 		while (sol_path_tmp)
 		{
 			i = 0;
@@ -211,10 +220,38 @@ void	ft_sol_list(t_info *info)
 			ft_putstr("\n");
 			sol_path_tmp = sol_path_tmp->next;
 		}
-		sol_tmp = sol_tmp->next;
-	}
+		ft_putstr("////////////////////////\n");
+//		sol_tmp = sol_tmp->next;
+//	}
 	ft_putstr("---------------LISTE SOL-------------\n\n");
-//	return (info->sol_first);
+}
+
+void	ft_sol_list(t_info *info)
+{
+	t_path	*path_tmp;
+
+	path_tmp = PATH;
+	while (path_tmp)
+	{
+		if (path_tmp->flag == 0)
+		{
+			if (!info->sol_first)
+			{
+				ft_putstr("SOL_LIST 1\n\n");
+				info->sol_first = ft_init_sol(path_tmp);
+			}
+			else
+			{
+				ft_putstr("SOL_LIST 2\n\n");
+				ft_sol_combine_to_existing(info, path_tmp);
+			}
+			ft_putstr("SOL_LIST 3\n\n");
+			path_tmp->flag = -1;
+		}
+		ft_putstr("SOL_LIST 4\n\n");
+		path_tmp = path_tmp->next;
+	}
+	//	return (info->sol_first);
 }
 
 // marche pour le premier tour recusrsive nico pas pour la suite (il faut recombiner aux preexistants)
