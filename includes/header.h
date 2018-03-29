@@ -13,6 +13,7 @@
 # define START_COUNT info->start_count
 # define END_COUNT info->end_count
 # define INDEX_END info->index_end
+# define INDEX_ROOM info->index_room
 # define X_ROOM info->x_room
 # define Y_ROOM info->y_room
 # define INDEX info->index_room
@@ -24,6 +25,15 @@
 # include <unistd.h>
 # include <fcntl.h>
 # include "../libft/libft.h"
+
+typedef struct		s_ant
+{
+	int				ant;
+	int				*path_index;
+	int				path_len;
+	int				index_room_act;
+	int				flag_print;
+}					t_ant;
 
 typedef struct		s_path
 {
@@ -94,6 +104,12 @@ typedef	struct		s_info
 }					t_info;
 
 int					ft_solve(t_info *info);
+int					ft_get_index(t_info *info, char *name);
+t_room				*ft_find_room(t_info *info, int index_room);
+int					ft_get_last_index(t_info *info, t_path *path);
+t_path				*ft_last(t_path *path);
+void				ft_flag(t_info *info, t_path *last_path);
+void				ft_clean_room_type(t_info *info);
 t_info				*ft_info_init(void);
 t_path				*ft_path_init(t_info *info, t_path *path_lst, int new_index);
 int					ft_atoi_lem(const char *str);
@@ -115,4 +131,5 @@ int					ft_error(void);
 void				ft_sol_list(t_info *info);
 void				ft_count_exclusive_path(t_sol *sol, t_info *info);
 int					ft_cycles(t_info *info, t_sol *sol);
+int					*ft_intdup(int *path_tab, int room_nb, int new_index);
 #endif
