@@ -6,7 +6,7 @@
 /*   By: nvergnac <nvergnac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/20 20:54:33 by nvergnac          #+#    #+#             */
-/*   Updated: 2018/03/29 18:08:51 by nvergnac         ###   ########.fr       */
+/*   Updated: 2018/03/30 20:14:07 by nvergnac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,10 +92,10 @@ int		ft_solve(t_info *info)
 	ft_count_exclusive_path(info->sol_first, info);
 	RECURSIVE++;
 	FLAG++;
-	ft_show_path(info, PATH);
+//	ft_show_path(info, PATH);
 	ft_clean_room_type(info);
 	if (RECURSIVE < 3 && MAX_PATH > EX_SOL)
 		ft_solve(info);
-	ft_show_best_sol(info);
+//	ft_show_best_sol(info);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: nvergnac <nvergnac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/03 14:01:03 by nvergnac          #+#    #+#             */
-/*   Updated: 2018/03/29 17:08:41 by nvergnac         ###   ########.fr       */
+/*   Updated: 2018/03/30 20:03:21 by nvergnac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,6 @@ void	ft_free_lst_sol(t_info *info, t_sol *sol_lst)
 	while (sol_lst)
 	{
 		sol_tmp = sol_lst->next;
-		ft_show_sol(info, sol_lst);
 		ft_free_lst_path(info, sol_lst->first_path);
 		sol_lst->first_path = 0;
 		sol_lst->last_path = 0;
@@ -90,6 +89,9 @@ void	ft_free_all(t_info *info)
 	ft_free_lst_room(FIRST);
 	ft_free_lst_sol(info, info->sol_first);
 	ft_free_lst_path(info, PATH);
+	free(ANT_TAB);
+	free(info->path_repart);
+	ANT_TAB = 0;;
 	ft_safe_free(CMD);
 	free(info);
 	info = 0;

@@ -6,7 +6,7 @@
 /*   By: nvergnac <nvergnac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/12 16:27:44 by pclement          #+#    #+#             */
-/*   Updated: 2018/03/20 19:39:24 by nvergnac         ###   ########.fr       */
+/*   Updated: 2018/03/30 20:05:15 by nvergnac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,19 +96,10 @@ int		ft_fill_info_p3(char *line, t_info *info)
 int		ft_fill_info(char *line, t_info *info)
 {
 	if (PHASE == 1)
-	{
-		//ft_putstr("PHASE1\n");
 		return (ft_fill_info_p1(line, info));
-	}
 	if (PHASE == 2)
-	{
-		//ft_putstr("PHASE2\n");
 		return (ft_fill_info_p2(line, info));
-	}
 	if (PHASE == 3)
-	{
-		//ft_putstr("PHASE3\n");
 		return (ft_fill_info_p3(line, info));
-	}
 	return (0);
 }

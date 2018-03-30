@@ -1,4 +1,16 @@
-#include "../includes/header.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_path_combi.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nvergnac <nvergnac@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/03/30 20:01:46 by nvergnac          #+#    #+#             */
+/*   Updated: 2018/03/30 20:08:11 by nvergnac         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "header.h"
 
 t_path		*ft_path_duplicate(t_info *info, t_path *path)
 {
@@ -6,7 +18,6 @@ t_path		*ft_path_duplicate(t_info *info, t_path *path)
 
 	if (!(new_path = (t_path *)malloc(sizeof(t_path))))
 		exit (0);
-//	new_path->path_index = path->path_index;
 	new_path->path_index = ft_intdup(path->path_index, ROOM_NB, 0);
 	new_path->flag = path->flag;
 	new_path->path_len = path->path_len;
@@ -26,18 +37,6 @@ t_sol		*ft_init_sol(t_info *info, t_path *path)
 	sol->cycles = 0;
 	sol->next = 0;
 	return (sol);
-}
-
-t_sol	*ft_last_sol(t_sol *sol)
-{
-	t_sol	*sol_tmp;
-
-	sol_tmp = sol;
-	while (sol_tmp->next)
-	{
-		sol_tmp = sol_tmp->next;
-	}
-	return (sol_tmp);
 }
 
 t_sol		*ft_sol_duplicate(t_info *info, t_sol *sol, t_path *path)
@@ -62,70 +61,11 @@ t_sol		*ft_sol_duplicate(t_info *info, t_sol *sol, t_path *path)
 	}
 	dest_path_tmp->next = ft_path_duplicate(info, path);
 	new_sol->last_path = dest_path_tmp->next;
-	new_sol->path_nb = sol->path_nb++;
-	new_sol->cycles = ft_cycles(info, sol);
+	new_sol->path_nb = sol->path_nb + 1;
+	new_sol->cycles = 0;
 	new_sol->last_path->next = 0;
 	new_sol->next = 0;
 	return (new_sol);
-}
-
-void	ft_count_exclusive_path(t_sol *sol, t_info *info)
-{
-	int		count;
-	t_sol	*sol_tmp;
-	t_path	*path_tmp;
-
-	sol_tmp = sol;
-	ft_putstr("------COUNT_EXCLUSIVE_PATH-------\n\n");
-	while (sol_tmp)
-	{
-		count = 0;
-		path_tmp = sol_tmp->first_path;
-		while (path_tmp)
-		{
-			count++;
-			path_tmp = path_tmp->next;
-		}
-		if (count > EX_SOL)
-			EX_SOL = count;
-		if (EX_SOL == MAX_PATH)
-		{
-			ft_putstr("BEST_SOL IS SET\n\n");
-			info->best_sol = sol_tmp;
-			ft_putstr("------COUNT_EXCLUSIVE_PATH-------\n\n");
-			break ;
-		}
-		sol_tmp = sol_tmp->next;
-	}
-	ft_putstr("------COUNT_EXCLUSIVE_PATH-------\n\n");
-}
-
-int		ft_check_exclusive_path(t_sol *sol, t_path *path, t_info *info)
-{
-	t_path	*sol_path_tmp;
-	t_path	*path_tmp;
-	int i;
-	int k;
-
-	sol_path_tmp = sol->first_path;
-	path_tmp = path;
-	while (sol_path_tmp)
-	{
-		i = 1;
-		while ((sol_path_tmp->path_index[i] != INDEX_END && sol_path_tmp->path_index[i] != 0))
-		{
-			k = 0;
-			while (path->path_index[k] != 0 && k < ROOM_NB)
-			{
-				if (sol_path_tmp->path_index[i] == path->path_index[k])
-					return (1);
-				k++;
-			}
-			i++;
-		}
-		sol_path_tmp = sol_path_tmp->next;
-	}
-	return (0);
 }
 
 void	ft_sol_combine_to_existing(t_info *info, t_path *path)
@@ -138,9 +78,7 @@ void	ft_sol_combine_to_existing(t_info *info, t_path *path)
 	while (sol_tmp)
 	{
 		if (ft_check_exclusive_path(sol_tmp, path, info) == 0)
-		{
 			ft_last_sol(info->sol_first)->next = ft_sol_duplicate(info, sol_tmp, path);
-		}
 		if (sol_tmp == last_preexisting_sol)
 			break ;
 		sol_tmp = sol_tmp->next;
@@ -148,43 +86,10 @@ void	ft_sol_combine_to_existing(t_info *info, t_path *path)
 	ft_last_sol(sol_tmp)->next = ft_init_sol(info, path);
 }
 
-void	ft_show_sol(t_info *info, t_sol *sol)
-{
-	t_sol *sol_tmp;
-	t_path *sol_path_tmp;
-	int i;
-
-	i = 0;
-	sol_tmp = sol;
-	ft_putstr("---------------LISTE SOL-------------\n\n");
-//	while (sol_tmp)
-//	{
-		sol_path_tmp = sol_tmp->first_path;
-		ft_putstr("////////////////////////\n");
-		while (sol_path_tmp)
-		{
-			i = 0;
-			while (i < ROOM_NB && sol_path_tmp->path_index[i] != 0)
-			{
-				ft_putnbr((int)sol_path_tmp->path_index[i]);
-				ft_putstr(" | ");
-				i++;
-			}
-			ft_putstr("\n");
-			ft_putstr("PATH_LEN :\t");
-			ft_putnbr((int)sol_path_tmp->path_len);
-			ft_putstr("\n\n");
-			sol_path_tmp = sol_path_tmp->next;
-		}
-		ft_putstr("////////////////////////\n");
-//		sol_tmp = sol_tmp->next;
-//	}
-	ft_putstr("---------------LISTE SOL-------------\n\n");
-}
-
 void	ft_sol_list(t_info *info)
 {
 	t_path	*path_tmp;
+	t_sol	*sol_tmp;
 
 	path_tmp = PATH;
 	while (path_tmp)
@@ -192,18 +97,18 @@ void	ft_sol_list(t_info *info)
 		if (path_tmp->flag == 0)
 		{
 			if (!info->sol_first)
-			{
 				info->sol_first = ft_init_sol(info, path_tmp);
-			}
 			else
-			{
 				ft_sol_combine_to_existing(info, path_tmp);
-			}
 			path_tmp->flag = -1;
 		}
 		path_tmp = path_tmp->next;
 	}
-	//	return (info->sol_first);
+	sol_tmp = info->sol_first;
+	while (sol_tmp)
+	{
+		sol_tmp->cycles = ft_cycles(info, sol_tmp);
+		sol_tmp = sol_tmp->next;
+	}
+	ft_set_best_sol(info);
 }
-
-// marche pour le premier tour recusrsive nico pas pour la suite (il faut recombiner aux preexistants)
