@@ -6,7 +6,7 @@
 /*   By: nvergnac <nvergnac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/20 20:54:33 by nvergnac          #+#    #+#             */
-/*   Updated: 2018/04/06 18:28:18 by nvergnac         ###   ########.fr       */
+/*   Updated: 2018/04/06 19:13:23 by nvergnac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ int		ft_solve(t_info *info)
 			break ;
 	}
 	if (ft_check_end(info) == 0)
-		return (ft_error());
+		return (1);
 	ft_sol_list(info);
 	ft_clean_room_type(info);
 	if ((LIMIT > 0 && LIMIT < 2500) && MAX_PATH > EX_SOL)

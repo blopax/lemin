@@ -1,6 +1,7 @@
 #ifndef HEADER_H
 # define HEADER_H
 # define CMD info->command
+# define INPUT info->input
 # define TREAT_OVER info->treatment_over
 # define PHASE info->phase
 # define LIMIT info->limit
@@ -83,6 +84,7 @@ typedef struct		s_cycles_info
 typedef	struct		s_info
 {
 	char			*command;
+	char			*input;
 	int				treatment_over;
 	int				phase;
 	int				ant_nb;
@@ -146,9 +148,9 @@ int					ft_get_next_index(t_info *info, t_ant ant);
 int					ft_all_ants_reached_end(t_info *info);
 
 
-int					ft_error(void);
+int					ft_error(t_info *info);
 int					ft_atoi_lem(const char *str);
-int				ft_free_all(t_info *info);
+int					ft_free_all(t_info *info);
 
 
 void				ft_show_lst_room(t_room *lst);

@@ -6,7 +6,7 @@
 /*   By: nvergnac <nvergnac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/03 14:01:03 by nvergnac          #+#    #+#             */
-/*   Updated: 2018/04/06 16:52:05 by nvergnac         ###   ########.fr       */
+/*   Updated: 2018/04/06 19:13:05 by nvergnac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,9 +90,10 @@ int		ft_free_all(t_info *info)
 	ft_free_lst_sol(info, info->sol_first);
 	ft_free_lst_path(info, PATH);
 	free(ANT_TAB);
-	free(info->path_repart);
 	ANT_TAB = 0;;
+	free(info->path_repart);
 	ft_safe_free(CMD);
+	ft_safe_free(INPUT);
 	free(info);
 	info = 0;
 	return (0);

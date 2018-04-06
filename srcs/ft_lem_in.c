@@ -6,7 +6,7 @@
 /*   By: pclement <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/12 15:53:35 by pclement          #+#    #+#             */
-/*   Updated: 2018/04/06 18:29:16 by nvergnac         ###   ########.fr       */
+/*   Updated: 2018/04/06 19:15:39 by nvergnac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@ int		ft_max_path(t_info *info)
 		return (END->link_room_count);
 }
 
-int		ft_error(void)
+int		ft_error(t_info *info)
 {
 	write(2, "ERROR\n", 6);
-	return (1);
+	return (ft_free_all(info));
 }
 
 int		ft_check_info(t_info *info)
@@ -41,29 +41,35 @@ int		ft_check_info(t_info *info)
 	return (0);
 }
 
-int		main(int argc, char **argv)
+void	ft_get_info(t_info *info)
 {
 	char	*line;
-	t_info	*info;
-
-	argc = 0;
-	(void)argv;
-	info = ft_info_init();
+	
+	line = 0;
 	while (TREAT_OVER == 0 && get_next_line(0, &line) > 0)
 	{
+		INPUT = ft_strjoin(INPUT, line);
+		INPUT = ft_strjoin(INPUT, "\n");
 		if (ft_fill_info(line, info) == 1)
 			TREAT_OVER = 1;
 		line = ft_safe_free(line);
 	}
 	MAX_PATH = ft_max_path(info);
+}
+
+int		main(void)
+{
+	t_info	*info;
+
+	info = ft_info_init();
+	ft_get_info(info);
 	if (ft_check_info(info) != 0 || START_COUNT != 1 || END_COUNT != 1 || MAX_PATH == 0)
-	{
-		ft_error();
-		return (ft_free_all(info));
-	}
+		return (ft_error(info));
 	INDEX_END = END->index;
 	if (ft_solve(info) == 1)
-		return (ft_free_all(info));
+		return (ft_error(info));
+	ft_putstr(INPUT);
+	ft_putstr("\n");
 	ft_move_ants(info);
 	return (ft_free_all(info));
 }

@@ -6,7 +6,7 @@
 /*   By: nvergnac <nvergnac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/05 14:18:04 by nvergnac          #+#    #+#             */
-/*   Updated: 2018/04/06 16:51:59 by nvergnac         ###   ########.fr       */
+/*   Updated: 2018/04/06 19:10:12 by nvergnac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,7 @@ t_info	*ft_info_init(void)
 	if (!(info = (t_info*)malloc(sizeof(t_info))))
 		exit(0);
 	CMD = 0;
+	INPUT = 0;
 	TREAT_OVER = 0;
 	PHASE = 1;
 	ANT_NB = 0;
