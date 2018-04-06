@@ -6,7 +6,7 @@
 /*   By: nvergnac <nvergnac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/30 20:01:46 by nvergnac          #+#    #+#             */
-/*   Updated: 2018/03/30 20:08:11 by nvergnac         ###   ########.fr       */
+/*   Updated: 2018/04/06 18:27:03 by nvergnac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,8 +78,17 @@ void	ft_sol_combine_to_existing(t_info *info, t_path *path)
 	while (sol_tmp)
 	{
 		if (ft_check_exclusive_path(sol_tmp, path, info) == 0)
+		{
 			ft_last_sol(info->sol_first)->next = ft_sol_duplicate(info, sol_tmp, path);
-		if (sol_tmp == last_preexisting_sol)
+			LIMIT++;
+		}
+		if (LIMIT > 0 && LIMIT % 500 == 0)
+		{
+			ft_putstr("Valeur de LIMIT dupli :\t");
+			ft_putnbr(LIMIT);
+			ft_putstr("\n");
+		}
+		if (sol_tmp == last_preexisting_sol || LIMIT > 2500)
 			break ;
 		sol_tmp = sol_tmp->next;
 	}
@@ -89,11 +98,11 @@ void	ft_sol_combine_to_existing(t_info *info, t_path *path)
 void	ft_sol_list(t_info *info)
 {
 	t_path	*path_tmp;
-	t_sol	*sol_tmp;
 
 	path_tmp = PATH;
 	while (path_tmp)
 	{
+		LIMIT = 0;
 		if (path_tmp->flag == 0)
 		{
 			if (!info->sol_first)
@@ -101,14 +110,11 @@ void	ft_sol_list(t_info *info)
 			else
 				ft_sol_combine_to_existing(info, path_tmp);
 			path_tmp->flag = -1;
+			if (LIMIT > 2500)
+				break ;
 		}
+		LIMIT++;
 		path_tmp = path_tmp->next;
 	}
-	sol_tmp = info->sol_first;
-	while (sol_tmp)
-	{
-		sol_tmp->cycles = ft_cycles(info, sol_tmp);
-		sol_tmp = sol_tmp->next;
-	}
-	ft_set_best_sol(info);
+	ft_set_cycles_and_stuff(info);
 }

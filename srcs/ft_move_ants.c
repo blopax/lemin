@@ -6,7 +6,7 @@
 /*   By: nvergnac <nvergnac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/30 19:53:29 by nvergnac          #+#    #+#             */
-/*   Updated: 2018/03/30 19:56:13 by nvergnac         ###   ########.fr       */
+/*   Updated: 2018/04/05 17:58:12 by nvergnac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,14 +63,14 @@ int		ft_check_if_can_move(t_info *info, int i)
 	int	k;
 
 	k = 0;
-	if (ft_get_next_index(ANT_TAB[i]) == INDEX_END)
+	if (ft_get_next_index(info, ANT_TAB[i]) == INDEX_END)
 		return (0);
 	if (ANT_TAB[i].index_room_act == INDEX_END)
 		return (1);
 	while (k < i)
 	{
-		if (ft_get_next_index(ANT_TAB[i]) == ANT_TAB[k].index_room_act)
-			return (1);
+			if (ft_get_next_index(info, ANT_TAB[i]) == ANT_TAB[k].index_room_act)
+				return (1);
 		k++;
 	}
 	return (0);
@@ -87,8 +87,11 @@ void	ft_affect_ant_to_path(t_info *info)
 	path_tmp = BEST_SOL->first_path;
 	while (i < ANT_NB)
 	{
-		while (info->path_repart[k] > 0)
+		k = k % BEST_SOL->path_nb;
+		if (info->path_repart[k] > 0)
 		{
+			if (k == 0)
+				path_tmp = BEST_SOL->first_path;
 			ANT_TAB[i].path_index = path_tmp->path_index;
 			ANT_TAB[i].path_len = path_tmp->path_len;
 			ANT_TAB[i].index_room_act = path_tmp->path_index[0];
@@ -106,8 +109,7 @@ void	ft_move_ants(t_info *info)
 
 	i = 0;
 	ft_init_ants_tab(info);
-	if (BEST_SOL->path_nb > 1)
-		ft_path_repartition(info);
+	ft_path_repartition(info);
 	ft_affect_ant_to_path(info);
 	while (ft_all_ants_reached_end(info) == 1)
 	{
@@ -116,7 +118,7 @@ void	ft_move_ants(t_info *info)
 		while (i < ANT_NB)
 		{
 			if (ft_check_if_can_move(info, i) == 0)
-				ANT_TAB[i].index_room_act = ft_get_next_index(ANT_TAB[i]);
+				ANT_TAB[i].index_room_act = ft_get_next_index(info, ANT_TAB[i]);
 			ft_print_ant(info, i);
 			i++;
 		}

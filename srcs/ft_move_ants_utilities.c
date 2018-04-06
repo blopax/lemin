@@ -6,19 +6,21 @@
 /*   By: nvergnac <nvergnac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/30 19:53:47 by nvergnac          #+#    #+#             */
-/*   Updated: 2018/03/30 19:55:55 by nvergnac         ###   ########.fr       */
+/*   Updated: 2018/04/05 16:25:42 by nvergnac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-int		ft_get_next_index(t_ant ant)
+int		ft_get_next_index(t_info *info, t_ant ant)
 {
 	int	i;
 
 	i = 0;
 	while (ant.path_index[i] != ant.index_room_act)
 		i++;
+	if (ant.path_index[i] == INDEX_END)
+		return (ant.path_index[i]);
 	return (ant.path_index[i + 1]);
 }
 

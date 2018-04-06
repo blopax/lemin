@@ -6,7 +6,7 @@
 /*   By: nvergnac <nvergnac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/05 14:18:04 by nvergnac          #+#    #+#             */
-/*   Updated: 2018/03/30 19:29:27 by nvergnac         ###   ########.fr       */
+/*   Updated: 2018/04/06 16:51:59 by nvergnac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,6 @@ t_info	*ft_info_init(void)
 	PATH = 0;
 	START_COUNT = 0;
 	END_COUNT = 0;
-	RECURSIVE = 0;
 	EX_SOL = 0;
 	FLAG = 1;
 	info->sol_first = 0;
@@ -115,5 +114,6 @@ t_info	*ft_info_init(void)
 	info->path_repart = 0;
 	ANT_TAB = 0;
 	info->print_count = 0;
+	LIMIT = 0;
 	return (info);
 }

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lst_utilities.c                                 :+:      :+:    :+:   */
+/*   ft_create_room.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pclement <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: nvergnac <nvergnac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/12 18:42:39 by pclement          #+#    #+#             */
-/*   Updated: 2018/03/30 20:07:56 by nvergnac         ###   ########.fr       */
+/*   Created: 2018/04/05 18:22:05 by nvergnac          #+#    #+#             */
+/*   Updated: 2018/04/06 17:39:09 by nvergnac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,39 +14,15 @@
 
 void	ft_add_room(char *line, t_info *info, int type)
 {
-	t_room	*new;
 	char	*tmp;
-	t_room	*room_tmp;
 
 	INDEX++;
-	new = 0;
 	if (!(tmp = ft_strnew(SIZE)))
 		exit(0);
-	room_tmp = FIRST;
 	if (FIRST->x == -1)
-	{
-		room_tmp->x = X_ROOM;
-		room_tmp->y = Y_ROOM;
-		room_tmp->type = type;
-		room_tmp->index = INDEX;
-		room_tmp->name = ft_strdup(ft_strncpy(tmp, line, SIZE));
-		if (type == 1)
-			START = FIRST;
-		else if (type == 2)
-			END = FIRST;
-	}
+		ft_create_first_room(line, tmp, info, type);
 	else
-	{
-		new = ft_room_init(X_ROOM, Y_ROOM, type, INDEX);
-		new->name = ft_strdup(ft_strncpy(tmp, line, SIZE));
-		while (room_tmp->next)
-			room_tmp = room_tmp->next;
-		room_tmp->next = new;
-		if (type == 1)
-			START = room_tmp->next;
-		else if (type == 2)
-			END = room_tmp->next;
-	}
+		ft_create_room(line, tmp, info, type);
 	ROOM_NB++;
 	ft_safe_free(tmp);
 }

@@ -6,7 +6,7 @@
 /*   By: nvergnac <nvergnac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/03 14:01:03 by nvergnac          #+#    #+#             */
-/*   Updated: 2018/03/30 20:03:21 by nvergnac         ###   ########.fr       */
+/*   Updated: 2018/04/06 16:52:05 by nvergnac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ void	ft_free_lst_sol(t_info *info, t_sol *sol_lst)
 	}
 }
 
-void	ft_free_all(t_info *info)
+int		ft_free_all(t_info *info)
 {
 	ft_free_lst_room(FIRST);
 	ft_free_lst_sol(info, info->sol_first);
@@ -95,4 +95,5 @@ void	ft_free_all(t_info *info)
 	ft_safe_free(CMD);
 	free(info);
 	info = 0;
+	return (0);
 }

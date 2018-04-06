@@ -3,6 +3,8 @@
 # define CMD info->command
 # define TREAT_OVER info->treatment_over
 # define PHASE info->phase
+# define LIMIT info->limit
+# define LAST_LIMIT info->last_limit
 # define ANT_NB info->ant_nb
 # define ROOM_NB info->room_nb
 # define MAX_PATH info->max_path
@@ -19,7 +21,6 @@
 # define Y_ROOM info->y_room
 # define INDEX info->index_room
 # define SIZE info->size
-# define RECURSIVE info->recursive
 # define EX_SOL info->exclusive_sol
 # define FLAG info->flag_path
 # define ANT_TAB info->ant_tab
@@ -98,7 +99,6 @@ typedef	struct		s_info
 	t_path			*path;
 	int				start_count;
 	int				end_count;
-	int				recursive;
 	int				exclusive_sol;
 	int				flag_path;
 	t_sol			*sol_first;
@@ -106,6 +106,8 @@ typedef	struct		s_info
 	int				*path_repart;
 	t_ant			*ant_tab;
 	int				print_count;
+	int				limit;
+	int				last_limit;
 }					t_info;
 
 int					ft_fill_info(char *line, t_info *info);
@@ -114,11 +116,15 @@ int					ft_sharp_treatment(char *line, t_info *info);
 int					ft_check_p2(char *line, t_info *info);
 int					ft_link_rooms(t_info *info, char *room1, char *room2);
 t_room				*ft_room_init(int x, int y, int type, int index);
+void				ft_create_first_room(char *line, char *tmp, t_info *info,
+		int type);
+void				ft_create_room(char *line, char *tmp, t_info *info,
+		int type);
 t_link				*ft_linked_room_init(char *room_name);
 int					ft_add_linked_room(t_room *room, char *room_name);
 void				ft_add_room(char *line, t_info *info, int type);
 int					ft_solve(t_info *info);
-t_path				*ft_path_init(t_info *info, t_path *path_lst, int new_index);
+t_path				*ft_path_init(t_info *info, t_path *path_lst, int new_indx);
 int					*ft_intdup(int *path_tab, int room_nb, int new_index);
 int					ft_get_index(t_info *info, char *name);
 t_room				*ft_find_room(t_info *info, int index_room);
@@ -127,20 +133,22 @@ t_path				*ft_last(t_path *path);
 void				ft_flag(t_info *info, t_path *last_path);
 void				ft_clean_room_type(t_info *info);
 void				ft_sol_list(t_info *info);
+void				ft_set_cycles_and_stuff(t_info *info);
 t_sol				*ft_last_sol(t_sol *sol);
 void				ft_count_exclusive_path(t_sol *sol, t_info *info);
-int					ft_check_exclusive_path(t_sol *sol, t_path *path, t_info *info);
+int					ft_check_exclusive_path(t_sol *sol, t_path *path,
+		t_info *info);
 void				ft_set_best_sol(t_info *info);
 int					ft_cycles(t_info *info, t_sol *sol);
 void				ft_move_ants(t_info *info);
 void				ft_print_ant(t_info *info, int i);
-int					ft_get_next_index(t_ant ant);
+int					ft_get_next_index(t_info *info, t_ant ant);
 int					ft_all_ants_reached_end(t_info *info);
 
 
 int					ft_error(void);
 int					ft_atoi_lem(const char *str);
-void				ft_free_all(t_info *info);
+int				ft_free_all(t_info *info);
 
 
 void				ft_show_lst_room(t_room *lst);

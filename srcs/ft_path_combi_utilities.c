@@ -6,7 +6,7 @@
 /*   By: nvergnac <nvergnac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/29 18:20:26 by nvergnac          #+#    #+#             */
-/*   Updated: 2018/03/30 20:04:32 by nvergnac         ###   ########.fr       */
+/*   Updated: 2018/04/06 18:28:23 by nvergnac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ void	ft_set_best_sol(t_info *info)
 
 	sol_tmp = info->sol_first;
 	min_cycles = sol_tmp->cycles;
+	info->best_sol= sol_tmp;
 	while (sol_tmp)
 	{
 		if (sol_tmp->cycles < min_cycles)
@@ -40,30 +41,6 @@ void	ft_set_best_sol(t_info *info)
 			min_cycles = sol_tmp->cycles;
 			info->best_sol = sol_tmp;
 		}
-		sol_tmp = sol_tmp->next;
-	}
-}
-
-void	ft_count_exclusive_path(t_sol *sol, t_info *info)
-{
-	int		count;
-	t_sol	*sol_tmp;
-	t_path	*path_tmp;
-
-	sol_tmp = sol;
-	while (sol_tmp)
-	{
-		count = 0;
-		path_tmp = sol_tmp->first_path;
-		while (path_tmp)
-		{
-			count++;
-			path_tmp = path_tmp->next;
-		}
-		if (count > EX_SOL)
-			EX_SOL = count;
-		if (EX_SOL == MAX_PATH)
-			break ;
 		sol_tmp = sol_tmp->next;
 	}
 }
@@ -96,3 +73,17 @@ int		ft_check_exclusive_path(t_sol *sol, t_path *path, t_info *info)
 	return (0);
 }
 
+void	ft_set_cycles_and_stuff(t_info *info)
+{
+	t_sol	*sol_tmp;
+
+	sol_tmp = info->sol_first;
+	while (sol_tmp)
+	{
+		sol_tmp->cycles = ft_cycles(info, sol_tmp);
+		sol_tmp = sol_tmp->next;
+	}
+	ft_set_best_sol(info);
+	EX_SOL = info->best_sol->path_nb;
+	FLAG++;
+}

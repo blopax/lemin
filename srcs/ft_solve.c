@@ -6,7 +6,7 @@
 /*   By: nvergnac <nvergnac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/20 20:54:33 by nvergnac          #+#    #+#             */
-/*   Updated: 2018/03/30 20:14:07 by nvergnac         ###   ########.fr       */
+/*   Updated: 2018/04/06 18:28:18 by nvergnac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ void	ft_build_path(t_info *info, t_path *path_tmp, t_link *link_tmp)
 			ft_last(PATH)->next = ft_path_init(info, path_tmp, ft_get_index(info, link_tmp->name));
 			ft_set_black_room(info, ft_get_index(info, link_tmp->name), ft_last(PATH));
 			ft_flag(info, ft_last(PATH));
+			LIMIT++;
 		}
 		link_tmp = link_tmp->next;
 	}
@@ -72,6 +73,7 @@ int		ft_solve(t_info *info)
 	t_room	*room;
 	t_link	*link_tmp;
 
+	LIMIT = 0;
 	if (!PATH)
 		PATH = ft_path_init(info, 0, START->index);
 	path_tmp = PATH;
@@ -82,20 +84,14 @@ int		ft_solve(t_info *info)
 		link_tmp = room->linked_room;
 		ft_build_path(info, path_tmp, link_tmp);
 		path_tmp = path_tmp->next;
+		if (LIMIT > 50000 && ft_check_end(info) == 1)
+			break ;
 	}
 	if (ft_check_end(info) == 0)
-	{
-		ft_error();
-		return (0);
-	}
+		return (ft_error());
 	ft_sol_list(info);
-	ft_count_exclusive_path(info->sol_first, info);
-	RECURSIVE++;
-	FLAG++;
-//	ft_show_path(info, PATH);
 	ft_clean_room_type(info);
-	if (RECURSIVE < 3 && MAX_PATH > EX_SOL)
+	if ((LIMIT > 0 && LIMIT < 2500) && MAX_PATH > EX_SOL)
 		ft_solve(info);
-//	ft_show_best_sol(info);
 	return (0);
 }

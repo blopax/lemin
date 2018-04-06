@@ -6,7 +6,7 @@
 /*   By: nvergnac <nvergnac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/30 20:06:52 by nvergnac          #+#    #+#             */
-/*   Updated: 2018/03/30 20:08:00 by nvergnac         ###   ########.fr       */
+/*   Updated: 2018/04/06 17:11:04 by nvergnac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,9 @@ void	ft_show_info(t_info *info)
 {
 	ft_putstr("TREAT_OVER : ");
 	ft_putnbr(info->treatment_over);
+	ft_putstr("\n");
+	ft_putstr("START LINK ROOM COUNT : ");
+	ft_putnbr(START->link_room_count);
 	ft_putstr("\n");
 	ft_putstr("PHASE : ");
 	ft_putnbr(info->phase);
@@ -133,7 +136,10 @@ void	ft_show_best_sol(t_info *info)
 	int i;
 
 	best_sol = info->best_sol->first_path;
-	ft_putstr("---------------------BEST SOLUTION--------------------\n");
+	ft_putstr("---------------------BEST SOLUTION--------------------\n\n");
+	ft_putstr("NOMBRE DE CYCLES :\t");
+	ft_putnbr((int)info->best_sol->cycles);
+	ft_putstr("\n\n");
 	while (best_sol)
 	{
 		i = 0;

@@ -6,7 +6,7 @@
 /*   By: pclement <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/12 15:53:35 by pclement          #+#    #+#             */
-/*   Updated: 2018/03/30 20:14:17 by nvergnac         ###   ########.fr       */
+/*   Updated: 2018/04/06 18:29:16 by nvergnac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,21 +49,21 @@ int		main(int argc, char **argv)
 	argc = 0;
 	(void)argv;
 	info = ft_info_init();
-	while (get_next_line(0, &line) > 0 && TREAT_OVER == 0)
+	while (TREAT_OVER == 0 && get_next_line(0, &line) > 0)
 	{
 		if (ft_fill_info(line, info) == 1)
 			TREAT_OVER = 1;
 		line = ft_safe_free(line);
 	}
 	MAX_PATH = ft_max_path(info);
-//	ft_show_lst_room(FIRST);
 	if (ft_check_info(info) != 0 || START_COUNT != 1 || END_COUNT != 1 || MAX_PATH == 0)
-		return (ft_error());
+	{
+		ft_error();
+		return (ft_free_all(info));
+	}
 	INDEX_END = END->index;
-//	ft_show_info(info);
-	ft_solve(info);
-//	ft_show_path(info, PATH);
+	if (ft_solve(info) == 1)
+		return (ft_free_all(info));
 	ft_move_ants(info);
-	ft_free_all(info);
-	return (0);
+	return (ft_free_all(info));
 }
