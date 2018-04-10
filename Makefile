@@ -23,7 +23,8 @@ SRC_NAME = ft_fill_info.c ft_fill_info_utls.c ft_init_struct.c ft_lem_in.c\
 		   ft_create_room.c ft_safe_free_lst.c ft_atoi_lem_in.c\
 		   ft_solve.c ft_path_combi.c ft_cycles_treatment.c\
 		   ft_solve_utilities.c ft_path_combi_utilities.c ft_move_ants.c\
-		   ft_move_ants_utilities.c ft_display.c ft_create_room_utilities.c
+		   ft_move_ants_utilities.c ft_create_room_utilities.c\
+		   ft_init_info.c
 SRC = $(addprefix $(SRC_PATH), $(SRC_NAME))
 
 #obj

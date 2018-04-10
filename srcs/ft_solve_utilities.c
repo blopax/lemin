@@ -6,7 +6,7 @@
 /*   By: nvergnac <nvergnac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/29 17:36:03 by nvergnac          #+#    #+#             */
-/*   Updated: 2018/03/30 17:15:47 by nvergnac         ###   ########.fr       */
+/*   Updated: 2018/04/10 15:42:50 by nvergnac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,17 +56,4 @@ void	ft_flag(t_info *info, t_path *last_path)
 {
 	if (ft_get_last_index(info, last_path) == INDEX_END)
 		last_path->flag = 0;
-}
-
-void	ft_clean_room_type(t_info *info)
-{
-	t_room *tmp_room;
-	
-	tmp_room = FIRST;
-	while (tmp_room)
-	{
-		if (tmp_room->type == 3)
-			tmp_room->type = 0;
-		tmp_room = tmp_room->next;
-	}
 }

@@ -6,7 +6,7 @@
 /*   By: nvergnac <nvergnac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/30 20:01:46 by nvergnac          #+#    #+#             */
-/*   Updated: 2018/04/06 18:27:03 by nvergnac         ###   ########.fr       */
+/*   Updated: 2018/04/10 15:52:59 by nvergnac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ t_path		*ft_path_duplicate(t_info *info, t_path *path)
 	t_path	*new_path;
 
 	if (!(new_path = (t_path *)malloc(sizeof(t_path))))
-		exit (0);
+		exit(0);
 	new_path->path_index = ft_intdup(path->path_index, ROOM_NB, 0);
 	new_path->flag = path->flag;
 	new_path->path_len = path->path_len;
@@ -30,7 +30,7 @@ t_sol		*ft_init_sol(t_info *info, t_path *path)
 	t_sol	*sol;
 
 	if (!(sol = (t_sol*)malloc(sizeof(t_sol))))
-		exit (0);
+		exit(0);
 	sol->first_path = ft_path_duplicate(info, path);
 	sol->last_path = sol->first_path;
 	sol->path_nb = 1;
@@ -46,13 +46,11 @@ t_sol		*ft_sol_duplicate(t_info *info, t_sol *sol, t_path *path)
 	t_path	*dest_path_tmp;
 
 	if (!(new_sol = (t_sol*)malloc(sizeof(t_sol))))
-		exit (0);
-
+		exit(0);
 	src_path_tmp = sol->first_path;
 	new_sol->first_path = ft_path_duplicate(info, src_path_tmp);
 	dest_path_tmp = new_sol->first_path;
 	src_path_tmp = src_path_tmp->next;
-
 	while (src_path_tmp)
 	{
 		dest_path_tmp->next = ft_path_duplicate(info, src_path_tmp);
@@ -68,7 +66,7 @@ t_sol		*ft_sol_duplicate(t_info *info, t_sol *sol, t_path *path)
 	return (new_sol);
 }
 
-void	ft_sol_combine_to_existing(t_info *info, t_path *path)
+void		ft_sol_combine_to_existing(t_info *info, t_path *path)
 {
 	t_sol	*sol_tmp;
 	t_sol	*last_preexisting_sol;
@@ -79,14 +77,9 @@ void	ft_sol_combine_to_existing(t_info *info, t_path *path)
 	{
 		if (ft_check_exclusive_path(sol_tmp, path, info) == 0)
 		{
-			ft_last_sol(info->sol_first)->next = ft_sol_duplicate(info, sol_tmp, path);
+			ft_last_sol(info->sol_first)->next =
+				ft_sol_duplicate(info, sol_tmp, path);
 			LIMIT++;
-		}
-		if (LIMIT > 0 && LIMIT % 500 == 0)
-		{
-			ft_putstr("Valeur de LIMIT dupli :\t");
-			ft_putnbr(LIMIT);
-			ft_putstr("\n");
 		}
 		if (sol_tmp == last_preexisting_sol || LIMIT > 2500)
 			break ;
@@ -95,7 +88,7 @@ void	ft_sol_combine_to_existing(t_info *info, t_path *path)
 	ft_last_sol(sol_tmp)->next = ft_init_sol(info, path);
 }
 
-void	ft_sol_list(t_info *info)
+void		ft_sol_list(t_info *info)
 {
 	t_path	*path_tmp;
 
@@ -113,7 +106,6 @@ void	ft_sol_list(t_info *info)
 			if (LIMIT > 2500)
 				break ;
 		}
-		LIMIT++;
 		path_tmp = path_tmp->next;
 	}
 	ft_set_cycles_and_stuff(info);

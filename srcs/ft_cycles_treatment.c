@@ -1,16 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_cycles_treatment.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nvergnac <nvergnac@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/04/10 15:23:01 by nvergnac          #+#    #+#             */
+/*   Updated: 2018/04/10 15:25:30 by nvergnac         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/header.h"
 
-t_cycles_info	*ft_cycles_init (t_sol *sol)
+t_cycles_info	*ft_cycles_init(t_sol *sol)
 {
 	t_cycles_info	*cycles_info;
 	t_path			*tmp_path;
 	int				i;
 
 	if (!(cycles_info = (t_cycles_info *)malloc(sizeof(*cycles_info))))
-		exit (0);
-
+		exit(0);
 	if (!(cycles_info->len_tab = (int*)malloc((sizeof(int) * sol->path_nb))))
-		exit (0);
+		exit(0);
 	i = 0;
 	tmp_path = sol->first_path;
 	cycles_info->len_tab_min = tmp_path->path_len - 1;
@@ -28,7 +39,7 @@ t_cycles_info	*ft_cycles_init (t_sol *sol)
 	return (cycles_info);
 }
 
-int			ft_cycles(t_info *info, t_sol *sol)
+int				ft_cycles(t_info *info, t_sol *sol)
 {
 	t_cycles_info	*cycles_info;
 	int				i;
@@ -49,7 +60,7 @@ int			ft_cycles(t_info *info, t_sol *sol)
 		}
 		cycles++;
 	}
-	i =  ((ANT_NB - arrived_ants) % sol->path_nb == 0 ? 0 : 1);
+	i = ((ANT_NB - arrived_ants) % sol->path_nb == 0 ? 0 : 1);
 	if (arrived_ants < ANT_NB)
 		cycles = (cycles - 1) + ((ANT_NB - arrived_ants) / sol->path_nb) + i;
 	free(cycles_info->len_tab);

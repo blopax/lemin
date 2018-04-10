@@ -6,7 +6,7 @@
 /*   By: pclement <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/12 15:53:35 by pclement          #+#    #+#             */
-/*   Updated: 2018/04/06 19:15:39 by nvergnac         ###   ########.fr       */
+/*   Updated: 2018/04/10 15:57:11 by nvergnac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int		ft_check_info(t_info *info)
 void	ft_get_info(t_info *info)
 {
 	char	*line;
-	
+
 	line = 0;
 	while (TREAT_OVER == 0 && get_next_line(0, &line) > 0)
 	{
@@ -63,7 +63,8 @@ int		main(void)
 
 	info = ft_info_init();
 	ft_get_info(info);
-	if (ft_check_info(info) != 0 || START_COUNT != 1 || END_COUNT != 1 || MAX_PATH == 0)
+	if (ft_check_info(info) != 0 || START_COUNT != 1 || END_COUNT != 1 ||
+			MAX_PATH == 0)
 		return (ft_error(info));
 	INDEX_END = END->index;
 	if (ft_solve(info) == 1)

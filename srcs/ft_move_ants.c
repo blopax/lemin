@@ -6,7 +6,7 @@
 /*   By: nvergnac <nvergnac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/30 19:53:29 by nvergnac          #+#    #+#             */
-/*   Updated: 2018/04/05 17:58:12 by nvergnac         ###   ########.fr       */
+/*   Updated: 2018/04/10 15:35:43 by nvergnac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,8 +69,9 @@ int		ft_check_if_can_move(t_info *info, int i)
 		return (1);
 	while (k < i)
 	{
-			if (ft_get_next_index(info, ANT_TAB[i]) == ANT_TAB[k].index_room_act)
-				return (1);
+		if (ft_get_next_index(info, ANT_TAB[i]) ==
+				ANT_TAB[k].index_room_act)
+			return (1);
 		k++;
 	}
 	return (0);

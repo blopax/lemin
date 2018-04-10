@@ -6,7 +6,7 @@
 /*   By: nvergnac <nvergnac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/05 18:22:22 by nvergnac          #+#    #+#             */
-/*   Updated: 2018/04/05 18:26:37 by nvergnac         ###   ########.fr       */
+/*   Updated: 2018/04/10 15:21:46 by nvergnac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,3 @@ void	ft_create_room(char *line, char *tmp, t_info *info, int type)
 	else if (type == 2)
 		END = room_tmp->next;
 }
-
