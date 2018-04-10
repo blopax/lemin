@@ -151,6 +151,7 @@ int					ft_all_ants_reached_end(t_info *info);
 int					ft_error(t_info *info);
 int					ft_atoi_lem(const char *str);
 int					ft_free_all(t_info *info);
+int					ft_free_lst_link(t_link *link_lst);
 
 
 void				ft_show_lst_room(t_room *lst);

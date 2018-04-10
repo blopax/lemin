@@ -6,13 +6,13 @@
 /*   By: nvergnac <nvergnac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/03 14:01:03 by nvergnac          #+#    #+#             */
-/*   Updated: 2018/04/10 15:36:58 by nvergnac         ###   ########.fr       */
+/*   Updated: 2018/04/10 17:52:42 by pclement         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-void	ft_free_lst_link(t_link *link_lst)
+int		ft_free_lst_link(t_link *link_lst)
 {
 	t_link *tmp;
 
@@ -25,6 +25,7 @@ void	ft_free_lst_link(t_link *link_lst)
 		link_lst = 0;
 		link_lst = tmp;
 	}
+	return (1);
 }
 
 void	ft_free_lst_room(t_room *room_lst)

@@ -1,0 +1,1054 @@
+test_lem_in/valid_map/big_map00
+==90459== Memcheck, a memory error detector
+==90459== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==90459== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==90459== Command: ./lem-in
+==90459== 
+--90459-- run: /usr/bin/dsymutil "./lem-in"
+warning: no debug symbols in executable (-arch x86_64)
+==90459== Syscall param msg->desc.port.name points to uninitialised byte(s)
+==90459==    at 0x1003C334A: mach_msg_trap (in /usr/lib/system/libsystem_kernel.dylib)
+==90459==    by 0x1003C2796: mach_msg (in /usr/lib/system/libsystem_kernel.dylib)
+==90459==    by 0x1003BC485: task_set_special_port (in /usr/lib/system/libsystem_kernel.dylib)
+==90459==    by 0x10055810E: _os_trace_create_debug_control_port (in /usr/lib/system/libsystem_trace.dylib)
+==90459==    by 0x100558458: _libtrace_init (in /usr/lib/system/libsystem_trace.dylib)
+==90459==    by 0x1000C19DF: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==90459==    by 0x100031A1A: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==90459==    by 0x100031C1D: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==90459==    by 0x10002D4A9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==90459==    by 0x10002D440: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==90459==    by 0x10002C523: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==90459==    by 0x10002C5B8: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==90459==  Address 0x1048a4d6c is on thread 1's stack
+==90459==  in frame #2, created by task_set_special_port (???:)
+==90459== 
+==90459== 
+==90459== HEAP SUMMARY:
+==90459==     in use at exit: 18,197 bytes in 163 blocks
+==90459==   total heap usage: 95,244 allocs, 95,081 frees, 196,099,491 bytes allocated
+==90459== 
+==90459== 2 bytes in 1 blocks are definitely lost in loss record 1 of 43
+==90459==    at 0x1000B2A46: malloc (in /Users/pclement/.brew/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==90459==    by 0x10000185E: ft_strsub (in ./lem-in)
+==90459==    by 0x100001CB4: result (in ./lem-in)
+==90459==    by 0x100001E7A: get_next_line (in ./lem-in)
+==90459==    by 0x100002B7B: ft_get_info (in ./lem-in)
+==90459==    by 0x100002CA0: main (in ./lem-in)
+==90459== 
+==90459== LEAK SUMMARY:
+==90459==    definitely lost: 2 bytes in 1 blocks
+==90459==    indirectly lost: 2,064 bytes in 1 blocks
+==90459==      possibly lost: 0 bytes in 0 blocks
+==90459==    still reachable: 200 bytes in 6 blocks
+==90459==         suppressed: 15,931 bytes in 155 blocks
+==90459== Reachable blocks (those to which a pointer was found) are not shown.
+==90459== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==90459== 
+==90459== For counts of detected and suppressed errors, rerun with: -v
+==90459== Use --track-origins=yes to see where uninitialised values come from
+==90459== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 13 from 13)
+
+
+
+test_lem_in/valid_map/validOrNot_Do_not_worry00
+==90495== Memcheck, a memory error detector
+==90495== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==90495== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==90495== Command: ./lem-in
+==90495== 
+==90495== Syscall param msg->desc.port.name points to uninitialised byte(s)
+==90495==    at 0x1003C334A: mach_msg_trap (in /usr/lib/system/libsystem_kernel.dylib)
+==90495==    by 0x1003C2796: mach_msg (in /usr/lib/system/libsystem_kernel.dylib)
+==90495==    by 0x1003BC485: task_set_special_port (in /usr/lib/system/libsystem_kernel.dylib)
+==90495==    by 0x10055810E: _os_trace_create_debug_control_port (in /usr/lib/system/libsystem_trace.dylib)
+==90495==    by 0x100558458: _libtrace_init (in /usr/lib/system/libsystem_trace.dylib)
+==90495==    by 0x1000C19DF: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==90495==    by 0x100031A1A: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==90495==    by 0x100031C1D: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==90495==    by 0x10002D4A9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==90495==    by 0x10002D440: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==90495==    by 0x10002C523: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==90495==    by 0x10002C5B8: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==90495==  Address 0x1048a4d6c is on thread 1's stack
+==90495==  in frame #2, created by task_set_special_port (???:)
+==90495== 
+ERROR
+==90495== 
+==90495== HEAP SUMMARY:
+==90495==     in use at exit: 18,197 bytes in 163 blocks
+==90495==   total heap usage: 416 allocs, 253 frees, 27,060 bytes allocated
+==90495== 
+==90495== 2 bytes in 1 blocks are definitely lost in loss record 1 of 43
+==90495==    at 0x1000B2A46: malloc (in /Users/pclement/.brew/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==90495==    by 0x10000185E: ft_strsub (in ./lem-in)
+==90495==    by 0x100001CB4: result (in ./lem-in)
+==90495==    by 0x100001E7A: get_next_line (in ./lem-in)
+==90495==    by 0x100002B7B: ft_get_info (in ./lem-in)
+==90495==    by 0x100002CA0: main (in ./lem-in)
+==90495== 
+==90495== LEAK SUMMARY:
+==90495==    definitely lost: 2 bytes in 1 blocks
+==90495==    indirectly lost: 2,064 bytes in 1 blocks
+==90495==      possibly lost: 0 bytes in 0 blocks
+==90495==    still reachable: 200 bytes in 6 blocks
+==90495==         suppressed: 15,931 bytes in 155 blocks
+==90495== Reachable blocks (those to which a pointer was found) are not shown.
+==90495== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==90495== 
+==90495== For counts of detected and suppressed errors, rerun with: -v
+==90495== Use --track-origins=yes to see where uninitialised values come from
+==90495== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 13 from 13)
+
+
+
+test_lem_in/valid_map/valid_map00
+==90496== Memcheck, a memory error detector
+==90496== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==90496== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==90496== Command: ./lem-in
+==90496== 
+==90496== Syscall param msg->desc.port.name points to uninitialised byte(s)
+==90496==    at 0x1003C334A: mach_msg_trap (in /usr/lib/system/libsystem_kernel.dylib)
+==90496==    by 0x1003C2796: mach_msg (in /usr/lib/system/libsystem_kernel.dylib)
+==90496==    by 0x1003BC485: task_set_special_port (in /usr/lib/system/libsystem_kernel.dylib)
+==90496==    by 0x10055810E: _os_trace_create_debug_control_port (in /usr/lib/system/libsystem_trace.dylib)
+==90496==    by 0x100558458: _libtrace_init (in /usr/lib/system/libsystem_trace.dylib)
+==90496==    by 0x1000C19DF: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==90496==    by 0x100031A1A: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==90496==    by 0x100031C1D: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==90496==    by 0x10002D4A9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==90496==    by 0x10002D440: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==90496==    by 0x10002C523: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==90496==    by 0x10002C5B8: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==90496==  Address 0x1048a4d6c is on thread 1's stack
+==90496==  in frame #2, created by task_set_special_port (???:)
+==90496== 
+==90496== 
+==90496== HEAP SUMMARY:
+==90496==     in use at exit: 18,197 bytes in 163 blocks
+==90496==   total heap usage: 887 allocs, 724 frees, 39,048 bytes allocated
+==90496== 
+==90496== 2 bytes in 1 blocks are definitely lost in loss record 1 of 43
+==90496==    at 0x1000B2A46: malloc (in /Users/pclement/.brew/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==90496==    by 0x10000185E: ft_strsub (in ./lem-in)
+==90496==    by 0x100001CB4: result (in ./lem-in)
+==90496==    by 0x100001E7A: get_next_line (in ./lem-in)
+==90496==    by 0x100002B7B: ft_get_info (in ./lem-in)
+==90496==    by 0x100002CA0: main (in ./lem-in)
+==90496== 
+==90496== LEAK SUMMARY:
+==90496==    definitely lost: 2 bytes in 1 blocks
+==90496==    indirectly lost: 2,064 bytes in 1 blocks
+==90496==      possibly lost: 0 bytes in 0 blocks
+==90496==    still reachable: 200 bytes in 6 blocks
+==90496==         suppressed: 15,931 bytes in 155 blocks
+==90496== Reachable blocks (those to which a pointer was found) are not shown.
+==90496== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==90496== 
+==90496== For counts of detected and suppressed errors, rerun with: -v
+==90496== Use --track-origins=yes to see where uninitialised values come from
+==90496== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 13 from 13)
+
+
+
+test_lem_in/valid_map/valid_map01
+==90497== Memcheck, a memory error detector
+==90497== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==90497== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==90497== Command: ./lem-in
+==90497== 
+==90497== Syscall param msg->desc.port.name points to uninitialised byte(s)
+==90497==    at 0x1003C334A: mach_msg_trap (in /usr/lib/system/libsystem_kernel.dylib)
+==90497==    by 0x1003C2796: mach_msg (in /usr/lib/system/libsystem_kernel.dylib)
+==90497==    by 0x1003BC485: task_set_special_port (in /usr/lib/system/libsystem_kernel.dylib)
+==90497==    by 0x10055810E: _os_trace_create_debug_control_port (in /usr/lib/system/libsystem_trace.dylib)
+==90497==    by 0x100558458: _libtrace_init (in /usr/lib/system/libsystem_trace.dylib)
+==90497==    by 0x1000C19DF: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==90497==    by 0x100031A1A: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==90497==    by 0x100031C1D: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==90497==    by 0x10002D4A9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==90497==    by 0x10002D440: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==90497==    by 0x10002C523: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==90497==    by 0x10002C5B8: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==90497==  Address 0x1048a4d6c is on thread 1's stack
+==90497==  in frame #2, created by task_set_special_port (???:)
+==90497== 
+==90497== 
+==90497== HEAP SUMMARY:
+==90497==     in use at exit: 18,197 bytes in 163 blocks
+==90497==   total heap usage: 966 allocs, 803 frees, 43,548 bytes allocated
+==90497== 
+==90497== 2 bytes in 1 blocks are definitely lost in loss record 1 of 43
+==90497==    at 0x1000B2A46: malloc (in /Users/pclement/.brew/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==90497==    by 0x10000185E: ft_strsub (in ./lem-in)
+==90497==    by 0x100001CB4: result (in ./lem-in)
+==90497==    by 0x100001E7A: get_next_line (in ./lem-in)
+==90497==    by 0x100002B7B: ft_get_info (in ./lem-in)
+==90497==    by 0x100002CA0: main (in ./lem-in)
+==90497== 
+==90497== LEAK SUMMARY:
+==90497==    definitely lost: 2 bytes in 1 blocks
+==90497==    indirectly lost: 2,064 bytes in 1 blocks
+==90497==      possibly lost: 0 bytes in 0 blocks
+==90497==    still reachable: 200 bytes in 6 blocks
+==90497==         suppressed: 15,931 bytes in 155 blocks
+==90497== Reachable blocks (those to which a pointer was found) are not shown.
+==90497== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==90497== 
+==90497== For counts of detected and suppressed errors, rerun with: -v
+==90497== Use --track-origins=yes to see where uninitialised values come from
+==90497== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 13 from 13)
+
+
+
+test_lem_in/valid_map/valid_map02
+==90499== Memcheck, a memory error detector
+==90499== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==90499== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==90499== Command: ./lem-in
+==90499== 
+==90499== Syscall param msg->desc.port.name points to uninitialised byte(s)
+==90499==    at 0x1003C334A: mach_msg_trap (in /usr/lib/system/libsystem_kernel.dylib)
+==90499==    by 0x1003C2796: mach_msg (in /usr/lib/system/libsystem_kernel.dylib)
+==90499==    by 0x1003BC485: task_set_special_port (in /usr/lib/system/libsystem_kernel.dylib)
+==90499==    by 0x10055810E: _os_trace_create_debug_control_port (in /usr/lib/system/libsystem_trace.dylib)
+==90499==    by 0x100558458: _libtrace_init (in /usr/lib/system/libsystem_trace.dylib)
+==90499==    by 0x1000C19DF: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==90499==    by 0x100031A1A: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==90499==    by 0x100031C1D: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==90499==    by 0x10002D4A9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==90499==    by 0x10002D440: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==90499==    by 0x10002C523: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==90499==    by 0x10002C5B8: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==90499==  Address 0x1048a4d6c is on thread 1's stack
+==90499==  in frame #2, created by task_set_special_port (???:)
+==90499== 
+==90499== 
+==90499== HEAP SUMMARY:
+==90499==     in use at exit: 18,197 bytes in 163 blocks
+==90499==   total heap usage: 982 allocs, 819 frees, 42,388 bytes allocated
+==90499== 
+==90499== 2 bytes in 1 blocks are definitely lost in loss record 1 of 43
+==90499==    at 0x1000B2A46: malloc (in /Users/pclement/.brew/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==90499==    by 0x10000185E: ft_strsub (in ./lem-in)
+==90499==    by 0x100001CB4: result (in ./lem-in)
+==90499==    by 0x100001E7A: get_next_line (in ./lem-in)
+==90499==    by 0x100002B7B: ft_get_info (in ./lem-in)
+==90499==    by 0x100002CA0: main (in ./lem-in)
+==90499== 
+==90499== LEAK SUMMARY:
+==90499==    definitely lost: 2 bytes in 1 blocks
+==90499==    indirectly lost: 2,064 bytes in 1 blocks
+==90499==      possibly lost: 0 bytes in 0 blocks
+==90499==    still reachable: 200 bytes in 6 blocks
+==90499==         suppressed: 15,931 bytes in 155 blocks
+==90499== Reachable blocks (those to which a pointer was found) are not shown.
+==90499== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==90499== 
+==90499== For counts of detected and suppressed errors, rerun with: -v
+==90499== Use --track-origins=yes to see where uninitialised values come from
+==90499== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 13 from 13)
+
+
+
+test_lem_in/valid_map/valid_map03
+==90503== Memcheck, a memory error detector
+==90503== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==90503== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==90503== Command: ./lem-in
+==90503== 
+==90503== Syscall param msg->desc.port.name points to uninitialised byte(s)
+==90503==    at 0x1003C334A: mach_msg_trap (in /usr/lib/system/libsystem_kernel.dylib)
+==90503==    by 0x1003C2796: mach_msg (in /usr/lib/system/libsystem_kernel.dylib)
+==90503==    by 0x1003BC485: task_set_special_port (in /usr/lib/system/libsystem_kernel.dylib)
+==90503==    by 0x10055810E: _os_trace_create_debug_control_port (in /usr/lib/system/libsystem_trace.dylib)
+==90503==    by 0x100558458: _libtrace_init (in /usr/lib/system/libsystem_trace.dylib)
+==90503==    by 0x1000C19DF: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==90503==    by 0x100031A1A: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==90503==    by 0x100031C1D: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==90503==    by 0x10002D4A9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==90503==    by 0x10002D440: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==90503==    by 0x10002C523: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==90503==    by 0x10002C5B8: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==90503==  Address 0x1048a4d6c is on thread 1's stack
+==90503==  in frame #2, created by task_set_special_port (???:)
+==90503== 
+==90503== 
+==90503== HEAP SUMMARY:
+==90503==     in use at exit: 18,197 bytes in 163 blocks
+==90503==   total heap usage: 364 allocs, 201 frees, 26,349 bytes allocated
+==90503== 
+==90503== 2 bytes in 1 blocks are definitely lost in loss record 1 of 43
+==90503==    at 0x1000B2A46: malloc (in /Users/pclement/.brew/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==90503==    by 0x10000185E: ft_strsub (in ./lem-in)
+==90503==    by 0x100001CB4: result (in ./lem-in)
+==90503==    by 0x100001E7A: get_next_line (in ./lem-in)
+==90503==    by 0x100002B7B: ft_get_info (in ./lem-in)
+==90503==    by 0x100002CA0: main (in ./lem-in)
+==90503== 
+==90503== LEAK SUMMARY:
+==90503==    definitely lost: 2 bytes in 1 blocks
+==90503==    indirectly lost: 2,064 bytes in 1 blocks
+==90503==      possibly lost: 0 bytes in 0 blocks
+==90503==    still reachable: 200 bytes in 6 blocks
+==90503==         suppressed: 15,931 bytes in 155 blocks
+==90503== Reachable blocks (those to which a pointer was found) are not shown.
+==90503== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==90503== 
+==90503== For counts of detected and suppressed errors, rerun with: -v
+==90503== Use --track-origins=yes to see where uninitialised values come from
+==90503== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 13 from 13)
+
+
+
+test_lem_in/valid_map/valid_map04
+==90504== Memcheck, a memory error detector
+==90504== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==90504== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==90504== Command: ./lem-in
+==90504== 
+==90504== Syscall param msg->desc.port.name points to uninitialised byte(s)
+==90504==    at 0x1003C334A: mach_msg_trap (in /usr/lib/system/libsystem_kernel.dylib)
+==90504==    by 0x1003C2796: mach_msg (in /usr/lib/system/libsystem_kernel.dylib)
+==90504==    by 0x1003BC485: task_set_special_port (in /usr/lib/system/libsystem_kernel.dylib)
+==90504==    by 0x10055810E: _os_trace_create_debug_control_port (in /usr/lib/system/libsystem_trace.dylib)
+==90504==    by 0x100558458: _libtrace_init (in /usr/lib/system/libsystem_trace.dylib)
+==90504==    by 0x1000C19DF: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==90504==    by 0x100031A1A: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==90504==    by 0x100031C1D: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==90504==    by 0x10002D4A9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==90504==    by 0x10002D440: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==90504==    by 0x10002C523: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==90504==    by 0x10002C5B8: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==90504==  Address 0x1048a4d6c is on thread 1's stack
+==90504==  in frame #2, created by task_set_special_port (???:)
+==90504== 
+==90504== 
+==90504== HEAP SUMMARY:
+==90504==     in use at exit: 18,197 bytes in 163 blocks
+==90504==   total heap usage: 364 allocs, 201 frees, 26,317 bytes allocated
+==90504== 
+==90504== 2 bytes in 1 blocks are definitely lost in loss record 1 of 43
+==90504==    at 0x1000B2A46: malloc (in /Users/pclement/.brew/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==90504==    by 0x10000185E: ft_strsub (in ./lem-in)
+==90504==    by 0x100001CB4: result (in ./lem-in)
+==90504==    by 0x100001E7A: get_next_line (in ./lem-in)
+==90504==    by 0x100002B7B: ft_get_info (in ./lem-in)
+==90504==    by 0x100002CA0: main (in ./lem-in)
+==90504== 
+==90504== LEAK SUMMARY:
+==90504==    definitely lost: 2 bytes in 1 blocks
+==90504==    indirectly lost: 2,064 bytes in 1 blocks
+==90504==      possibly lost: 0 bytes in 0 blocks
+==90504==    still reachable: 200 bytes in 6 blocks
+==90504==         suppressed: 15,931 bytes in 155 blocks
+==90504== Reachable blocks (those to which a pointer was found) are not shown.
+==90504== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==90504== 
+==90504== For counts of detected and suppressed errors, rerun with: -v
+==90504== Use --track-origins=yes to see where uninitialised values come from
+==90504== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 13 from 13)
+
+
+
+test_lem_in/valid_map/valid_map05
+==90505== Memcheck, a memory error detector
+==90505== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==90505== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==90505== Command: ./lem-in
+==90505== 
+==90505== Syscall param msg->desc.port.name points to uninitialised byte(s)
+==90505==    at 0x1003C334A: mach_msg_trap (in /usr/lib/system/libsystem_kernel.dylib)
+==90505==    by 0x1003C2796: mach_msg (in /usr/lib/system/libsystem_kernel.dylib)
+==90505==    by 0x1003BC485: task_set_special_port (in /usr/lib/system/libsystem_kernel.dylib)
+==90505==    by 0x10055810E: _os_trace_create_debug_control_port (in /usr/lib/system/libsystem_trace.dylib)
+==90505==    by 0x100558458: _libtrace_init (in /usr/lib/system/libsystem_trace.dylib)
+==90505==    by 0x1000C19DF: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==90505==    by 0x100031A1A: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==90505==    by 0x100031C1D: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==90505==    by 0x10002D4A9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==90505==    by 0x10002D440: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==90505==    by 0x10002C523: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==90505==    by 0x10002C5B8: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==90505==  Address 0x1048a4d6c is on thread 1's stack
+==90505==  in frame #2, created by task_set_special_port (???:)
+==90505== 
+==90505== 
+==90505== HEAP SUMMARY:
+==90505==     in use at exit: 18,197 bytes in 163 blocks
+==90505==   total heap usage: 982 allocs, 819 frees, 42,292 bytes allocated
+==90505== 
+==90505== 2 bytes in 1 blocks are definitely lost in loss record 1 of 43
+==90505==    at 0x1000B2A46: malloc (in /Users/pclement/.brew/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==90505==    by 0x10000185E: ft_strsub (in ./lem-in)
+==90505==    by 0x100001CB4: result (in ./lem-in)
+==90505==    by 0x100001E7A: get_next_line (in ./lem-in)
+==90505==    by 0x100002B7B: ft_get_info (in ./lem-in)
+==90505==    by 0x100002CA0: main (in ./lem-in)
+==90505== 
+==90505== LEAK SUMMARY:
+==90505==    definitely lost: 2 bytes in 1 blocks
+==90505==    indirectly lost: 2,064 bytes in 1 blocks
+==90505==      possibly lost: 0 bytes in 0 blocks
+==90505==    still reachable: 200 bytes in 6 blocks
+==90505==         suppressed: 15,931 bytes in 155 blocks
+==90505== Reachable blocks (those to which a pointer was found) are not shown.
+==90505== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==90505== 
+==90505== For counts of detected and suppressed errors, rerun with: -v
+==90505== Use --track-origins=yes to see where uninitialised values come from
+==90505== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 13 from 13)
+
+
+
+test_lem_in/valid_map/valid_map06
+==90509== Memcheck, a memory error detector
+==90509== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==90509== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==90509== Command: ./lem-in
+==90509== 
+==90509== Syscall param msg->desc.port.name points to uninitialised byte(s)
+==90509==    at 0x1003C334A: mach_msg_trap (in /usr/lib/system/libsystem_kernel.dylib)
+==90509==    by 0x1003C2796: mach_msg (in /usr/lib/system/libsystem_kernel.dylib)
+==90509==    by 0x1003BC485: task_set_special_port (in /usr/lib/system/libsystem_kernel.dylib)
+==90509==    by 0x10055810E: _os_trace_create_debug_control_port (in /usr/lib/system/libsystem_trace.dylib)
+==90509==    by 0x100558458: _libtrace_init (in /usr/lib/system/libsystem_trace.dylib)
+==90509==    by 0x1000C19DF: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==90509==    by 0x100031A1A: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==90509==    by 0x100031C1D: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==90509==    by 0x10002D4A9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==90509==    by 0x10002D440: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==90509==    by 0x10002C523: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==90509==    by 0x10002C5B8: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==90509==  Address 0x1048a4d6c is on thread 1's stack
+==90509==  in frame #2, created by task_set_special_port (???:)
+==90509== 
+==90509== 
+==90509== HEAP SUMMARY:
+==90509==     in use at exit: 18,197 bytes in 163 blocks
+==90509==   total heap usage: 447 allocs, 284 frees, 27,650 bytes allocated
+==90509== 
+==90509== 2 bytes in 1 blocks are definitely lost in loss record 1 of 43
+==90509==    at 0x1000B2A46: malloc (in /Users/pclement/.brew/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==90509==    by 0x10000185E: ft_strsub (in ./lem-in)
+==90509==    by 0x100001CB4: result (in ./lem-in)
+==90509==    by 0x100001E7A: get_next_line (in ./lem-in)
+==90509==    by 0x100002B7B: ft_get_info (in ./lem-in)
+==90509==    by 0x100002CA0: main (in ./lem-in)
+==90509== 
+==90509== LEAK SUMMARY:
+==90509==    definitely lost: 2 bytes in 1 blocks
+==90509==    indirectly lost: 2,064 bytes in 1 blocks
+==90509==      possibly lost: 0 bytes in 0 blocks
+==90509==    still reachable: 200 bytes in 6 blocks
+==90509==         suppressed: 15,931 bytes in 155 blocks
+==90509== Reachable blocks (those to which a pointer was found) are not shown.
+==90509== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==90509== 
+==90509== For counts of detected and suppressed errors, rerun with: -v
+==90509== Use --track-origins=yes to see where uninitialised values come from
+==90509== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 13 from 13)
+
+
+
+test_lem_in/valid_map/valid_map07
+==90511== Memcheck, a memory error detector
+==90511== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==90511== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==90511== Command: ./lem-in
+==90511== 
+==90511== Syscall param msg->desc.port.name points to uninitialised byte(s)
+==90511==    at 0x1003C334A: mach_msg_trap (in /usr/lib/system/libsystem_kernel.dylib)
+==90511==    by 0x1003C2796: mach_msg (in /usr/lib/system/libsystem_kernel.dylib)
+==90511==    by 0x1003BC485: task_set_special_port (in /usr/lib/system/libsystem_kernel.dylib)
+==90511==    by 0x10055810E: _os_trace_create_debug_control_port (in /usr/lib/system/libsystem_trace.dylib)
+==90511==    by 0x100558458: _libtrace_init (in /usr/lib/system/libsystem_trace.dylib)
+==90511==    by 0x1000C19DF: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==90511==    by 0x100031A1A: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==90511==    by 0x100031C1D: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==90511==    by 0x10002D4A9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==90511==    by 0x10002D440: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==90511==    by 0x10002C523: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==90511==    by 0x10002C5B8: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==90511==  Address 0x1048a4d6c is on thread 1's stack
+==90511==  in frame #2, created by task_set_special_port (???:)
+==90511== 
+==90511== 
+==90511== HEAP SUMMARY:
+==90511==     in use at exit: 18,197 bytes in 163 blocks
+==90511==   total heap usage: 391 allocs, 228 frees, 26,634 bytes allocated
+==90511== 
+==90511== 2 bytes in 1 blocks are definitely lost in loss record 1 of 43
+==90511==    at 0x1000B2A46: malloc (in /Users/pclement/.brew/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==90511==    by 0x10000185E: ft_strsub (in ./lem-in)
+==90511==    by 0x100001CB4: result (in ./lem-in)
+==90511==    by 0x100001E7A: get_next_line (in ./lem-in)
+==90511==    by 0x100002B7B: ft_get_info (in ./lem-in)
+==90511==    by 0x100002CA0: main (in ./lem-in)
+==90511== 
+==90511== LEAK SUMMARY:
+==90511==    definitely lost: 2 bytes in 1 blocks
+==90511==    indirectly lost: 2,064 bytes in 1 blocks
+==90511==      possibly lost: 0 bytes in 0 blocks
+==90511==    still reachable: 200 bytes in 6 blocks
+==90511==         suppressed: 15,931 bytes in 155 blocks
+==90511== Reachable blocks (those to which a pointer was found) are not shown.
+==90511== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==90511== 
+==90511== For counts of detected and suppressed errors, rerun with: -v
+==90511== Use --track-origins=yes to see where uninitialised values come from
+==90511== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 13 from 13)
+
+
+
+test_lem_in/valid_map/valid_map08
+==90512== Memcheck, a memory error detector
+==90512== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==90512== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==90512== Command: ./lem-in
+==90512== 
+==90512== Syscall param msg->desc.port.name points to uninitialised byte(s)
+==90512==    at 0x1003C334A: mach_msg_trap (in /usr/lib/system/libsystem_kernel.dylib)
+==90512==    by 0x1003C2796: mach_msg (in /usr/lib/system/libsystem_kernel.dylib)
+==90512==    by 0x1003BC485: task_set_special_port (in /usr/lib/system/libsystem_kernel.dylib)
+==90512==    by 0x10055810E: _os_trace_create_debug_control_port (in /usr/lib/system/libsystem_trace.dylib)
+==90512==    by 0x100558458: _libtrace_init (in /usr/lib/system/libsystem_trace.dylib)
+==90512==    by 0x1000C19DF: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==90512==    by 0x100031A1A: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==90512==    by 0x100031C1D: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==90512==    by 0x10002D4A9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==90512==    by 0x10002D440: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==90512==    by 0x10002C523: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==90512==    by 0x10002C5B8: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==90512==  Address 0x1048a4d6c is on thread 1's stack
+==90512==  in frame #2, created by task_set_special_port (???:)
+==90512== 
+ERROR
+==90512== 
+==90512== HEAP SUMMARY:
+==90512==     in use at exit: 18,196 bytes in 163 blocks
+==90512==   total heap usage: 181 allocs, 18 frees, 24,540 bytes allocated
+==90512== 
+==90512== 1 bytes in 1 blocks are definitely lost in loss record 1 of 43
+==90512==    at 0x1000B2A46: malloc (in /Users/pclement/.brew/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==90512==    by 0x100001798: ft_memalloc (in ./lem-in)
+==90512==    by 0x100001818: ft_strnew (in ./lem-in)
+==90512==    by 0x100001D3B: get_next_line (in ./lem-in)
+==90512==    by 0x100002B7B: ft_get_info (in ./lem-in)
+==90512==    by 0x100002CA0: main (in ./lem-in)
+==90512== 
+==90512== LEAK SUMMARY:
+==90512==    definitely lost: 1 bytes in 1 blocks
+==90512==    indirectly lost: 2,064 bytes in 1 blocks
+==90512==      possibly lost: 0 bytes in 0 blocks
+==90512==    still reachable: 200 bytes in 6 blocks
+==90512==         suppressed: 15,931 bytes in 155 blocks
+==90512== Reachable blocks (those to which a pointer was found) are not shown.
+==90512== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==90512== 
+==90512== For counts of detected and suppressed errors, rerun with: -v
+==90512== Use --track-origins=yes to see where uninitialised values come from
+==90512== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 13 from 13)
+
+
+
+test_lem_in/valid_map/valid_map09
+==90516== Memcheck, a memory error detector
+==90516== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==90516== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==90516== Command: ./lem-in
+==90516== 
+==90516== Syscall param msg->desc.port.name points to uninitialised byte(s)
+==90516==    at 0x1003C334A: mach_msg_trap (in /usr/lib/system/libsystem_kernel.dylib)
+==90516==    by 0x1003C2796: mach_msg (in /usr/lib/system/libsystem_kernel.dylib)
+==90516==    by 0x1003BC485: task_set_special_port (in /usr/lib/system/libsystem_kernel.dylib)
+==90516==    by 0x10055810E: _os_trace_create_debug_control_port (in /usr/lib/system/libsystem_trace.dylib)
+==90516==    by 0x100558458: _libtrace_init (in /usr/lib/system/libsystem_trace.dylib)
+==90516==    by 0x1000C19DF: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==90516==    by 0x100031A1A: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==90516==    by 0x100031C1D: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==90516==    by 0x10002D4A9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==90516==    by 0x10002D440: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==90516==    by 0x10002C523: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==90516==    by 0x10002C5B8: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==90516==  Address 0x1048a4d6c is on thread 1's stack
+==90516==  in frame #2, created by task_set_special_port (???:)
+==90516== 
+==90516== 
+==90516== HEAP SUMMARY:
+==90516==     in use at exit: 18,197 bytes in 163 blocks
+==90516==   total heap usage: 804 allocs, 641 frees, 37,258 bytes allocated
+==90516== 
+==90516== 2 bytes in 1 blocks are definitely lost in loss record 1 of 43
+==90516==    at 0x1000B2A46: malloc (in /Users/pclement/.brew/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==90516==    by 0x10000185E: ft_strsub (in ./lem-in)
+==90516==    by 0x100001CB4: result (in ./lem-in)
+==90516==    by 0x100001E7A: get_next_line (in ./lem-in)
+==90516==    by 0x100002B7B: ft_get_info (in ./lem-in)
+==90516==    by 0x100002CA0: main (in ./lem-in)
+==90516== 
+==90516== LEAK SUMMARY:
+==90516==    definitely lost: 2 bytes in 1 blocks
+==90516==    indirectly lost: 2,064 bytes in 1 blocks
+==90516==      possibly lost: 0 bytes in 0 blocks
+==90516==    still reachable: 200 bytes in 6 blocks
+==90516==         suppressed: 15,931 bytes in 155 blocks
+==90516== Reachable blocks (those to which a pointer was found) are not shown.
+==90516== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==90516== 
+==90516== For counts of detected and suppressed errors, rerun with: -v
+==90516== Use --track-origins=yes to see where uninitialised values come from
+==90516== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 13 from 13)
+
+
+
+test_lem_in/valid_map/valid_map10
+==90517== Memcheck, a memory error detector
+==90517== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==90517== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==90517== Command: ./lem-in
+==90517== 
+==90517== Syscall param msg->desc.port.name points to uninitialised byte(s)
+==90517==    at 0x1003C334A: mach_msg_trap (in /usr/lib/system/libsystem_kernel.dylib)
+==90517==    by 0x1003C2796: mach_msg (in /usr/lib/system/libsystem_kernel.dylib)
+==90517==    by 0x1003BC485: task_set_special_port (in /usr/lib/system/libsystem_kernel.dylib)
+==90517==    by 0x10055810E: _os_trace_create_debug_control_port (in /usr/lib/system/libsystem_trace.dylib)
+==90517==    by 0x100558458: _libtrace_init (in /usr/lib/system/libsystem_trace.dylib)
+==90517==    by 0x1000C19DF: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==90517==    by 0x100031A1A: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==90517==    by 0x100031C1D: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==90517==    by 0x10002D4A9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==90517==    by 0x10002D440: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==90517==    by 0x10002C523: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==90517==    by 0x10002C5B8: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==90517==  Address 0x1048a4d6c is on thread 1's stack
+==90517==  in frame #2, created by task_set_special_port (???:)
+==90517== 
+==90517== 
+==90517== HEAP SUMMARY:
+==90517==     in use at exit: 18,197 bytes in 163 blocks
+==90517==   total heap usage: 431 allocs, 268 frees, 27,361 bytes allocated
+==90517== 
+==90517== 2 bytes in 1 blocks are definitely lost in loss record 1 of 43
+==90517==    at 0x1000B2A46: malloc (in /Users/pclement/.brew/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==90517==    by 0x10000185E: ft_strsub (in ./lem-in)
+==90517==    by 0x100001CB4: result (in ./lem-in)
+==90517==    by 0x100001E7A: get_next_line (in ./lem-in)
+==90517==    by 0x100002B7B: ft_get_info (in ./lem-in)
+==90517==    by 0x100002CA0: main (in ./lem-in)
+==90517== 
+==90517== LEAK SUMMARY:
+==90517==    definitely lost: 2 bytes in 1 blocks
+==90517==    indirectly lost: 2,064 bytes in 1 blocks
+==90517==      possibly lost: 0 bytes in 0 blocks
+==90517==    still reachable: 200 bytes in 6 blocks
+==90517==         suppressed: 15,931 bytes in 155 blocks
+==90517== Reachable blocks (those to which a pointer was found) are not shown.
+==90517== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==90517== 
+==90517== For counts of detected and suppressed errors, rerun with: -v
+==90517== Use --track-origins=yes to see where uninitialised values come from
+==90517== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 13 from 13)
+
+
+
+test_lem_in/valid_map/valid_map11
+==90519== Memcheck, a memory error detector
+==90519== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==90519== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==90519== Command: ./lem-in
+==90519== 
+==90519== Syscall param msg->desc.port.name points to uninitialised byte(s)
+==90519==    at 0x1003C334A: mach_msg_trap (in /usr/lib/system/libsystem_kernel.dylib)
+==90519==    by 0x1003C2796: mach_msg (in /usr/lib/system/libsystem_kernel.dylib)
+==90519==    by 0x1003BC485: task_set_special_port (in /usr/lib/system/libsystem_kernel.dylib)
+==90519==    by 0x10055810E: _os_trace_create_debug_control_port (in /usr/lib/system/libsystem_trace.dylib)
+==90519==    by 0x100558458: _libtrace_init (in /usr/lib/system/libsystem_trace.dylib)
+==90519==    by 0x1000C19DF: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==90519==    by 0x100031A1A: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==90519==    by 0x100031C1D: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==90519==    by 0x10002D4A9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==90519==    by 0x10002D440: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==90519==    by 0x10002C523: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==90519==    by 0x10002C5B8: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==90519==  Address 0x1048a4d6c is on thread 1's stack
+==90519==  in frame #2, created by task_set_special_port (???:)
+==90519== 
+==90519== 
+==90519== HEAP SUMMARY:
+==90519==     in use at exit: 18,197 bytes in 163 blocks
+==90519==   total heap usage: 914 allocs, 751 frees, 39,209 bytes allocated
+==90519== 
+==90519== 2 bytes in 1 blocks are definitely lost in loss record 1 of 43
+==90519==    at 0x1000B2A46: malloc (in /Users/pclement/.brew/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==90519==    by 0x10000185E: ft_strsub (in ./lem-in)
+==90519==    by 0x100001CB4: result (in ./lem-in)
+==90519==    by 0x100001E7A: get_next_line (in ./lem-in)
+==90519==    by 0x100002B7B: ft_get_info (in ./lem-in)
+==90519==    by 0x100002CA0: main (in ./lem-in)
+==90519== 
+==90519== LEAK SUMMARY:
+==90519==    definitely lost: 2 bytes in 1 blocks
+==90519==    indirectly lost: 2,064 bytes in 1 blocks
+==90519==      possibly lost: 0 bytes in 0 blocks
+==90519==    still reachable: 200 bytes in 6 blocks
+==90519==         suppressed: 15,931 bytes in 155 blocks
+==90519== Reachable blocks (those to which a pointer was found) are not shown.
+==90519== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==90519== 
+==90519== For counts of detected and suppressed errors, rerun with: -v
+==90519== Use --track-origins=yes to see where uninitialised values come from
+==90519== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 13 from 13)
+
+
+
+test_lem_in/valid_map/valid_map12
+==90523== Memcheck, a memory error detector
+==90523== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==90523== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==90523== Command: ./lem-in
+==90523== 
+==90523== Syscall param msg->desc.port.name points to uninitialised byte(s)
+==90523==    at 0x1003C334A: mach_msg_trap (in /usr/lib/system/libsystem_kernel.dylib)
+==90523==    by 0x1003C2796: mach_msg (in /usr/lib/system/libsystem_kernel.dylib)
+==90523==    by 0x1003BC485: task_set_special_port (in /usr/lib/system/libsystem_kernel.dylib)
+==90523==    by 0x10055810E: _os_trace_create_debug_control_port (in /usr/lib/system/libsystem_trace.dylib)
+==90523==    by 0x100558458: _libtrace_init (in /usr/lib/system/libsystem_trace.dylib)
+==90523==    by 0x1000C19DF: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==90523==    by 0x100031A1A: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==90523==    by 0x100031C1D: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==90523==    by 0x10002D4A9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==90523==    by 0x10002D440: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==90523==    by 0x10002C523: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==90523==    by 0x10002C5B8: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==90523==  Address 0x1048a4d6c is on thread 1's stack
+==90523==  in frame #2, created by task_set_special_port (???:)
+==90523== 
+==90523== 
+==90523== HEAP SUMMARY:
+==90523==     in use at exit: 18,197 bytes in 163 blocks
+==90523==   total heap usage: 722 allocs, 559 frees, 34,799 bytes allocated
+==90523== 
+==90523== 2 bytes in 1 blocks are definitely lost in loss record 1 of 43
+==90523==    at 0x1000B2A46: malloc (in /Users/pclement/.brew/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==90523==    by 0x10000185E: ft_strsub (in ./lem-in)
+==90523==    by 0x100001CB4: result (in ./lem-in)
+==90523==    by 0x100001E7A: get_next_line (in ./lem-in)
+==90523==    by 0x100002B7B: ft_get_info (in ./lem-in)
+==90523==    by 0x100002CA0: main (in ./lem-in)
+==90523== 
+==90523== LEAK SUMMARY:
+==90523==    definitely lost: 2 bytes in 1 blocks
+==90523==    indirectly lost: 2,064 bytes in 1 blocks
+==90523==      possibly lost: 0 bytes in 0 blocks
+==90523==    still reachable: 200 bytes in 6 blocks
+==90523==         suppressed: 15,931 bytes in 155 blocks
+==90523== Reachable blocks (those to which a pointer was found) are not shown.
+==90523== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==90523== 
+==90523== For counts of detected and suppressed errors, rerun with: -v
+==90523== Use --track-origins=yes to see where uninitialised values come from
+==90523== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 13 from 13)
+
+
+
+test_lem_in/valid_map/valid_map13
+==90524== Memcheck, a memory error detector
+==90524== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==90524== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==90524== Command: ./lem-in
+==90524== 
+==90524== Syscall param msg->desc.port.name points to uninitialised byte(s)
+==90524==    at 0x1003C334A: mach_msg_trap (in /usr/lib/system/libsystem_kernel.dylib)
+==90524==    by 0x1003C2796: mach_msg (in /usr/lib/system/libsystem_kernel.dylib)
+==90524==    by 0x1003BC485: task_set_special_port (in /usr/lib/system/libsystem_kernel.dylib)
+==90524==    by 0x10055810E: _os_trace_create_debug_control_port (in /usr/lib/system/libsystem_trace.dylib)
+==90524==    by 0x100558458: _libtrace_init (in /usr/lib/system/libsystem_trace.dylib)
+==90524==    by 0x1000C19DF: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==90524==    by 0x100031A1A: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==90524==    by 0x100031C1D: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==90524==    by 0x10002D4A9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==90524==    by 0x10002D440: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==90524==    by 0x10002C523: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==90524==    by 0x10002C5B8: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==90524==  Address 0x1048a4d6c is on thread 1's stack
+==90524==  in frame #2, created by task_set_special_port (???:)
+==90524== 
+==90524== 
+==90524== HEAP SUMMARY:
+==90524==     in use at exit: 18,197 bytes in 163 blocks
+==90524==   total heap usage: 426 allocs, 263 frees, 27,217 bytes allocated
+==90524== 
+==90524== 2 bytes in 1 blocks are definitely lost in loss record 1 of 43
+==90524==    at 0x1000B2A46: malloc (in /Users/pclement/.brew/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==90524==    by 0x10000185E: ft_strsub (in ./lem-in)
+==90524==    by 0x100001CB4: result (in ./lem-in)
+==90524==    by 0x100001E7A: get_next_line (in ./lem-in)
+==90524==    by 0x100002B7B: ft_get_info (in ./lem-in)
+==90524==    by 0x100002CA0: main (in ./lem-in)
+==90524== 
+==90524== LEAK SUMMARY:
+==90524==    definitely lost: 2 bytes in 1 blocks
+==90524==    indirectly lost: 2,064 bytes in 1 blocks
+==90524==      possibly lost: 0 bytes in 0 blocks
+==90524==    still reachable: 200 bytes in 6 blocks
+==90524==         suppressed: 15,931 bytes in 155 blocks
+==90524== Reachable blocks (those to which a pointer was found) are not shown.
+==90524== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==90524== 
+==90524== For counts of detected and suppressed errors, rerun with: -v
+==90524== Use --track-origins=yes to see where uninitialised values come from
+==90524== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 13 from 13)
+
+
+
+test_lem_in/valid_map/valid_map14
+==90525== Memcheck, a memory error detector
+==90525== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==90525== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==90525== Command: ./lem-in
+==90525== 
+==90525== Syscall param msg->desc.port.name points to uninitialised byte(s)
+==90525==    at 0x1003C334A: mach_msg_trap (in /usr/lib/system/libsystem_kernel.dylib)
+==90525==    by 0x1003C2796: mach_msg (in /usr/lib/system/libsystem_kernel.dylib)
+==90525==    by 0x1003BC485: task_set_special_port (in /usr/lib/system/libsystem_kernel.dylib)
+==90525==    by 0x10055810E: _os_trace_create_debug_control_port (in /usr/lib/system/libsystem_trace.dylib)
+==90525==    by 0x100558458: _libtrace_init (in /usr/lib/system/libsystem_trace.dylib)
+==90525==    by 0x1000C19DF: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==90525==    by 0x100031A1A: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==90525==    by 0x100031C1D: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==90525==    by 0x10002D4A9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==90525==    by 0x10002D440: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==90525==    by 0x10002C523: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==90525==    by 0x10002C5B8: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==90525==  Address 0x1048a4d6c is on thread 1's stack
+==90525==  in frame #2, created by task_set_special_port (???:)
+==90525== 
+==90525== 
+==90525== HEAP SUMMARY:
+==90525==     in use at exit: 18,197 bytes in 163 blocks
+==90525==   total heap usage: 677 allocs, 514 frees, 32,442 bytes allocated
+==90525== 
+==90525== 2 bytes in 1 blocks are definitely lost in loss record 1 of 43
+==90525==    at 0x1000B2A46: malloc (in /Users/pclement/.brew/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==90525==    by 0x10000185E: ft_strsub (in ./lem-in)
+==90525==    by 0x100001CB4: result (in ./lem-in)
+==90525==    by 0x100001E7A: get_next_line (in ./lem-in)
+==90525==    by 0x100002B7B: ft_get_info (in ./lem-in)
+==90525==    by 0x100002CA0: main (in ./lem-in)
+==90525== 
+==90525== LEAK SUMMARY:
+==90525==    definitely lost: 2 bytes in 1 blocks
+==90525==    indirectly lost: 2,064 bytes in 1 blocks
+==90525==      possibly lost: 0 bytes in 0 blocks
+==90525==    still reachable: 200 bytes in 6 blocks
+==90525==         suppressed: 15,931 bytes in 155 blocks
+==90525== Reachable blocks (those to which a pointer was found) are not shown.
+==90525== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==90525== 
+==90525== For counts of detected and suppressed errors, rerun with: -v
+==90525== Use --track-origins=yes to see where uninitialised values come from
+==90525== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 13 from 13)
+
+
+
+test_lem_in/valid_map/valid_map15
+==90526== Memcheck, a memory error detector
+==90526== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==90526== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==90526== Command: ./lem-in
+==90526== 
+==90526== Syscall param msg->desc.port.name points to uninitialised byte(s)
+==90526==    at 0x1003C334A: mach_msg_trap (in /usr/lib/system/libsystem_kernel.dylib)
+==90526==    by 0x1003C2796: mach_msg (in /usr/lib/system/libsystem_kernel.dylib)
+==90526==    by 0x1003BC485: task_set_special_port (in /usr/lib/system/libsystem_kernel.dylib)
+==90526==    by 0x10055810E: _os_trace_create_debug_control_port (in /usr/lib/system/libsystem_trace.dylib)
+==90526==    by 0x100558458: _libtrace_init (in /usr/lib/system/libsystem_trace.dylib)
+==90526==    by 0x1000C19DF: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==90526==    by 0x100031A1A: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==90526==    by 0x100031C1D: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==90526==    by 0x10002D4A9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==90526==    by 0x10002D440: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==90526==    by 0x10002C523: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==90526==    by 0x10002C5B8: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==90526==  Address 0x1048a4d6c is on thread 1's stack
+==90526==  in frame #2, created by task_set_special_port (???:)
+==90526== 
+==90526== 
+==90526== HEAP SUMMARY:
+==90526==     in use at exit: 18,197 bytes in 163 blocks
+==90526==   total heap usage: 810 allocs, 647 frees, 37,982 bytes allocated
+==90526== 
+==90526== 2 bytes in 1 blocks are definitely lost in loss record 1 of 43
+==90526==    at 0x1000B2A46: malloc (in /Users/pclement/.brew/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==90526==    by 0x10000185E: ft_strsub (in ./lem-in)
+==90526==    by 0x100001CB4: result (in ./lem-in)
+==90526==    by 0x100001E7A: get_next_line (in ./lem-in)
+==90526==    by 0x100002B7B: ft_get_info (in ./lem-in)
+==90526==    by 0x100002CA0: main (in ./lem-in)
+==90526== 
+==90526== LEAK SUMMARY:
+==90526==    definitely lost: 2 bytes in 1 blocks
+==90526==    indirectly lost: 2,064 bytes in 1 blocks
+==90526==      possibly lost: 0 bytes in 0 blocks
+==90526==    still reachable: 200 bytes in 6 blocks
+==90526==         suppressed: 15,931 bytes in 155 blocks
+==90526== Reachable blocks (those to which a pointer was found) are not shown.
+==90526== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==90526== 
+==90526== For counts of detected and suppressed errors, rerun with: -v
+==90526== Use --track-origins=yes to see where uninitialised values come from
+==90526== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 13 from 13)
+
+
+
+test_lem_in/valid_map/valid_map_dead_way00
+==90531== Memcheck, a memory error detector
+==90531== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==90531== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==90531== Command: ./lem-in
+==90531== 
+==90531== Syscall param msg->desc.port.name points to uninitialised byte(s)
+==90531==    at 0x1003C334A: mach_msg_trap (in /usr/lib/system/libsystem_kernel.dylib)
+==90531==    by 0x1003C2796: mach_msg (in /usr/lib/system/libsystem_kernel.dylib)
+==90531==    by 0x1003BC485: task_set_special_port (in /usr/lib/system/libsystem_kernel.dylib)
+==90531==    by 0x10055810E: _os_trace_create_debug_control_port (in /usr/lib/system/libsystem_trace.dylib)
+==90531==    by 0x100558458: _libtrace_init (in /usr/lib/system/libsystem_trace.dylib)
+==90531==    by 0x1000C19DF: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==90531==    by 0x100031A1A: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==90531==    by 0x100031C1D: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==90531==    by 0x10002D4A9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==90531==    by 0x10002D440: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==90531==    by 0x10002C523: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==90531==    by 0x10002C5B8: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==90531==  Address 0x1048a4d6c is on thread 1's stack
+==90531==  in frame #2, created by task_set_special_port (???:)
+==90531== 
+==90531== 
+==90531== HEAP SUMMARY:
+==90531==     in use at exit: 18,197 bytes in 163 blocks
+==90531==   total heap usage: 496 allocs, 333 frees, 28,453 bytes allocated
+==90531== 
+==90531== 2 bytes in 1 blocks are definitely lost in loss record 1 of 43
+==90531==    at 0x1000B2A46: malloc (in /Users/pclement/.brew/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==90531==    by 0x10000185E: ft_strsub (in ./lem-in)
+==90531==    by 0x100001CB4: result (in ./lem-in)
+==90531==    by 0x100001E7A: get_next_line (in ./lem-in)
+==90531==    by 0x100002B7B: ft_get_info (in ./lem-in)
+==90531==    by 0x100002CA0: main (in ./lem-in)
+==90531== 
+==90531== LEAK SUMMARY:
+==90531==    definitely lost: 2 bytes in 1 blocks
+==90531==    indirectly lost: 2,064 bytes in 1 blocks
+==90531==      possibly lost: 0 bytes in 0 blocks
+==90531==    still reachable: 200 bytes in 6 blocks
+==90531==         suppressed: 15,931 bytes in 155 blocks
+==90531== Reachable blocks (those to which a pointer was found) are not shown.
+==90531== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==90531== 
+==90531== For counts of detected and suppressed errors, rerun with: -v
+==90531== Use --track-origins=yes to see where uninitialised values come from
+==90531== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 13 from 13)
+
+
+
+test_lem_in/valid_map/valid_map_long_way00
+==90532== Memcheck, a memory error detector
+==90532== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==90532== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==90532== Command: ./lem-in
+==90532== 
+==90532== Syscall param msg->desc.port.name points to uninitialised byte(s)
+==90532==    at 0x1003C334A: mach_msg_trap (in /usr/lib/system/libsystem_kernel.dylib)
+==90532==    by 0x1003C2796: mach_msg (in /usr/lib/system/libsystem_kernel.dylib)
+==90532==    by 0x1003BC485: task_set_special_port (in /usr/lib/system/libsystem_kernel.dylib)
+==90532==    by 0x10055810E: _os_trace_create_debug_control_port (in /usr/lib/system/libsystem_trace.dylib)
+==90532==    by 0x100558458: _libtrace_init (in /usr/lib/system/libsystem_trace.dylib)
+==90532==    by 0x1000C19DF: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==90532==    by 0x100031A1A: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==90532==    by 0x100031C1D: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==90532==    by 0x10002D4A9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==90532==    by 0x10002D440: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==90532==    by 0x10002C523: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==90532==    by 0x10002C5B8: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==90532==  Address 0x1048a4d6c is on thread 1's stack
+==90532==  in frame #2, created by task_set_special_port (???:)
+==90532== 
+==90532== 
+==90532== HEAP SUMMARY:
+==90532==     in use at exit: 18,197 bytes in 163 blocks
+==90532==   total heap usage: 930 allocs, 767 frees, 40,674 bytes allocated
+==90532== 
+==90532== 2 bytes in 1 blocks are definitely lost in loss record 1 of 43
+==90532==    at 0x1000B2A46: malloc (in /Users/pclement/.brew/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==90532==    by 0x10000185E: ft_strsub (in ./lem-in)
+==90532==    by 0x100001CB4: result (in ./lem-in)
+==90532==    by 0x100001E7A: get_next_line (in ./lem-in)
+==90532==    by 0x100002B7B: ft_get_info (in ./lem-in)
+==90532==    by 0x100002CA0: main (in ./lem-in)
+==90532== 
+==90532== LEAK SUMMARY:
+==90532==    definitely lost: 2 bytes in 1 blocks
+==90532==    indirectly lost: 2,064 bytes in 1 blocks
+==90532==      possibly lost: 0 bytes in 0 blocks
+==90532==    still reachable: 200 bytes in 6 blocks
+==90532==         suppressed: 15,931 bytes in 155 blocks
+==90532== Reachable blocks (those to which a pointer was found) are not shown.
+==90532== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==90532== 
+==90532== For counts of detected and suppressed errors, rerun with: -v
+==90532== Use --track-origins=yes to see where uninitialised values come from
+==90532== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 13 from 13)
+
+
+
+test_lem_in/valid_map/valid_map_long_way01
+==90533== Memcheck, a memory error detector
+==90533== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==90533== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==90533== Command: ./lem-in
+==90533== 
+==90533== Syscall param msg->desc.port.name points to uninitialised byte(s)
+==90533==    at 0x1003C334A: mach_msg_trap (in /usr/lib/system/libsystem_kernel.dylib)
+==90533==    by 0x1003C2796: mach_msg (in /usr/lib/system/libsystem_kernel.dylib)
+==90533==    by 0x1003BC485: task_set_special_port (in /usr/lib/system/libsystem_kernel.dylib)
+==90533==    by 0x10055810E: _os_trace_create_debug_control_port (in /usr/lib/system/libsystem_trace.dylib)
+==90533==    by 0x100558458: _libtrace_init (in /usr/lib/system/libsystem_trace.dylib)
+==90533==    by 0x1000C19DF: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==90533==    by 0x100031A1A: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==90533==    by 0x100031C1D: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==90533==    by 0x10002D4A9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==90533==    by 0x10002D440: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==90533==    by 0x10002C523: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==90533==    by 0x10002C5B8: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==90533==  Address 0x1048a4d6c is on thread 1's stack
+==90533==  in frame #2, created by task_set_special_port (???:)
+==90533== 
+==90533== 
+==90533== HEAP SUMMARY:
+==90533==     in use at exit: 18,197 bytes in 163 blocks
+==90533==   total heap usage: 932 allocs, 769 frees, 40,704 bytes allocated
+==90533== 
+==90533== 2 bytes in 1 blocks are definitely lost in loss record 1 of 43
+==90533==    at 0x1000B2A46: malloc (in /Users/pclement/.brew/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==90533==    by 0x10000185E: ft_strsub (in ./lem-in)
+==90533==    by 0x100001CB4: result (in ./lem-in)
+==90533==    by 0x100001E7A: get_next_line (in ./lem-in)
+==90533==    by 0x100002B7B: ft_get_info (in ./lem-in)
+==90533==    by 0x100002CA0: main (in ./lem-in)
+==90533== 
+==90533== LEAK SUMMARY:
+==90533==    definitely lost: 2 bytes in 1 blocks
+==90533==    indirectly lost: 2,064 bytes in 1 blocks
+==90533==      possibly lost: 0 bytes in 0 blocks
+==90533==    still reachable: 200 bytes in 6 blocks
+==90533==         suppressed: 15,931 bytes in 155 blocks
+==90533== Reachable blocks (those to which a pointer was found) are not shown.
+==90533== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==90533== 
+==90533== For counts of detected and suppressed errors, rerun with: -v
+==90533== Use --track-origins=yes to see where uninitialised values come from
+==90533== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 13 from 13)
+
+
+

@@ -6,7 +6,7 @@
 /*   By: nvergnac <nvergnac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/05 18:22:05 by nvergnac          #+#    #+#             */
-/*   Updated: 2018/04/06 17:39:09 by nvergnac         ###   ########.fr       */
+/*   Updated: 2018/04/10 17:52:38 by pclement         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,11 +41,11 @@ int		ft_add_linked_room(t_room *room, char *room_name)
 		while (linked_room_tmp->next)
 		{
 			if (ft_strcmp(linked_room_tmp->name, room_name) == 0)
-				return (1);
+				return (ft_free_lst_link(new));
 			linked_room_tmp = linked_room_tmp->next;
 		}
 		if (ft_strcmp(linked_room_tmp->name, room_name) == 0)
-			return (1);
+			return (ft_free_lst_link(new));
 		linked_room_tmp->next = new;
 	}
 	room->link_room_count++;
