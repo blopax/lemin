@@ -6,7 +6,7 @@
 /*   By: pclement <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/12 15:53:35 by pclement          #+#    #+#             */
-/*   Updated: 2018/04/10 15:57:11 by nvergnac         ###   ########.fr       */
+/*   Updated: 2018/04/10 16:43:54 by nvergnac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,15 +44,23 @@ int		ft_check_info(t_info *info)
 void	ft_get_info(t_info *info)
 {
 	char	*line;
+	char	*tmp;
 
+	tmp = 0;
 	line = 0;
 	while (TREAT_OVER == 0 && get_next_line(0, &line) > 0)
 	{
-		INPUT = ft_strjoin(INPUT, line);
-		INPUT = ft_strjoin(INPUT, "\n");
+		tmp = ft_strdup(INPUT);
+		INPUT = ft_safe_free(INPUT);
+		INPUT = ft_strjoin(tmp, line);
+		tmp = ft_safe_free(tmp);
+		tmp = ft_strdup(INPUT);
+		INPUT = ft_safe_free(INPUT);
+		INPUT = ft_strjoin(tmp, "\n");
 		if (ft_fill_info(line, info) == 1)
 			TREAT_OVER = 1;
 		line = ft_safe_free(line);
+		tmp = ft_safe_free(tmp);
 	}
 	MAX_PATH = ft_max_path(info);
 }
