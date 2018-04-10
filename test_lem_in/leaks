@@ -2,183 +2,183 @@
 
 
 Leaks in ./unvalid_map/map_non_valid00
-==73291==    definitely lost: 2 bytes in 1 blocks
+==71514==    definitely lost: 6,944 bytes in 68 blocks
 
 Leaks in ./unvalid_map/map_non_valid01
-==73300==    definitely lost: 2 bytes in 1 blocks
+==71523==    definitely lost: 6,944 bytes in 68 blocks
 
 Leaks in ./unvalid_map/map_non_valid02
-==73313==    definitely lost: 2 bytes in 1 blocks
+==71536==    definitely lost: 6,944 bytes in 68 blocks
 
 Leaks in ./unvalid_map/map_non_valid03
-==73322==    definitely lost: 2 bytes in 1 blocks
+==71546==    definitely lost: 6,944 bytes in 68 blocks
 
 Leaks in ./unvalid_map/map_non_valid04
-==73334==    definitely lost: 2 bytes in 1 blocks
+==71555==    definitely lost: 6,944 bytes in 68 blocks
 
 Leaks in ./unvalid_map/map_non_valid05
-==73344==    definitely lost: 2 bytes in 1 blocks
+==71567==    definitely lost: 6,944 bytes in 68 blocks
 
 Leaks in ./unvalid_map/map_non_valid06
-==73356==    definitely lost: 2 bytes in 1 blocks
+==71576==    definitely lost: 6,944 bytes in 68 blocks
 
 Leaks in ./unvalid_map/map_non_valid07
-==73365==    definitely lost: 2 bytes in 1 blocks
+==71589==    definitely lost: 6,944 bytes in 68 blocks
 
 Leaks in ./unvalid_map/map_non_valid08
-==73374==    definitely lost: 2 bytes in 1 blocks
+==71600==    definitely lost: 6,944 bytes in 68 blocks
 
 Leaks in ./unvalid_map/map_non_valid09
-==73387==    definitely lost: 2 bytes in 1 blocks
+==71694==    definitely lost: 6,944 bytes in 68 blocks
 
 Leaks in ./unvalid_map/map_non_valid10
-==73398==    definitely lost: 2 bytes in 1 blocks
+==71714==    definitely lost: 6,944 bytes in 68 blocks
 
 Leaks in ./unvalid_map/map_non_valid11
-==73410==    definitely lost: 2 bytes in 1 blocks
+==71733==    definitely lost: 6,944 bytes in 68 blocks
 
 Leaks in ./unvalid_map/map_non_valid12
-==73420==    definitely lost: 2 bytes in 1 blocks
+==71756==    definitely lost: 6,944 bytes in 68 blocks
 
 Leaks in ./unvalid_map/map_non_valid13
-==73432==    definitely lost: 2 bytes in 1 blocks
+==71775==    definitely lost: 6,944 bytes in 68 blocks
 
 Leaks in ./unvalid_map/map_non_valid14
-==73441==    definitely lost: 2 bytes in 1 blocks
+==71785==    definitely lost: 6,944 bytes in 68 blocks
 
 Leaks in ./unvalid_map/map_non_valid15
-==73450==    definitely lost: 2 bytes in 1 blocks
+==71797==    definitely lost: 6,944 bytes in 68 blocks
 
 Leaks in ./unvalid_map/map_non_valid16
-==73463==    definitely lost: 2 bytes in 1 blocks
+==71807==    definitely lost: 6,944 bytes in 68 blocks
 
 Leaks in ./unvalid_map/map_non_valid17
-==73472==    definitely lost: 2 bytes in 1 blocks
+==71834==    definitely lost: 6,944 bytes in 68 blocks
 
 Leaks in ./unvalid_map/map_non_valid18
-==73484==    definitely lost: 2 bytes in 1 blocks
+==71843==    definitely lost: 6,944 bytes in 68 blocks
 
 Leaks in ./unvalid_map/map_non_valid19
-==73494==    definitely lost: 2 bytes in 1 blocks
+==71855==    definitely lost: 6,944 bytes in 68 blocks
 
 Leaks in ./unvalid_map/map_non_valid20
-==73503==    definitely lost: 2 bytes in 1 blocks
+==71865==    definitely lost: 6,944 bytes in 68 blocks
 
 Leaks in ./unvalid_map/map_non_valid21
-==73515==    definitely lost: 2 bytes in 1 blocks
+==71876==    definitely lost: 6,944 bytes in 68 blocks
 
 Leaks in ./unvalid_map/map_non_valid22
-==73525==    definitely lost: 2 bytes in 1 blocks
+==71888==    definitely lost: 6,944 bytes in 68 blocks
 
 Leaks in ./unvalid_map/map_non_valid23
-==73540==    definitely lost: 2 bytes in 1 blocks
+==71897==    definitely lost: 6,944 bytes in 68 blocks
 
 Leaks in ./unvalid_map/map_non_valid24
-==73549==    definitely lost: 2 bytes in 1 blocks
+==71910==    definitely lost: 6,944 bytes in 68 blocks
 
 Leaks in ./unvalid_map/map_non_valid25
-==73561==    definitely lost: 2 bytes in 1 blocks
+==71919==    definitely lost: 6,944 bytes in 68 blocks
 
 Leaks in ./unvalid_map/map_non_valid26
-==73572==    definitely lost: 2 bytes in 1 blocks
+==71931==    definitely lost: 6,944 bytes in 68 blocks
 
 Leaks in ./unvalid_map/map_non_valid27
-==73581==    definitely lost: 2 bytes in 1 blocks
+==71940==    definitely lost: 6,944 bytes in 68 blocks
 
 Leaks in ./unvalid_map/map_non_valid28
-==73593==    definitely lost: 2 bytes in 1 blocks
+==71950==    definitely lost: 6,944 bytes in 68 blocks
 
 Leaks in ./unvalid_map/map_non_valid29
-==73603==    definitely lost: 2 bytes in 1 blocks
+==71962==    definitely lost: 6,944 bytes in 68 blocks
 
 Leaks in ./unvalid_map/map_non_valid30
-==73615==    definitely lost: 2 bytes in 1 blocks
+==71971==    definitely lost: 6,944 bytes in 68 blocks
 
 Leaks in ./unvalid_map/map_non_valid31
-==73624==    definitely lost: 2 bytes in 1 blocks
+==71983==    definitely lost: 6,944 bytes in 68 blocks
 
 Leaks in ./unvalid_map/map_non_valid32
-==73636==    definitely lost: 2 bytes in 1 blocks
+==71993==    definitely lost: 6,944 bytes in 68 blocks
 
 Leaks in ./unvalid_map/map_non_valid33
-==73647==    definitely lost: 2 bytes in 1 blocks
+==72015==    definitely lost: 6,944 bytes in 68 blocks
 
 Leaks in ./unvalid_map/map_non_valid34
-==73656==    definitely lost: 2 bytes in 1 blocks
+==72039==    definitely lost: 6,944 bytes in 68 blocks
 
 Leaks in ./unvalid_map/map_non_valid35
-==73668==    definitely lost: 2 bytes in 1 blocks
+==72050==    definitely lost: 6,944 bytes in 68 blocks
 
 Leaks in ./unvalid_map/map_non_valid36
-==73678==    definitely lost: 2 bytes in 1 blocks
+==72062==    definitely lost: 6,944 bytes in 68 blocks
 
 Leaks in ./unvalid_map/map_non_valid37
-==73690==    definitely lost: 2 bytes in 1 blocks
+==72071==    definitely lost: 6,944 bytes in 68 blocks
 
 Leaks in ./unvalid_map/map_non_valid38
-==73699==    definitely lost: 2 bytes in 1 blocks
+==72083==    definitely lost: 6,944 bytes in 68 blocks
 
 
 [0;35mBegin of valid map[0m
 
 
 Leaks in ./valid_map//valid_map00
-==73719==    definitely lost: 2 bytes in 1 blocks
+==72101==    definitely lost: 6,944 bytes in 68 blocks
 
 Leaks in ./valid_map//valid_map01
-==73729==    definitely lost: 2 bytes in 1 blocks
+==72110==    definitely lost: 6,944 bytes in 68 blocks
 
 Leaks in ./valid_map//valid_map02
-==73738==    definitely lost: 2 bytes in 1 blocks
+==72122==    definitely lost: 6,944 bytes in 68 blocks
 
 Leaks in ./valid_map//valid_map03
-==73751==    definitely lost: 2 bytes in 1 blocks
+==72132==    definitely lost: 6,944 bytes in 68 blocks
 
 Leaks in ./valid_map//valid_map04
-==73761==    definitely lost: 2 bytes in 1 blocks
+==72144==    definitely lost: 6,944 bytes in 68 blocks
 
 Leaks in ./valid_map//valid_map05
-==73774==    definitely lost: 2 bytes in 1 blocks
+==72153==    definitely lost: 6,944 bytes in 68 blocks
 
 Leaks in ./valid_map//valid_map06
-==73783==    definitely lost: 2 bytes in 1 blocks
+==72162==    definitely lost: 6,944 bytes in 68 blocks
 
 Leaks in ./valid_map//valid_map07
-==73795==    definitely lost: 2 bytes in 1 blocks
+==72175==    definitely lost: 6,944 bytes in 68 blocks
 
 Leaks in ./valid_map//valid_map08
-==73805==    definitely lost: 2 bytes in 1 blocks
+==72184==    definitely lost: 6,944 bytes in 68 blocks
 
 Leaks in ./valid_map//valid_map09
-==73827==    definitely lost: 2 bytes in 1 blocks
+==72196==    definitely lost: 6,944 bytes in 68 blocks
 
 Leaks in ./valid_map//valid_map10
-==73851==    definitely lost: 2 bytes in 1 blocks
+==72206==    definitely lost: 6,944 bytes in 68 blocks
 
 Leaks in ./valid_map//valid_map11
-==73861==    definitely lost: 2 bytes in 1 blocks
+==72216==    definitely lost: 6,944 bytes in 68 blocks
 
 Leaks in ./valid_map//valid_map12
-==73873==    definitely lost: 2 bytes in 1 blocks
+==72227==    definitely lost: 6,944 bytes in 68 blocks
 
 Leaks in ./valid_map//valid_map13
-==73882==    definitely lost: 2 bytes in 1 blocks
+==72236==    definitely lost: 6,944 bytes in 68 blocks
 
 Leaks in ./valid_map//valid_map14
-==73894==    definitely lost: 2 bytes in 1 blocks
+==72249==    definitely lost: 6,944 bytes in 68 blocks
 
 Leaks in ./valid_map//valid_map15
-==73904==    definitely lost: 2 bytes in 1 blocks
+==72258==    definitely lost: 6,944 bytes in 68 blocks
 
 Leaks in ./valid_map//valid_map_dead_way00
-==73913==    definitely lost: 2 bytes in 1 blocks
+==72270==    definitely lost: 6,944 bytes in 68 blocks
 
 Leaks in ./valid_map//valid_map_long_way00
-==73926==    definitely lost: 2 bytes in 1 blocks
+==72280==    definitely lost: 6,944 bytes in 68 blocks
 
 Leaks in ./valid_map//valid_map_long_way01
-==73936==    definitely lost: 2 bytes in 1 blocks
+==72289==    definitely lost: 6,944 bytes in 68 blocks
 
 Leaks in ./valid_map//validOrNot_Do_not_worry00
-==73948==    definitely lost: 2 bytes in 1 blocks
+==72301==    definitely lost: 6,944 bytes in 68 blocks
 

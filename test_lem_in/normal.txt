@@ -2,125 +2,119 @@ Test ./valid_map//valid_map00
  not optimal
 Needed move optimum : [7]
 Needed move only took shortest path : [7]
-You did it in [101] moves
+You did it in [31] moves
 
 Test ./valid_map//valid_map01
  not optimal
 Needed move optimum : [15]
 Needed move only took shortest path : [15]
-You did it in [161] moves
+You did it in [50] moves
 
 Test ./valid_map//valid_map02
  not optimal
 Needed move optimum : [8]
 Needed move only took shortest path : [9]
-You did it in [103] moves
+You did it in [34] moves
 
 Test ./valid_map//valid_map03
  not optimal
 Needed move optimum : [5]
 Needed move only took shortest path : [5]
-You did it in [31] moves
+You did it in [10] moves
 
 Test ./valid_map//valid_map04
  not optimal
 Needed move optimum : [5]
 Needed move only took shortest path : [5]
-You did it in [31] moves
+You did it in [10] moves
 
 Test ./valid_map//valid_map05
  not optimal
 Needed move optimum : [7]
 Needed move only took shortest path : [7]
-You did it in [103] moves
+You did it in [33] moves
 
 Test ./valid_map//valid_map06
  not optimal
 Needed move optimum : [3]
 Needed move only took shortest path : [3]
-You did it in [31] moves
+You did it in [15] moves
 
 Test ./valid_map//valid_map07
  not optimal
 Needed move optimum : [3]
 Needed move only took shortest path : [3]
-You did it in [31] moves
+You did it in [11] moves
 
 Test ./valid_map//valid_map08
  not optimal
 Needed move optimum : [3]
 Needed move only took shortest path : [3]
-You did it in [31] moves
+You did it in [11] moves
 
 Test ./valid_map//valid_map09
  not optimal
 Needed move optimum : [5]
 Needed move only took shortest path : [5]
-You did it in [101] moves
+You did it in [33] moves
 
 Test ./valid_map//valid_map10
  not optimal
 Needed move optimum : [3]
 Needed move only took shortest path : [3]
-You did it in [39] moves
+You did it in [12] moves
 
 Test ./valid_map//valid_map11
  not optimal
 Needed move optimum : [6]
 Needed move only took shortest path : [11]
-You did it in [95] moves
+You did it in [29] moves
 
 Test ./valid_map//valid_map12
  not optimal
 Needed move optimum : [21]
 Needed move only took shortest path : [40]
-You did it in [75] moves
+You did it in [40] moves
 
 Test ./valid_map//valid_map13
  not optimal
 Needed move optimum : [5]
 Needed move only took shortest path : [5]
-You did it in [51] moves
+You did it in [18] moves
 
 Test ./valid_map//valid_map14
  not optimal
 Needed move optimum : [5]
 Needed move only took shortest path : [6]
-You did it in [73] moves
+You did it in [23] moves
 
 Test ./valid_map//valid_map15
  not optimal
 Needed move optimum : [11]
 Needed move only took shortest path : [17]
-You did it in [101] moves
+You did it in [45] moves
 
 Test ./valid_map//valid_map_dead_way00
  not optimal
 Needed move optimum : [4]
 Needed move only took shortest path : [4]
-You did it in [51] moves
+You did it in [14] moves
 
 Test ./valid_map//valid_map_long_way00
  not optimal
 Needed move optimum : [10]
 Needed move only took shortest path : [10]
-You did it in [101] moves
+You did it in [35] moves
 
 Test ./valid_map//valid_map_long_way01
  not optimal
 Needed move optimum : [10]
 Needed move only took shortest path : [10]
-You did it in [101] moves
-
-Test ./valid_map//validOrNot_Do_not_worry00
- not optimal
-Needed move optimum : [12]
-Needed move only took shortest path : [12]
-You did it in [52] moves
+You did it in [35] moves
 
 Test ./valid_map/big_map00
  not optimal
 Needed move optimum : [41]
 Needed move only took shortest path : [104]
-You did it in [12115] moves
+You did it in [3157] moves
 
